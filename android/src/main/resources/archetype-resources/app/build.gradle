@@ -7,13 +7,13 @@ apply plugin: 'com.github.dcendents.android-maven'
 group = "${groupId}"
 
 android {
-    compileSdkVersion 21
-    buildToolsVersion "21.1.2"
+    compileSdkVersion 22
+    buildToolsVersion "22.0.1"
 
     defaultConfig {
         applicationId "${groupId}"
-        minSdkVersion 10
-        targetSdkVersion 21
+        minSdkVersion 15
+        targetSdkVersion 22
         versionCode 100
         versionName "1.0"
     }
@@ -64,7 +64,7 @@ dependencies {
     compile "com.squareup.okhttp:okhttp:$okHttpVersion"
     compile "com.google.code.gson:gson:$gsonVersion"
 
-    androidTestCompile 'junit:junit:4.11'
+    androidTestCompile 'junit:junit:4.12'
 }
 
 mdkdbkeystore {

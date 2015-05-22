@@ -21,7 +21,7 @@ buildscript {
 
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:1.0.0'
+        classpath 'com.android.tools.build:gradle:1.2.3'
         classpath 'com.github.dcendents:android-maven-plugin:1.2'
 		classpath 'com.sopra.mobility.gradle.mdkdbkeystore:mdkdbkeystore-gradle-plugin:0.0.4-SNAPSHOT'
         classpath 'com.sopra.mobility.gradle.mdkdrawablecheck:mdkdrawablecheck-gradle-plugin:0.0.3-SNAPSHOT'
@@ -60,12 +60,12 @@ allprojects {
         projectTargetCompatibility = JavaVersion.VERSION_1_7
 
         // library versions
-        appcompatv7Version = "21.+"
+        appcompatv7Version = "22.1.1"
         mdkAndroidVersion = "6.0.0-SNAPSHOT"
         databaseVariant = "database";
         
         gsonVersion = "1.7.2"
-        acraVersion = "4.6.1"
+        acraVersion = "4.6.2"
         okHttpVersion = "2.2.0"
     }
 }
