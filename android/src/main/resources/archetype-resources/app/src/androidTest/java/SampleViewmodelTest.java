@@ -2,7 +2,6 @@ package ${package};
 
 import android.test.suitebuilder.annotation.SmallTest;
 
-import com.adeuza.movalysfwk.mobile.mf4android.test.AbstractMFAndroidTestCase;
 import com.adeuza.movalysfwk.mobile.mf4mjcommons.context.ItfTransactionalContext;
 import com.adeuza.movalysfwk.mobile.mf4mjcommons.context.MContext;
 import com.adeuza.movalysfwk.mobile.mf4mjcommons.core.services.BeanLoader;
@@ -11,7 +10,7 @@ public class SampleViewmodelTest extends AbstractMFAndroidTestCase {
 
 	@SmallTest
 	public void testViewmodel() throws Exception {
-		MContext oContext = createTransactionContext();
+		MContext oContext = TestHelper.createTransactionContext();
 		try {
 			oContext.beginTransaction();
 			try {

@@ -1,47 +1,56 @@
 package ${package};
 
-import android.test.suitebuilder.annotation.SmallTest;
+import android.support.test.runner.AndroidJUnit4;
+import android.test.suitebuilder.annotation.LargeTest;
 
-import com.adeuza.movalysfwk.mobile.mf4android.test.AbstractMFAndroidTestCase;
+import com.adeuza.movalysfwk.mobile.mf4android.test.TestHelper;
 import com.adeuza.movalysfwk.mobile.mf4mjcommons.action.ActionParameter;
 import com.adeuza.movalysfwk.mobile.mf4mjcommons.action.EntityActionParameterImpl;
 import com.adeuza.movalysfwk.mobile.mf4mjcommons.action.NullActionParameterImpl;
-import com.adeuza.movalysfwk.mobile.mf4mjcommons.business.doopenmap.AddressLocation;
 import com.adeuza.movalysfwk.mobile.mf4mjcommons.context.ItfTransactionalContext;
 import com.adeuza.movalysfwk.mobile.mf4mjcommons.context.MContext;
 import com.adeuza.movalysfwk.mobile.mf4mjcommons.core.services.BeanLoader;
 
-public class SampleActionTest extends AbstractMFAndroidTestCase {
+import org.junit.Test;
+import org.junit.runner.RunWith;
 
-	@SmallTest
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.notNullValue;
+import static org.hamcrest.Matchers.lessThan;
+
+@RunWith(AndroidJUnit4.class)
+@LargeTest
+public class SampleActionTest {
+
+	@Test
 	public void testSaveAction() throws Exception {
-		MContext oContext = createTransactionContext();
+		MContext oContext = TestHelper.createTransactionContext();
 		try {
 			oContext.beginTransaction();
 			try {
 
 				/*
-				
 				// Create a new entity
 				YOURENTITY oNewEntity = BeanLoader.getInstance().getBean(YOURENTITYFACTORY.class).createInstance();
-				assertNotNull(oNewEntity);
+				assertThat(oNewEntity, is(notNullValue()));
 				//TODO: fill your entities with values
 				
 				// Initialize viewmodel with the data of the entity
 				ViewModelCreator oViewModelCreator = 
 					(ViewModelCreator) BeanLoader.getInstance().getBeanByType("viewmodelcreator");
-				assertNotNull(oViewModelCreator);
+				assertThat(oViewModelCreator, is(notNullValue()));
 				YOURVIEWMODEL oViewModel = oViewModelCreator.createOrUpdateYOURVIEWMODEL(oNewEntity, true);
-				assertNotNull(oViewModel);
+				assertThat(oViewModel, is(notNullValue()));
 				
 				// Start the save action
-				ActionParameter oOut = launchAction(YUORSAVEACTION.class, 
+				ActionParameter oOut = TestHelper.launchAction(YUORSAVEACTION.class,
 						new NullActionParameterImpl(), oContext);
-				assertNotNull(oOut);
+				assertThat(oOut, is(notNullValue()));
 				EntityActionParameterImpl<YOURENTITY> param = (EntityActionParameterImpl<YOURENTITY>) oOut;
 				YOURENTITY oSavedEntity = param.getEntity();
-				assertTrue(oSavedEntity.getId() < -1 );
-
+				assertThat(oSavedEntity.getId(), is(lessThan(-1L)));
 				*/
 
 			} finally {
@@ -51,7 +60,4 @@ public class SampleActionTest extends AbstractMFAndroidTestCase {
 			oContext.close();
 		}
 	}
-
-
-
 }

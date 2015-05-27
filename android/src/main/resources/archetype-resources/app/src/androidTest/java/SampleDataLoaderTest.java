@@ -1,34 +1,38 @@
 package ${package};
 
-import android.test.suitebuilder.annotation.SmallTest;
+import android.support.test.runner.AndroidJUnit4;
+import android.test.suitebuilder.annotation.LargeTest;
 
-import com.adeuza.movalysfwk.mobile.mf4android.test.AbstractMFAndroidTestCase;
+import com.adeuza.movalysfwk.mobile.mf4android.test.TestHelper;
 import com.adeuza.movalysfwk.mobile.mf4mjcommons.context.ItfTransactionalContext;
 import com.adeuza.movalysfwk.mobile.mf4mjcommons.context.MContext;
 import com.adeuza.movalysfwk.mobile.mf4mjcommons.core.services.BeanLoader;
 
-/**
- * @author lmichenaud
- *
- */
-public class SampleDataLoaderTest extends AbstractMFAndroidTestCase {
+import org.junit.Test;
+import org.junit.runner.RunWith;
+
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.notNullValue;
+
+@RunWith(AndroidJUnit4.class)
+@LargeTest
+public class SampleDataLoaderTest {
 	
-	@SmallTest
+	@Test
 	public void testDataLoaders() throws Exception {
-		MContext oContext = createTransactionContext();
+		MContext oContext = TestHelper.createTransactionContext();
 		try {
 			oContext.beginTransaction();
 			try {
 				//TODO: Write your daoloader test
 				/*YOURDATALOADER oDataLoader = 
 						BeanLoader.getInstance().getBean(YOURDATALOADER.class);
-				assertNotNull(oDataLoader);
+				assertThat(oDataLoader, is(notNullValue()));
 				oDataLoader.setItemId(1);
 				oDataLoader.reload(oContext);
 				YOURENTITY oEntity = oDataLoader.getData();
-				assertNotNull(oEntity);*/
-			} finally {
-				((ItfTransactionalContext)oContext).getTransaction().rollback();
+				assertThat(oEntity, is(notNullValue()));*/
 			}
 		} finally {
 			oContext.close();
