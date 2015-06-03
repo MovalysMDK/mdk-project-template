@@ -17,22 +17,22 @@ import static org.hamcrest.Matchers.notNullValue;
 
 @RunWith(AndroidJUnit4.class)
 @LargeTest
-public class SampleDataLoaderTest {
-	
+public class SampleDaoTest {
+
 	@Test
-	public void testDataLoaders() throws Exception {
+	public void testDao() throws Exception {
 		MContext oContext = TestHelper.createTransactionContext();
 		try {
 			oContext.beginTransaction();
 			try {
-				//TODO: Write your daoloader test
-				/*YOURDATALOADER oDataLoader = 
-						BeanLoader.getInstance().getBean(YOURDATALOADER.class);
-				assertThat(oDataLoader, is(notNullValue()));
-				oDataLoader.setItemId(1);
-				oDataLoader.reload(oContext);
-				YOURENTITY oEntity = oDataLoader.getData();
-				assertThat(oEntity, is(notNullValue()));*/
+				//TODO: Write your dao test
+				/*YOURDAO oDao = BeanLoader.getInstance().getBean(YOURDAO.class);
+				assertThat(oDao, is(notNullValue()));
+				List<YOURENTITY> listEntities = oDao.getListYOURENTITY(oContext);
+				assertThat(listEntities, is(notNullValue()));
+				assertThat(listEntities.size(), is(moreThan(0)));*/		
+			} finally {
+				((ItfTransactionalContext)oContext).getTransaction().rollback();
 			}
 		} finally {
 			oContext.close();

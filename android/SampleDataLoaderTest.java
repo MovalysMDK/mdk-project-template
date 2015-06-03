@@ -17,15 +17,15 @@ import static org.hamcrest.Matchers.notNullValue;
 
 @RunWith(AndroidJUnit4.class)
 @LargeTest
-public class SampleViewmodelTest {
-
+public class SampleDataLoaderTest {
+	
 	@Test
-	public void testViewmodel() throws Exception {
+	public void testDataLoaders() throws Exception {
 		MContext oContext = TestHelper.createTransactionContext();
 		try {
 			oContext.beginTransaction();
 			try {
-				//TODO: Write your viewmodel test
+				//TODO: Write your daoloader test
 				/*YOURDATALOADER oDataLoader = 
 						BeanLoader.getInstance().getBean(YOURDATALOADER.class);
 				assertThat(oDataLoader, is(notNullValue()));
@@ -33,13 +33,6 @@ public class SampleViewmodelTest {
 				oDataLoader.reload(oContext);
 				YOURENTITY oEntity = oDataLoader.getData();
 				assertThat(oEntity, is(notNullValue()));*/
-				
-				/*ViewModelCreator oViewModelCreator = 
-					(ViewModelCreator) BeanLoader.getInstance().getBeanByType("viewmodelcreator");
-				assertThat(oViewModelCreator, is(notNullValue()));
-				YOURVIEWMODEL oViewModel = 
-						oViewModelCreator.createOrUpdateYOURVIEWMODEL(oEntity, true);
-				assertThat(oViewModel, is(notNullValue()));*/				
 			} finally {
 				((ItfTransactionalContext)oContext).getTransaction().rollback();
 			}
