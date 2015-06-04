@@ -32,7 +32,7 @@ android {
 
     buildTypes {
         debug {
-            testCoverageEnabled = true
+            testCoverageEnabled true
         }
         release {
             minifyEnabled false
@@ -46,7 +46,9 @@ android {
     }
 
     jacoco {
-        version = "0.7.1.201405082137"
+    	//bug in code coverage with espresso 2.1:
+    	//https://code.google.com/p/android/issues/detail?id=170607
+        version "0.7.1.201405082137"
     }
 
     packagingOptions {
