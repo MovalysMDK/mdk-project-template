@@ -61,11 +61,11 @@ android {
 dependencies {
     compile "com.android.support:appcompat-v7:$appcompatv7Version"
     compile "com.soprasteria.mdk:mdk:$mdkAndroidVersion@aar"
+    compile "com.soprasteria.mdk:mdk-widget-legacy:$mdkAndroidVersion@aar"
     compile "com.soprasteria.mdk:mdk-$databaseVariant:$mdkAndroidVersion@aar"
     compile "com.soprasteria.mdk:mdk-workspace:$mdkAndroidVersion@aar"
     compile "com.soprasteria.mdk:mdk-scanner:$mdkAndroidVersion@aar"
 
-    compile "ch.acra:acra:$acraVersion"
     compile "com.squareup.okhttp:okhttp:$okHttpVersion"
     compile "com.google.code.gson:gson:$gsonVersion"
 
