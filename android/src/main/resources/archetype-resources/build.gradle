@@ -63,7 +63,9 @@ allprojects {
         // library versions
         appcompatv7Version = "22.1.1"
         mdkAndroidVersion = "6.0.0-SNAPSHOT"
-        databaseVariant = "database";
+        mdkWidgetVersion = "1.0.0-SNAPSHOT"
+        
+        databaseVariant = "database"
         
         gsonVersion = "1.7.2"
         okHttpVersion = "2.2.0"

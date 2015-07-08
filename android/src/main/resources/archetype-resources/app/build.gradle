@@ -66,6 +66,9 @@ dependencies {
     compile "com.soprasteria.mdk:mdk-workspace:$mdkAndroidVersion@aar"
     compile "com.soprasteria.mdk:mdk-scanner:$mdkAndroidVersion@aar"
 
+	compile "com.soprasteria.movalysmdk.widget:widget-core:$mdkWidgetVersion@aar"
+	compile "com.soprasteria.movalysmdk.widget:widget-basic:$mdkWidgetVersion@aar"
+
     compile "com.squareup.okhttp:okhttp:$okHttpVersion"
     compile "com.google.code.gson:gson:$gsonVersion"
 
