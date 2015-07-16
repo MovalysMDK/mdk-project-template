@@ -64,6 +64,7 @@ allprojects {
         appcompatv7Version = "22.1.1"
         mdkAndroidVersion = "6.0.0-SNAPSHOT"
         mdkWidgetVersion = "1.0.0-SNAPSHOT"
+        mdkEspressoVersion = "1.0.0-SNAPSHOT"
         
         databaseVariant = "database"
         

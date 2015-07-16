@@ -18,7 +18,7 @@ android {
         versionCode 100
         versionName "1.0"
         
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "com.soprasteria.movalysmdk.espresso.AndroidJacocoTestRunner"
     }
 
     signingConfigs {
@@ -78,6 +78,7 @@ dependencies {
     androidTestCompile 'com.android.support:support-annotations:22.1.1'
     androidTestCompile 'com.android.support.test:runner:0.2'
     androidTestCompile "com.soprasteria.mdk:mdk-test:$mdkAndroidVersion@aar"
+    androidTestCompile "com.soprasteria.movalysmdk.espresso:mdk-espresso:$mdkEspressoVersion@aar"
     
     androidTestCompile 'com.squareup.spoon:spoon-client:1.1.9'
 }
