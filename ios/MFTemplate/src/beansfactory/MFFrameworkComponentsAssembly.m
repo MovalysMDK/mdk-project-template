@@ -1,6 +1,6 @@
 //
 //  MFFrameworkComponentsAssembly.m
-//  lemon
+//  MFTemplate
 //
 //  Created by Movalys MDK.
 //  Copyright (c) 2014 Sopra Consulting. All rights reserved.
@@ -12,21 +12,13 @@
 #import "MFUserCsvLoaderRunInit.h"
 #import "MFFwkCsvLoaderRunInit.h"
 #import "MFProjectCsvLoaderRunInit.h"
-#import "MFLoadFormRunInit.h"
-#import "MFLoadVisualConfigurationRunInit.h"
 #import "MFWebViewController.h"
 #import "MFExportDatabaseAction.h"
 #import "MFImportDatabaseAction.h"
 #import "MFResetDatabaseAction.h"
 #import "MFEmailLogsAction.h"
 #import "MFExportLogsAction.h"
-#import "MFReaderSection.h"
 #import "MFLoggingFormatter.h"
-#import "MFReaderColumn.h"
-#import "MFReaderForm.h"
-#import "MFReaderWorkspace.h"
-#import "MFExtensionKeyboardingUIControl.h"
-#import "MFExtensionKeyboardingUIControlWithRegExp.h"
 #import "MFSyncTimestampService.h"
 #import "MFObjectToSyncService.h"
 #import "MFRestConnectionConfig.h"
@@ -37,6 +29,20 @@
 #import "MFRestInvoker.h"
 #import "MFSecurityHelper.h"
 #import "MFKeychainRunInit.h"
+#import "MFSendEmailCommand.h"
+#import "MFOpenURLCommand.h"
+#import "MFCallPhoneNumberCommand.h"
+#import "MFConfigurationHandler.h"
+#import "MFProperty.h"
+
+#import "MFMandatoryFieldValidator.h"
+#import "MFLengthFieldValidator.h"
+#import "MFUrlFieldValidator.h"
+#import "MFPhoneFieldValidator.h"
+#import "MFEmailFieldValidator.h"
+#import "MFDoubleFieldValidator.h"
+#import "MFIntegerFieldValidator.h"
+#import "MFFixedListContentFieldValidator.h"
 
 /**
  * @brief Class containing the beans managed by Typhoon used in MDK
@@ -57,6 +63,15 @@
     [singletons setObject:[MFKeyNotFound class] forKey:@"MFKeyNotFound"];
     [singletons setObject:[MFSecurityHelper class] forKey:@"MFSecurityHelper"];
     
+    [singletons setObject:[MFUrlFieldValidator class] forKey:@"urlFieldValidator"];
+    [singletons setObject:[MFPhoneFieldValidator class] forKey:@"phoneFieldValidator"];
+    [singletons setObject:[MFEmailFieldValidator class] forKey:@"emailFieldValidator"];
+    [singletons setObject:[MFMandatoryFieldValidator class] forKey:@"mandatoryFieldValidator"];
+    [singletons setObject:[MFLengthFieldValidator class] forKey:@"lengthFieldValidator"];
+    [singletons setObject:[MFDoubleFieldValidator class] forKey:@"doubleFieldValidator"];
+    [singletons setObject:[MFIntegerFieldValidator class] forKey:@"integerFieldValidator"];
+    [singletons setObject:[MFFixedListContentFieldValidator class] forKey:@"fixedListContentFieldValidator"];
+    
     [prototypes setObject:[MFContext class] forKey:@"MFContext"];
     [prototypes setObject:[MFContext class] forKey:@"MFContextProtocol"];
     [prototypes setObject:[MFWaitRunInit class] forKey:@"MFWaitRunInit"];
@@ -65,29 +80,15 @@
     [prototypes setObject:[MFUserCsvLoaderRunInit class] forKey:@"MFUserCsvLoaderRunInit"];
     [prototypes setObject:[MFFwkCsvLoaderRunInit class] forKey:@"MFFwkCsvLoaderRunInit"];
     [prototypes setObject:[MFProjectCsvLoaderRunInit class] forKey:@"MFProjectCsvLoaderRunInit"];
-    [prototypes setObject:[MFLoadFormRunInit class] forKey:@"MFLoadFormRunInit"];
-    [prototypes setObject:[MFLoadVisualConfigurationRunInit class] forKey:@"MFLoadVisualConfigurationRunInit"];
     [prototypes setObject:[MFMapViewController class] forKey:@"mapViewController"];
     [prototypes setObject:[MFWebViewController class] forKey:@"webViewController"];
     [prototypes setObject:[MFCreateEmailViewController class] forKey:@"createEMailViewcontroller"];
-    [prototypes setObject:[MFFieldDescriptor class] forKey:@"fieldDescriptor"];
-    [prototypes setObject:[MFSectionDescriptor class] forKey:@"sectionDescriptor"];
-    [prototypes setObject:[MFFormDescriptor class] forKey:@"formDescriptor"];
-    [prototypes setObject:[MFGroupDescriptor class] forKey:@"groupDescriptor"];
-    [prototypes setObject:[MFWorkspaceDescriptor class] forKey:@"workspaceDescriptor"];
-    [prototypes setObject:[MFColumnDescriptor class] forKey:@"columnDescriptor"];
-    [prototypes setObject:[MFReaderForm class] forKey:@"formReader"];
-    [prototypes setObject:[MFReaderSection class] forKey:@"sectionReader"];
-    [prototypes setObject:[MFReaderWorkspace class] forKey:@"workspaceReader"];
-    [prototypes setObject:[MFReaderColumn class] forKey:@"columnReader"];
     [prototypes setObject:[MFLoggingFormatter class] forKey:@"loggingFormatter"];
     [prototypes setObject:[MFURL class] forKey:@"url"];
     [prototypes setObject:[MFProperty class] forKey:@"property"];
-    [prototypes setObject:[MFBindingComponentDescriptor class] forKey:@"bindingComponentdescriptor"];
+    [prototypes setObject:[MFComponentDescriptor class] forKey:@"bindingComponentdescriptor"];
     [prototypes setObject:[MFUIBaseComponent class] forKey:@"baseComponent"];
-    [prototypes setObject:[MFFormExtend class] forKey:@"formExtend"];
     [prototypes setObject:[MFFormSearchDelegate class] forKey:@"MFFormSearchDelegate"];
-    [prototypes setObject:[MFFormSearchExtend class] forKey:@"MFFormSearchExtend"];
     [prototypes setObject:[MFBinding class] forKey:@"MFBinding"];
     [prototypes setObject:[MFExportDatabaseAction class] forKey:@"MFExportDatabaseAction"];
     [prototypes setObject:[MFImportDatabaseAction class] forKey:@"MFImportDatabaseAction"];
@@ -99,8 +100,6 @@
     [prototypes setObject:[MViewModelCreator class] forKey:@"MViewModelCreator"];
     [prototypes setObject:[MFPositionViewModel class] forKey:@"positionViewModel"];
     [prototypes setObject:[MFChainSaveDetailAction class] forKey:@"MFChainSaveDetailAction"];
-    [prototypes setObject:[MFExtensionKeyboardingUIControl class] forKey:@"extensionKeyboardingUIControl"];
-    [prototypes setObject:[MFExtensionKeyboardingUIControlWithRegExp class] forKey:@"MFExtensionKeyboardingUIControlWithRegExpProtocol"];
     [prototypes setObject:[MFSyncTimestampService class] forKey:@"MFSyncTimestampService"];
     [prototypes setObject:[MFObjectToSyncService class] forKey:@"MFObjectToSyncService"];
     [prototypes setObject:[MFRestConnectionConfig class] forKey:@"MFRestConnectionConfig"];
@@ -110,8 +109,11 @@
     [prototypes setObject:[MFLocalCredentialService class] forKey:@"MFLocalCredentialService"];
     [prototypes setObject:[MFRestInvoker class] forKey:@"RestInvoker"];
     
-    
-    
+    [prototypes setObject:[MFSendEmailCommand class] forKey:@"SendEmailCommand"];
+    [prototypes setObject:[MFCallPhoneNumberCommand class] forKey:@"CallPhoneNumberCommand"];
+    [prototypes setObject:[MFOpenURLCommand class] forKey:@"OpenURLCommand"];
 }
+
+
 
 @end

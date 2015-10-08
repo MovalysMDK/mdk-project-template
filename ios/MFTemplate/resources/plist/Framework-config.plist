@@ -6,81 +6,8 @@
 	<string>debug</string>
 	<key>PushMailOnCrash</key>
 	<string>no</string>
-	<key>Converters</key>
-	<dict>
-		<key>float</key>
-		<dict>
-			<key>numberOfDigits</key>
-			<integer>5</integer>
-		</dict>
-		<key>date</key>
-		<dict>
-			<key>hour</key>
-			<false/>
-		</dict>
-	</dict>
-	<key>BindableProperties</key>
-	<dict>
-		<key>componentAlignment</key>
-		<dict>
-			<key>recognizedValues</key>
-			<string>left;center;right;natural;justified</string>
-			<key>type</key>
-			<string>alignment</string>
-		</dict>
-		<key>converter</key>
-		<dict>
-			<key>recognizedValues</key>
-			<string>date;float</string>
-			<key>type</key>
-			<string>converter</string>
-		</dict>
-		<key>i18nKey</key>
-		<dict>
-			<key>recognizedValues</key>
-			<string></string>
-			<key>type</key>
-			<string>string</string>
-		</dict>
-		<key>backgroundColor</key>
-		<dict>
-			<key>recognizedValues</key>
-			<string>black;darkGray;white;gray;red;green;blue;cyan;yellow;magenta;orange;purple;brown;clear;lightText;darkText;groupTableViewBackground;viewFlipsideBackground;scrollViewTextureBackground;underPageBackground</string>
-			<key>type</key>
-			<string>color</string>
-		</dict>
-		<key>visible</key>
-		<dict>
-			<key>recognizedValues</key>
-			<string>YES;NO;0;1;true;false;</string>
-			<key>type</key>
-			<string>bool</string>
-		</dict>
-		<key>textColor</key>
-		<dict>
-			<key>recognizedValues</key>
-			<string>black;darkGray;white;gray;red;green;blue;cyan;yellow;magenta;orange;purple;brown;clear;lightText;darkText;groupTableViewBackground;viewFlipsideBackground;scrollViewTextureBackground;underPageBackground</string>
-			<key>type</key>
-			<string>color</string>
-		</dict>
-		<key>mandatory</key>
-		<dict>
-			<key>recognizedValues</key>
-			<string>YES;NO;0;1;true;false;</string>
-			<key>type</key>
-			<string>bool</string>
-		</dict>
-		<key>editable</key>
-		<dict>
-			<key>recognizedValues</key>
-			<string>YES;NO;0;1;true;false;</string>
-			<key>type</key>
-			<string>bool</string>
-		</dict>
-	</dict>
 	<key>AdminEMails</key>
 	<array>
-		<string>sebastien.maitre@sopragroup.com</string>
 		<string>sebastien.maitre@sopragroup.com</string>
 	</array>
 	<key>StarterFwk</key>

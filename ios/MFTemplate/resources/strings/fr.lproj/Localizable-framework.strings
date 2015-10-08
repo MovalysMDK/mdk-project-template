@@ -15,6 +15,11 @@
 "MFCSSConflictExceptionTitle" = "Erreur : conflit CSS";
 "MFCSSConflictExceptionMessage" = "Deux feuilles de style CSS différentes (\"%@\",\"%@\") sont spécifiées pour le contrôleur %@. Vous devez spécifier une seule feuille de style personnalisée par contrôleur.";
 
+/********************* Not Implemented Exception ***************/
+"MFNotImplementedMehodTitle" = "Méthode non trouvée";
+"MFNotImplementedMehodMessage" = "La méthode nommée \"%@\" devrait être implémentée dans la classe \"%@\"";
+
+
 /********************* Error message ************************/
 "MFTooShortStringUIValidationError" = "Valeur trop petite";
 "MFTooLongStringUIValidationError" = "Valeur trop grande";
@@ -25,6 +30,7 @@
 "MFInvalidPhoneNumberValueUIValidationError" = "La saisie n'est pas un numéro de téléphone valide";
 "MFInvalidDoubleValueUIValidationError" = "La saisie n'est pas un nombre décimal valide";
 "MFInvalidIntegerValueUIValidationError" = "La saisie n'est pas un nombre entier valide";
+"MFInvalidLocationValueUIValidationError" = "La latitude ou la longitude n'est pas correcte";
 "MFCantSendMailTechnicalError" = "Cet appareil ne peut pas envoyer d'e-mail";
 
 /*********************** Button label *************************/
@@ -138,6 +144,7 @@
 "okButton" = "OK";
 "enterText" = "saisir un texte";
 "enterNumber" = "saisir un nombre";
+"mdk_navigate_to" = "Naviguer vers :";
 
 /*********************** Position Component *************************/
 "MFPositionError" = "Erreur";

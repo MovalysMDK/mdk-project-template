@@ -1,6 +1,6 @@
 //
 //  MFProjectComponentsAssembly.h
-//  lemon
+//  MFTemplate
 //
 //  Created by Movalys MDK.
 //  Copyright (c) 2014 Sopra Consulting. All rights reserved.

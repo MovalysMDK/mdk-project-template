@@ -15,26 +15,34 @@
 #endif
 
 #ifdef __OBJC__
+
+    //iOS
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
     #import <CoreData/CoreData.h>
     
     #define MR_ENABLE_ACTIVE_RECORD_LOGGING 0
+    //MagicalRecord
     #import <MagicalRecord/CoreData+MagicalRecord.h>
-    
-    #import <MFCore/foundationExt/MFCoreFoundationExt.h>
-    #import <MFCore/log/MFCoreLog.h>
-    #import <MFCore/error/MFCoreError.h>
-    #import <MFCore/bean/MFCoreBean.h>
-    #import <MFCore/form/descriptor/MFCoreFormDescriptor.h>
-    #import <MFCore/action/MFCoreAction.h>
-    #import <MFCore/application/MFCoreApplication.h>
-    #import <MFCore/coredata/MFCoreCoredata.h>
-    #import <MFCore/dataloader/MFCoreDataloader.h>
-    #import <MFCore/i18n/MFCoreI18n.h>
+
+    //MFCore
+    #import <MFCore/MFCoreFoundationExt.h>
+    #import <MFCore/MFCoreLog.h>
+    #import <MFCore/MFCoreError.h>
+    #import <MFCore/MFCoreBean.h>
+    #import <MFCore/MFCoreAction.h>
+    #import <MFCore/MFCoreApplication.h>
+    #import <MFCore/MFCoreCoredata.h>
+    #import <MFCore/MFCoreDataloader.h>
+    #import <MFCore/MFCoreI18n.h>
+
+    //MFUI
     #import <MFUI/MFUI.h>
 
-	//@generated-start[gen-imports][X]
-	//@generated-end
+    //Generated project
+    #import "MFCustomComponent.h"
+
+//@generated-start[gen-imports][X]
+//@generated-end
 
 #endif

@@ -15,6 +15,9 @@
 "MFCSSConflictExceptionTitle" = "CSS conflict exception";
 "MFCSSConflictExceptionMessage" = "Two different CSS stylesheets (\"%@\",\"%@\") are given for the controller %@. You must specify only one custom CSS stylesheet by ViewController";
 
+/********************* Not Implemented Exception ***************/
+"MFNotImplementedMethodTitle" = "Unimplemented method";
+"MFNotImplementedMethodMessage" = "The method named \"%@\" should be implemented in the class \"%@\"";
 
 /********************* Error message ************************/
 "MFTooShortStringUIValidationError" = "Too short value";
@@ -26,6 +29,7 @@
 "MFInvalidPhoneNumberValueUIValidationError" = "The value isn't a valid phone number";
 "MFInvalidDoubleValueUIValidationError" = "The value isn't a valid double number";
 "MFInvalidIntegerValueUIValidationError" = "The value isn't a valid integer number";
+"MFInvalidLocationValueUIValidationError" = "The latitude or longitude value is not valid";
 "MFCantSendMailTechnicalError" = "This device can't send mail";
 
 /*********************** Button label *************************/
@@ -135,6 +139,7 @@
 "okButton" = "OK";
 "enterText" = "enter text";
 "enterNumber" = "enter number";
+"mdk_navigate_to" = "Navigate to :";
 
 /*********************** Position Component *************************/
 "MFPositionError" = "Error";

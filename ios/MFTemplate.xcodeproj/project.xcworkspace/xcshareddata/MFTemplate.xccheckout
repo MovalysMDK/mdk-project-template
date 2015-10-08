@@ -11,35 +11,47 @@
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>c2b672ac-07ee-0310-9223-be368f17bb99++874</key>
-		<string>http://svn.ntes.fr.sopra/svnpolemobility/svn/Movalys/repository/com/adeuza/movalysfwk/mdk-project-template/branches/Dunagiri</string>
+		<string>http://svn.ntes.fr.sopra/svnpolemobility/svn/Movalys/repository</string>
+		<key>c2b672ac-07ee-0310-9223-be368f17bb99++9021</key>
+		<string>http://svn.ntes.fr.sopra/svnpolemobility/svn/Movalys/repository/com/adeuza/movalysfwk/mdk-project-template/branches/Cotopaxi_5.0</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>ios/MFTemplate.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>c2b672ac-07ee-0310-9223-be368f17bb99++874</key>
+		<string>../../../../Cotopaxi_4.0</string>
+		<key>c2b672ac-07ee-0310-9223-be368f17bb99++9021</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectRepositoryRootDictionary</key>
 	<dict>
-		<key>c2b672ac-07ee-0310-9223-be368f17bb99++874</key>
+		<key>c2b672ac-07ee-0310-9223-be368f17bb99++9021</key>
 		<string>http://svn.ntes.fr.sopra/svnpolemobility/svn/Movalys/repository</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>http://svn.ntes.fr.sopra/svnpolemobility/svn/Movalys/repository/com/adeuza/movalysfwk/mdk-project-template/branches/Dunagiri/ios/MFTemplate.xcodeproj</string>
+	<string>http://svn.ntes.fr.sopra/svnpolemobility/svn/Movalys/repository/com/adeuza/movalysfwk/mdk-project-template/branches/Cotopaxi_5.0/ios/MFTemplate.xcodeproj</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>c2b672ac-07ee-0310-9223-be368f17bb99++874</string>
+	<string>c2b672ac-07ee-0310-9223-be368f17bb99++9021</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.subversion</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>c2b672ac-07ee-0310-9223-be368f17bb99++9021</string>
+			<key>IDESourceControlWCCName</key>
+			<string>5.0</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>c2b672ac-07ee-0310-9223-be368f17bb99++874</string>
 			<key>IDESourceControlWCCName</key>
-			<string>Dunagiri</string>
+			<string>Cotopaxi_4.0</string>
 		</dict>
 	</array>
 </dict>
