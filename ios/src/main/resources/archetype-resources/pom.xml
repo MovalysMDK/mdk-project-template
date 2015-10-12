@@ -127,7 +127,7 @@
 							</dependency>
 							<dependency>
 								<groupId>com.adeuza.movalysfwk.mf4mdd</groupId>
-								<artifactId>mf4mdd</artifactId>
+								<artifactId>mf4mdd-ios</artifactId>
 								<version>${mf4mdd.version}</version>
 							</dependency>
 						</dependencies>
