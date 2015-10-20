@@ -2,7 +2,9 @@
 
 buildscript {
     repositories {
-        mavenLocal()
+        maven {
+            url mdkMavenConfLocation
+        }
         maven {
             url mdkArtifactoryRepoReleases
             credentials {
@@ -33,8 +35,9 @@ buildscript {
 allprojects {
 
     repositories {
-        mavenLocal()
-
+        maven {
+            url mdkMavenConfLocation
+        }
         maven {
             url mdkArtifactoryRepoReleases
             credentials {
