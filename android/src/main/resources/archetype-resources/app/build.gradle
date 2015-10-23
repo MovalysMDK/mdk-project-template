@@ -73,6 +73,7 @@ dependencies {
 	compile "com.soprasteria.movalysmdk.widget:widget-core:$mdkWidgetVersion@aar"
 	compile "com.soprasteria.movalysmdk.widget:widget-basic:$mdkWidgetVersion@aar"
 	compile "com.soprasteria.movalysmdk.widget:widget-fixedlist:$mdkWidgetVersion@aar"
+	compile "com.soprasteria.movalysmdk.widget:widget-position:$mdkWidgetVersion@aar"
 
     compile "com.squareup.okhttp:okhttp:$okHttpVersion"
     compile "com.google.code.gson:gson:$gsonVersion"

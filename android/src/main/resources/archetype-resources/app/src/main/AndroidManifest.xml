@@ -35,16 +35,6 @@
         android:label="@string/app_name"
         android:theme="@style/MDKTheme" >
         <activity
-            android:name="com.adeuza.movalysfwk.mobile.mf4android.application.ApplicationMainImpl"
-            android:label="@string/app_name"
-            android:theme="@style/MDKTheme.Light" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
             android:name="com.adeuza.movalysfwk.mobile.mf4android.activity.ParameterDialogActivity"
             android:label="@string/activityname_parameterdialog"
             android:theme="@style/Theme.Dialog" >
