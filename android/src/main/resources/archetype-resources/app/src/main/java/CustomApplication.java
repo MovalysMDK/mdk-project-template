@@ -1,4 +1,4 @@
-package ${package}.mbandroid;
+package ${package};
 
 import com.adeuza.movalysfwk.mobile.mf4android.application.MFAndroidApplication;
 import com.soprasteria.movalysmdk.widget.core.provider.MDKWidgetApplication;

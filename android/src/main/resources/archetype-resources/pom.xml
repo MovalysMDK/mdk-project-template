@@ -88,6 +88,7 @@
 										<value>/com/adeuza/movalysfwk/mf4mdd/config/mf4mdd-android-mdkwidget.xml</value>
 										<value>/com/a2a/adjava/android-gradle-config.xml</value>
 										<value>/com/adeuza/movalysfwk/mf4mdd/config/mf4mdd-android-gradle.xml</value>
+										<value>/com/adeuza/movalysfwk/mf4mdd/config/mf4mdd-android-mdkfixedlist.xml</value>
 									</configFiles>
 									<sqlDirectory>sql</sqlDirectory>
 									<properties>

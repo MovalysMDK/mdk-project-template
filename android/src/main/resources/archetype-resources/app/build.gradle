@@ -8,17 +8,18 @@ apply plugin: 'spoon'
 group = "${groupId}"
 
 android {
-    compileSdkVersion 22
-    buildToolsVersion "22.0.1"
+    compileSdkVersion 23
+    buildToolsVersion "23.0.1"
 
     defaultConfig {
         applicationId "${groupId}"
         minSdkVersion 15
-        targetSdkVersion 22
+        targetSdkVersion 23
         versionCode 100
         versionName "1.0"
         
-        testInstrumentationRunner "com.soprasteria.movalysmdk.espresso.AndroidJacocoTestRunner"
+        //testInstrumentationRunner "com.soprasteria.movalysmdk.espresso.AndroidJacocoTestRunner"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
     signingConfigs {
@@ -60,23 +61,26 @@ android {
 
 dependencies {
     compile "com.android.support:appcompat-v7:$appcompatv7Version"
+    compile "com.android.support:recyclerview-v7:$appcompatv7Version"
     compile "com.soprasteria.mdk:mdk:$mdkAndroidVersion@aar"
     compile "com.soprasteria.mdk:mdk-widget-legacy:$mdkAndroidVersion@aar"
     compile "com.soprasteria.mdk:mdk-$databaseVariant:$mdkAndroidVersion@aar"
     compile "com.soprasteria.mdk:mdk-workspace:$mdkAndroidVersion@aar"
     compile "com.soprasteria.mdk:mdk-scanner:$mdkAndroidVersion@aar"
     compile "com.soprasteria.mdk:mdk-recyclerview:$mdkAndroidVersion@aar"
+	compile "com.soprasteria.mdk:mdk-fixedlist:$mdkAndroidVersion@aar"
 
 	compile "com.soprasteria.movalysmdk.widget:widget-core:$mdkWidgetVersion@aar"
 	compile "com.soprasteria.movalysmdk.widget:widget-basic:$mdkWidgetVersion@aar"
+	compile "com.soprasteria.movalysmdk.widget:widget-fixedlist:$mdkWidgetVersion@aar"
 
     compile "com.squareup.okhttp:okhttp:$okHttpVersion"
     compile "com.google.code.gson:gson:$gsonVersion"
 
     //to run test: ./gradlew connectedAndroidTest
-    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.1'
-    androidTestCompile 'com.android.support:support-annotations:22.1.1'
-    androidTestCompile 'com.android.support.test:runner:0.2'
+    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.1'
+    androidTestCompile 'com.android.support:support-annotations:23.0.1'
+    androidTestCompile 'com.android.support.test:runner:0.4'
     androidTestCompile "com.soprasteria.mdk:mdk-test:$mdkAndroidVersion@aar"
     androidTestCompile "com.soprasteria.movalysmdk.espresso:mdk-espresso:$mdkEspressoVersion@aar"
     
