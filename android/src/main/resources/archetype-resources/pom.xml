@@ -81,6 +81,8 @@
 									<generationVersion>${generationVersion}</generationVersion>
 									<xmiFile>${xmiFile}</xmiFile>
 									<debug>${adjavaDebug}</debug>
+									<widgetVariant>mdkwidget</widgetVariant>
+									<widgetClass>com.adeuza.movalysfwk.mf4mdd.commons.utils.Widget</widgetClass>
 									<configFiles>
 										<value>/com/a2a/adjava/default-config.xml</value>
 										<value>/com/a2a/adjava/android-config.xml</value>
