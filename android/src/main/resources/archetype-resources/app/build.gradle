@@ -62,18 +62,19 @@ android {
 dependencies {
     compile "com.android.support:appcompat-v7:$appcompatv7Version"
     compile "com.android.support:recyclerview-v7:$appcompatv7Version"
-    compile "com.soprasteria.mdk:mdk:$mdkAndroidVersion@aar"
-    compile "com.soprasteria.mdk:mdk-widget-legacy:$mdkAndroidVersion@aar"
-    compile "com.soprasteria.mdk:mdk-$databaseVariant:$mdkAndroidVersion@aar"
-    compile "com.soprasteria.mdk:mdk-workspace:$mdkAndroidVersion@aar"
-    compile "com.soprasteria.mdk:mdk-scanner:$mdkAndroidVersion@aar"
-    compile "com.soprasteria.mdk:mdk-recyclerview:$mdkAndroidVersion@aar"
-	compile "com.soprasteria.mdk:mdk-fixedlist:$mdkAndroidVersion@aar"
+   
+    compile group:mdkAndroidLibGroup, name:"mdk", version:mdkAndroidVersion, ext:"aar", changing:mdkAndroidChanging
+    compile group:mdkAndroidLibGroup, name:"mdk-widget-legacy", version:mdkAndroidVersion, ext:"aar", changing:mdkAndroidChanging
+    compile group:mdkAndroidLibGroup, name:"mdk-$databaseVariant", version:mdkAndroidVersion, ext:"aar", changing:mdkAndroidChanging
+    compile group:mdkAndroidLibGroup, name:"mdk-workspace", version:mdkAndroidVersion, ext:"aar", changing:mdkAndroidChanging
+    compile group:mdkAndroidLibGroup, name:"mdk-scanner", version:mdkAndroidVersion, ext:"aar", changing:mdkAndroidChanging
+    compile group:mdkAndroidLibGroup, name:"mdk-recyclerview", version:mdkAndroidVersion, ext:"aar", changing:mdkAndroidChanging
+    compile group:mdkAndroidLibGroup, name:"mdk-fixedlist", version:mdkAndroidVersion, ext:"aar", changing:mdkAndroidChanging
 
-	compile "com.soprasteria.movalysmdk.widget:widget-core:$mdkWidgetVersion@aar"
-	compile "com.soprasteria.movalysmdk.widget:widget-basic:$mdkWidgetVersion@aar"
-	compile "com.soprasteria.movalysmdk.widget:widget-fixedlist:$mdkWidgetVersion@aar"
-	compile "com.soprasteria.movalysmdk.widget:widget-position:$mdkWidgetVersion@aar"
+	compile group:mdkWidgetGroup, name:"widget-core", version:mdkWidgetVersion, ext:"aar", changing:mdkWidgetChanging
+	compile group:mdkWidgetGroup, name:"widget-basic", version:mdkWidgetVersion, ext:"aar", changing:mdkWidgetChanging
+	compile group:mdkWidgetGroup, name:"widget-fixedlist", version:mdkWidgetVersion, ext:"aar", changing:mdkWidgetChanging
+	compile group:mdkWidgetGroup, name:"widget-position", version:mdkWidgetVersion, ext:"aar", changing:mdkWidgetChanging
 
     compile "com.squareup.okhttp:okhttp:$okHttpVersion"
     compile "com.google.code.gson:gson:$gsonVersion"
@@ -82,8 +83,8 @@ dependencies {
     androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.1'
     androidTestCompile 'com.android.support:support-annotations:23.0.1'
     androidTestCompile 'com.android.support.test:runner:0.4'
-    androidTestCompile "com.soprasteria.mdk:mdk-test:$mdkAndroidVersion@aar"
-    androidTestCompile "com.soprasteria.movalysmdk.espresso:mdk-espresso:$mdkEspressoVersion@aar"
+    androidTestCompile group:mdkAndroidLibGroup, name:"mdk-test", version:mdkAndroidVersion, ext:"aar", changing:mdkAndroidChanging
+    androidTestCompile group:"com.soprasteria.movalysmdk.espresso", name:"mdk-espresso", version:mdkEspressoVersion, ext:"aar", changing:mdkEspressoChanging
     
     androidTestCompile 'com.squareup.spoon:spoon-client:1.1.9'
 }

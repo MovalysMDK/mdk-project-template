@@ -32,8 +32,16 @@ buildscript {
     }
 }
 
-allprojects {
+configurations.all {
+    // check for updates every build
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+}
 
+def isReleaseVersion(localVersion) {
+    return localVersion.contains("SNAPSHOT") == false
+}
+
+allprojects {
     repositories {
         maven {
             url mdkMavenConfLocation
@@ -68,11 +76,19 @@ allprojects {
         mdkAndroidVersion = "6.0.0-SNAPSHOT"
         mdkWidgetVersion = "1.0.0-SNAPSHOT"
         mdkEspressoVersion = "1.0.0-SNAPSHOT"
+
+        mdkAndroidChanging = !isReleaseVersion(mdkAndroidVersion)
+        mdkWidgetChanging = !isReleaseVersion(mdkAndroidVersion)
+        mdkEspressoChanging = !isReleaseVersion(mdkAndroidVersion)
         
         databaseVariant = "database"
         
         gsonVersion = "1.7.2"
         okHttpVersion = "2.2.0"
+        
+        // mdk group name
+        mdkAndroidLibGroup = "com.soprasteria.mdk"
+        mdkWidgetGroup = "com.soprasteria.movalysmdk.widget"
     }
 }
 
