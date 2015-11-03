@@ -75,13 +75,14 @@ dependencies {
 	compile group:mdkWidgetGroup, name:"widget-basic", version:mdkWidgetVersion, ext:"aar", changing:mdkWidgetChanging
 	compile group:mdkWidgetGroup, name:"widget-fixedlist", version:mdkWidgetVersion, ext:"aar", changing:mdkWidgetChanging
 	compile group:mdkWidgetGroup, name:"widget-position", version:mdkWidgetVersion, ext:"aar", changing:mdkWidgetChanging
+	compile group:mdkWidgetGroup, name:"widget-spinner", version:mdkWidgetVersion, ext:"aar", changing:mdkWidgetChanging
 
     compile "com.squareup.okhttp:okhttp:$okHttpVersion"
     compile "com.google.code.gson:gson:$gsonVersion"
 
     //to run test: ./gradlew connectedAndroidTest
     androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.1'
-    androidTestCompile 'com.android.support:support-annotations:23.0.1'
+    androidTestCompile 'com.android.support:support-annotations:$appcompatv7Version'
     androidTestCompile 'com.android.support.test:runner:0.4'
     androidTestCompile group:mdkAndroidLibGroup, name:"mdk-test", version:mdkAndroidVersion, ext:"aar", changing:mdkAndroidChanging
     androidTestCompile group:"com.soprasteria.movalysmdk.espresso", name:"mdk-espresso", version:mdkEspressoVersion, ext:"aar", changing:mdkEspressoChanging
