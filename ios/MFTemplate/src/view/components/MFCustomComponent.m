@@ -19,3 +19,12 @@
  ***************************/
 
 #import "MFCustomComponent.h"
+
+@implementation MDKSlider
+@end
+@implementation MDKDateTime
+@end
+@implementation MDKFixedList
+@end
+@implementation MDKEnumImage
+@end

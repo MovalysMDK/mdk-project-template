@@ -20,4 +20,8 @@
 
 #import <MFUI/MFUI.h>
 
+IB_DESIGNABLE @interface MDKSlider : MDKUIExternalSlider @end
+IB_DESIGNABLE @interface MDKDateTime : MDKUIExternalDateTime @end
+IB_DESIGNABLE @interface MDKFixedList : MDKUIExternalFixedList @end
+IB_DESIGNABLE @interface MDKEnumImage : MDKUIExternalEnumImage @end
 
