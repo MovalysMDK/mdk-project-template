@@ -39,6 +39,9 @@
     //MFUI
     #import <MFUI/MFUI.h>
 
+    //MDKControl
+    #import <MDKControl/MDKControl.h>
+
     //Generated project
     #import "MFCustomComponent.h"
 
