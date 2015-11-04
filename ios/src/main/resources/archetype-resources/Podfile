@@ -1,11 +1,11 @@
-	platform :ios, '7.0'
+	platform :ios, '8.0'
 
 	source 'gitmovalys@git.ptx.fr.sopra:podspecs.git'
 	source 'https://github.com/CocoaPods/Specs.git'
 
-	pod 'MFCore', '1.5.1'
-	pod 'MFUI', '1.5.1'
-	pod 'MDKControl', '0.0.1'
+	pod 'MFCore', '2.0.0'
+	pod 'MFUI', '2.0.0'
+	pod 'MDKControl', '1.0.0'
 
 	use_frameworks!
 	inhibit_all_warnings!
