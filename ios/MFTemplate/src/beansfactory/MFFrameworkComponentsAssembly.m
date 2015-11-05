@@ -7,6 +7,7 @@
 //
 
 @import MDKControl.Command;
+@import MDKControl.FieldValidator;
 
 #import "MFFrameworkComponentsAssembly.h"
 #import "MViewModelCreator.h"
@@ -34,13 +35,6 @@
 #import "MFConfigurationHandler.h"
 #import "MFProperty.h"
 
-#import "MFMandatoryFieldValidator.h"
-#import "MFLengthFieldValidator.h"
-#import "MFUrlFieldValidator.h"
-#import "MFPhoneFieldValidator.h"
-#import "MFEmailFieldValidator.h"
-#import "MFDoubleFieldValidator.h"
-#import "MFIntegerFieldValidator.h"
 #import "MFFixedListContentFieldValidator.h"
 
 /**
@@ -62,13 +56,14 @@
     [singletons setObject:[MFKeyNotFound class] forKey:@"MFKeyNotFound"];
     [singletons setObject:[MFSecurityHelper class] forKey:@"MFSecurityHelper"];
     
-    [singletons setObject:[MFUrlFieldValidator class] forKey:@"urlFieldValidator"];
-    [singletons setObject:[MFPhoneFieldValidator class] forKey:@"phoneFieldValidator"];
-    [singletons setObject:[MFEmailFieldValidator class] forKey:@"emailFieldValidator"];
-    [singletons setObject:[MFMandatoryFieldValidator class] forKey:@"mandatoryFieldValidator"];
-    [singletons setObject:[MFLengthFieldValidator class] forKey:@"lengthFieldValidator"];
-    [singletons setObject:[MFDoubleFieldValidator class] forKey:@"doubleFieldValidator"];
-    [singletons setObject:[MFIntegerFieldValidator class] forKey:@"integerFieldValidator"];
+    [singletons setObject:[MDKUrlFieldValidator class] forKey:@"urlFieldValidator"];
+    [singletons setObject:[MDKPhoneFieldValidator class] forKey:@"phoneFieldValidator"];
+    [singletons setObject:[MDKEmailFieldValidator class] forKey:@"emailFieldValidator"];
+    [singletons setObject:[MDKMandatoryFieldValidator class] forKey:@"mandatoryFieldValidator"];
+    [singletons setObject:[MDKLengthFieldValidator class] forKey:@"lengthFieldValidator"];
+    [singletons setObject:[MDKDoubleFieldValidator class] forKey:@"doubleFieldValidator"];
+    [singletons setObject:[MDKIntegerFieldValidator class] forKey:@"integerFieldValidator"];
+    
     [singletons setObject:[MFFixedListContentFieldValidator class] forKey:@"fixedListContentFieldValidator"];
     
     [prototypes setObject:[MFContext class] forKey:@"MFContext"];
