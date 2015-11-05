@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Sopra Consulting. All rights reserved.
 //
 
+@import MDKControl.Command;
+
 #import "MFFrameworkComponentsAssembly.h"
 #import "MViewModelCreator.h"
 #import "MFCsvLoaderHelper.h"
@@ -29,9 +31,6 @@
 #import "MFRestInvoker.h"
 #import "MFSecurityHelper.h"
 #import "MFKeychainRunInit.h"
-#import "MFSendEmailCommand.h"
-#import "MFOpenURLCommand.h"
-#import "MFCallPhoneNumberCommand.h"
 #import "MFConfigurationHandler.h"
 #import "MFProperty.h"
 
@@ -109,9 +108,9 @@
     [prototypes setObject:[MFLocalCredentialService class] forKey:@"MFLocalCredentialService"];
     [prototypes setObject:[MFRestInvoker class] forKey:@"RestInvoker"];
     
-    [prototypes setObject:[MFSendEmailCommand class] forKey:@"SendEmailCommand"];
-    [prototypes setObject:[MFCallPhoneNumberCommand class] forKey:@"CallPhoneNumberCommand"];
-    [prototypes setObject:[MFOpenURLCommand class] forKey:@"OpenURLCommand"];
+    [prototypes setObject:[MDKSendEmailCommand class] forKey:@"SendEmailCommand"];
+    [prototypes setObject:[MDKCallPhoneNumberCommand class] forKey:@"CallPhoneNumberCommand"];
+    [prototypes setObject:[MDKOpenURLCommand class] forKey:@"OpenURLCommand"];
 }
 
 
