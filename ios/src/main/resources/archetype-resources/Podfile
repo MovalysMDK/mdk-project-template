@@ -11,7 +11,7 @@
 	inhibit_all_warnings!
 
 	post_install do |installer_representation|
-		installer_representation.project.targets.each do |target|
+		installer_representation.pods_project.targets.each do |target|
 			target.build_configurations.each do |config|
 				config.build_settings['ENABLE_STRICT_OBJC_MSGSEND'] = 'NO'
 				config.build_settings['CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES'] = 'YES'
