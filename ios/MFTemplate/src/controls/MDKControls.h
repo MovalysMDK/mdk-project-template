@@ -18,13 +18,11 @@
  * DO NOT MODIFY THIS FILE *
  ***************************/
 
-#import "MFCustomComponent.h"
+#import <MFUI/MFUI.h>
 
-@implementation MDKSlider
-@end
-@implementation MDKDateTime
-@end
-@implementation MDKFixedList
-@end
-@implementation MDKEnumImage
-@end
+IB_DESIGNABLE @interface MDKSlider : MDKUIExternalSlider @end
+IB_DESIGNABLE @interface MDKDateTime : MDKUIExternalDateTime @end
+IB_DESIGNABLE @interface MDKFixedList : MDKUIExternalFixedList @end
+IB_DESIGNABLE @interface MDKEnumImage : MDKUIExternalEnumImage @end
+IB_DESIGNABLE @interface MDKPosition : MDKUIExternalPosition @end
+

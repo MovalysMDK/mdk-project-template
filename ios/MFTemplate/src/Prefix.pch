@@ -43,7 +43,7 @@
     #import <MDKControl/MDKControl.h>
 
     //Generated project
-    #import "MFCustomComponent.h"
+    #import "MDKControls.h"
 
 //@generated-start[gen-imports][X]
 //@generated-end

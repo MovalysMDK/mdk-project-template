@@ -18,9 +18,9 @@
 		4EF45F9A18F3051800C7027C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4EF45F9818F3051800C7027C /* InfoPlist.strings */; };
 		731336D918A942F4005A9F55 /* Framework-config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 731336D718A942F4005A9F55 /* Framework-config.plist */; };
 		B032BC081940CB49002AEDB3 /* MFCoreDataRunInit+Encryption.m in Sources */ = {isa = PBXBuildFile; fileRef = B032BC071940CB49002AEDB3 /* MFCoreDataRunInit+Encryption.m */; };
-		B04CD7011AA9E943001F1E79 /* MFCustomComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = B04CD7001AA9E943001F1E79 /* MFCustomComponent.m */; };
 		B077941F19470CA600F74DB3 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B077941E19470CA600F74DB3 /* Splash.storyboard */; };
 		B0C7492F1B5F967F0052E2A6 /* soprasteria.png in Resources */ = {isa = PBXBuildFile; fileRef = B0C7492E1B5F967F0052E2A6 /* soprasteria.png */; };
+		B0CEFF651BF5D459007AEBB4 /* MDKControls.m in Sources */ = {isa = PBXBuildFile; fileRef = B0CEFF641BF5D459007AEBB4 /* MDKControls.m */; };
 		B0D002B61AD7C5220001045D /* Pods.debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = B0D002B41AD7C5220001045D /* Pods.debug.xcconfig */; };
 		B0D002B71AD7C5220001045D /* Pods.release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = B0D002B51AD7C5220001045D /* Pods.release.xcconfig */; };
 		B0E7771119D41D1C00B90A34 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0E7771019D41D1C00B90A34 /* Security.framework */; };
@@ -74,10 +74,10 @@
 		911CAF6A88244E21B4EEDAD0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B032BC061940CB49002AEDB3 /* MFCoreDataRunInit+Encryption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "MFCoreDataRunInit+Encryption.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		B032BC071940CB49002AEDB3 /* MFCoreDataRunInit+Encryption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "MFCoreDataRunInit+Encryption.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		B04CD6FF1AA9E943001F1E79 /* MFCustomComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFCustomComponent.h; sourceTree = "<group>"; };
-		B04CD7001AA9E943001F1E79 /* MFCustomComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFCustomComponent.m; sourceTree = "<group>"; };
 		B077941E19470CA600F74DB3 /* Splash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		B0C7492E1B5F967F0052E2A6 /* soprasteria.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soprasteria.png; sourceTree = "<group>"; };
+		B0CEFF631BF5D459007AEBB4 /* MDKControls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKControls.h; sourceTree = "<group>"; };
+		B0CEFF641BF5D459007AEBB4 /* MDKControls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKControls.m; sourceTree = "<group>"; };
 		B0D002B41AD7C5220001045D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
 		B0D002B51AD7C5220001045D /* Pods.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
 		B0E7771019D41D1C00B90A34 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -160,13 +160,13 @@
 			name = controller;
 			sourceTree = "<group>";
 		};
-		B04CD6FE1AA9E943001F1E79 /* components */ = {
+		B0CEFF621BF5D459007AEBB4 /* controls */ = {
 			isa = PBXGroup;
 			children = (
-				B04CD6FF1AA9E943001F1E79 /* MFCustomComponent.h */,
-				B04CD7001AA9E943001F1E79 /* MFCustomComponent.m */,
+				B0CEFF631BF5D459007AEBB4 /* MDKControls.h */,
+				B0CEFF641BF5D459007AEBB4 /* MDKControls.m */,
 			);
-			path = components;
+			path = controls;
 			sourceTree = "<group>";
 		};
 		B0D002B11AD7C5220001045D /* Pods */ = {
@@ -244,13 +244,13 @@
 		C701F42616492BB10047FFA1 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				B0CEFF621BF5D459007AEBB4 /* controls */,
 				4B5A37C4196AA0D40039DE73 /* beansfactory */,
 				4BDFB588171C315500987E9D /* controller */,
 				C701F42E16492C0C0047FFA1 /* application */,
 				C701F42F16492C120047FFA1 /* dao */,
 				C701F43016492C180047FFA1 /* model */,
 				C701F43216492C290047FFA1 /* viewmodel */,
-				C701F43116492C210047FFA1 /* view */,
 				C701F3C816491ED80047FFA1 /* main.m */,
 				C701F3CA16491ED80047FFA1 /* Prefix.pch */,
 				E41BF29D172A7D460009A181 /* MFErrorConfig.h */,
@@ -346,14 +346,6 @@
 			children = (
 			);
 			path = model;
-			sourceTree = "<group>";
-		};
-		C701F43116492C210047FFA1 /* view */ = {
-			isa = PBXGroup;
-			children = (
-				B04CD6FE1AA9E943001F1E79 /* components */,
-			);
-			path = view;
 			sourceTree = "<group>";
 		};
 		C701F43216492C290047FFA1 /* viewmodel */ = {
@@ -572,6 +564,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0CEFF651BF5D459007AEBB4 /* MDKControls.m in Sources */,
 				C701F3C916491ED80047FFA1 /* main.m in Sources */,
 				C701F3CD16491ED80047FFA1 /* AppDelegate.m in Sources */,
 				4B5A37CC196AA0D40039DE73 /* MFFrameworkExtendedComponentsAssembly.m in Sources */,
@@ -579,7 +572,6 @@
 				B032BC081940CB49002AEDB3 /* MFCoreDataRunInit+Encryption.m in Sources */,
 				4B5A37CD196AA0D40039DE73 /* MFProjectComponentsAssembly.m in Sources */,
 				E49F3C2C16A6DC63003F47E5 /* Model.xcdatamodeld in Sources */,
-				B04CD7011AA9E943001F1E79 /* MFCustomComponent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
