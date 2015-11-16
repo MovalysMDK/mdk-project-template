@@ -1,0 +1,169 @@
+apply plugin: 'com.android.application'
+apply plugin: 'mdkdbkeystore'
+apply plugin: 'mdkdrawablecheck'
+apply plugin: 'mdkkeytool'
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'spoon'
+
+group = "${groupId}"
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.1"
+
+    defaultConfig {
+        applicationId "${groupId}"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 100
+        versionName "1.0"
+        
+        //testInstrumentationRunner "com.soprasteria.movalysmdk.espresso.AndroidJacocoTestRunner"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("android.keystore")
+            storePassword "a2aandroidSC"
+            keyAlias "android"
+            keyPassword "a2aandroidSC"
+        }
+    }
+
+    buildTypes {
+        debug {
+            testCoverageEnabled true
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+
+    lintOptions {
+          abortOnError false
+    }
+
+    jacoco {
+    	//bug in code coverage with espresso 2.1:
+    	//https://code.google.com/p/android/issues/detail?id=170607
+        version "0.7.1.201405082137"
+    }
+
+    packagingOptions {
+        exclude 'META-INF/LICENCE.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'LICENSE.txt'
+    }
+}
+
+dependencies {
+    compile "com.android.support:appcompat-v7:$appcompatv7Version"
+    compile "com.android.support:recyclerview-v7:$appcompatv7Version"
+    compile "com.android.support:cardview-v7:$appcompatv7Version"
+    compile "com.android.support:design:$appcompatv7Version"
+   
+    compile group:mdkAndroidLibGroup, name:"mdk", version:mdkAndroidVersion, ext:"aar", changing:mdkAndroidChanging
+    compile group:mdkAndroidLibGroup, name:"mdk-widget-legacy", version:mdkAndroidVersion, ext:"aar", changing:mdkAndroidChanging
+    compile group:mdkAndroidLibGroup, name:"mdk-$databaseVariant", version:mdkAndroidVersion, ext:"aar", changing:mdkAndroidChanging
+    compile group:mdkAndroidLibGroup, name:"mdk-workspace", version:mdkAndroidVersion, ext:"aar", changing:mdkAndroidChanging
+    compile group:mdkAndroidLibGroup, name:"mdk-scanner", version:mdkAndroidVersion, ext:"aar", changing:mdkAndroidChanging
+    compile group:mdkAndroidLibGroup, name:"mdk-recyclerview", version:mdkAndroidVersion, ext:"aar", changing:mdkAndroidChanging
+    compile group:mdkAndroidLibGroup, name:"mdk-fixedlist", version:mdkAndroidVersion, ext:"aar", changing:mdkAndroidChanging
+
+	compile group:mdkWidgetGroup, name:"widget-core", version:mdkWidgetVersion, ext:"aar", changing:mdkWidgetChanging
+	compile group:mdkWidgetGroup, name:"widget-basic", version:mdkWidgetVersion, ext:"aar", changing:mdkWidgetChanging
+	compile group:mdkWidgetGroup, name:"widget-fixedlist", version:mdkWidgetVersion, ext:"aar", changing:mdkWidgetChanging
+	compile group:mdkWidgetGroup, name:"widget-position", version:mdkWidgetVersion, ext:"aar", changing:mdkWidgetChanging
+	compile group:mdkWidgetGroup, name:"widget-spinner", version:mdkWidgetVersion, ext:"aar", changing:mdkWidgetChanging
+
+    compile "com.squareup.okhttp:okhttp:$okHttpVersion"
+    compile "com.google.code.gson:gson:$gsonVersion"
+
+    //to run test: ./gradlew connectedAndroidTest
+    androidTestCompile "com.android.support.test.espresso:espresso-core:2.2.1"
+    androidTestCompile "com.android.support:support-annotations:$appcompatv7Version"
+    androidTestCompile "com.android.support.test:runner:0.4"
+    androidTestCompile group:mdkAndroidLibGroup, name:"mdk-test", version:mdkAndroidVersion, ext:"aar", changing:mdkAndroidChanging
+    androidTestCompile group:"com.soprasteria.movalysmdk.espresso", name:"mdk-espresso", version:mdkEspressoVersion, ext:"aar", changing:mdkEspressoChanging
+    
+    androidTestCompile 'com.squareup.spoon:spoon-client:1.1.9'
+}
+
+mdkdbkeystore {
+    password "a2aandroidSC"
+    alias "dbcrypt"
+    outputFile file("${project.projectDir}/src/main/res/raw/dbkeystore")
+}
+
+mdkkeytool {
+    keystore file("${project.projectDir}/android.keystore")
+	dname "CN=steria.com"
+    keypass "a2aandroidSC"
+	storepass "a2aandroidSC"
+    alias "android"
+}
+
+mdkdrawablecheck {
+    inputDirectory file("${project.projectDir}/src/main/res")
+    outputDirectory file("${project.projectDir}/report")
+}
+
+task androidJavadocs(type: Javadoc) {
+    options {
+        linksOffline "http://d.android.com/reference", "${android.sdkDirectory}/docs/reference"
+    }
+    exclude '**/BuildConfig.java'
+    exclude '**/R.java'
+    source = android.sourceSets.main.java.sourceFiles
+    classpath += project.files(project.android.getBootClasspath().join(File.pathSeparator))
+}
+
+task androidJavadocsJar(type: Jar, dependsOn: androidJavadocs) {
+    classifier = 'javadoc'
+    from androidJavadocs.destinationDir
+}
+
+task androidSourcesJar(type: Jar) {
+    classifier = 'sources'
+    from android.sourceSets.main.java.sourceFiles
+}
+
+artifacts {
+    archives androidSourcesJar
+    archives androidJavadocsJar
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: mdkArtifactoryRepoReleases) {
+                authentication(userName: mdkArtifactoryUsername, password: mdkArtifactoryPassword)
+            }
+            snapshotRepository(url: mdkArtifactoryRepoSnapshots) {
+                authentication(userName: mdkArtifactoryUsername, password: mdkArtifactoryPassword)
+            }
+        }
+    }
+}
+
+task buildDist(type: Zip) {
+    into 'jars'
+    from { subprojects.configurations.runtime }
+    from { subprojects.jar }
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
+//to run spoon: ./gradlew spoon 
+spoon {
+    // for debug output
+    debug = true
+
+    // To run a single test class
+    //className = 'fully.qualified.TestCase'
+
+    // To run a single method in TestCase
+    //methodName = 'testMyApp'
+}
