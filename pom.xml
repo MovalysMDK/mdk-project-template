@@ -65,6 +65,7 @@
 	    <module>commons</module>
 		<module>ios</module>
 		<module>android</module>
+		<module>android-classy</module>
 	</modules>
 	
 	<build>
