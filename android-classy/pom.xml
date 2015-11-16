@@ -88,14 +88,8 @@
 								</replace>
 								<replace
 									file="${project.build.directory}/classes/archetype-resources/pom.xml">
-									<replacetoken><![CDATA[<!-- custom AGL dependencies here -->]]></replacetoken>
-									<replacevalue><![CDATA[<!-- custom AGL dependencies here -->
-								<dependency>
-									<groupId>com.sopragroup.adeuza.movalysfwk</groupId>
-									<artifactId>mf4mdd-android-classy</artifactId>
-									<version>${mf4mdd.version}</version>
-								</dependency>
-								]]></replacevalue>
+									<replacetoken><![CDATA[<artifactId>mf4mdd-android</artifactId>]]></replacetoken>
+									<replacevalue><![CDATA[<artifactId>mf4mdd-android-classy</artifactId>]]></replacevalue>
 								</replace>
 <!-- 								<replace -->
 <!-- 									file="${project.build.directory}/classes/archetype-resources/mbandroid/pom.xml"> -->
@@ -112,6 +106,11 @@
 <!-- 									<replacetoken><![CDATA[<artifactId>mdk</artifactId>]]></replacetoken> -->
 <!-- 									<replacevalue><![CDATA[<artifactId>mdk-demo</artifactId>]]></replacevalue> -->
 <!-- 								</replace> -->
+								<replace
+									file="${project.build.directory}/classes/archetype-resources/app/src/main/AndroidManifest.xml">
+									<replacetoken><![CDATA[android:theme="@style/MDKTheme"]]></replacetoken>
+									<replacevalue><![CDATA[android:theme="@style/MDKTheme"]]></replacevalue>
+								</replace>
 							</tasks>
 						</configuration>
 						<goals>
