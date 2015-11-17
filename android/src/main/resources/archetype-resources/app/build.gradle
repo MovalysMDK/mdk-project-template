@@ -74,6 +74,7 @@ dependencies {
 
 	compile group:mdkWidgetGroup, name:"widget-core", version:mdkWidgetVersion, ext:"aar", changing:mdkWidgetChanging
 	compile group:mdkWidgetGroup, name:"widget-basic", version:mdkWidgetVersion, ext:"aar", changing:mdkWidgetChanging
+	compile group:mdkWidgetGroup, name:"widget-media", version:mdkWidgetVersion, ext:"aar", changing:mdkWidgetChanging
 	compile group:mdkWidgetGroup, name:"widget-fixedlist", version:mdkWidgetVersion, ext:"aar", changing:mdkWidgetChanging
 	compile group:mdkWidgetGroup, name:"widget-position", version:mdkWidgetVersion, ext:"aar", changing:mdkWidgetChanging
 	compile group:mdkWidgetGroup, name:"widget-spinner", version:mdkWidgetVersion, ext:"aar", changing:mdkWidgetChanging
