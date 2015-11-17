@@ -107,11 +107,6 @@
 <!-- 									<replacevalue><![CDATA[<artifactId>mdk-demo</artifactId>]]></replacevalue> -->
 <!-- 								</replace> -->
 								<replace
-									file="${project.build.directory}/classes/archetype-resources/app/src/main/AndroidManifest.xml">
-									<replacetoken><![CDATA[android:theme="@style/MDKTheme"]]></replacetoken>
-									<replacevalue><![CDATA[android:theme="@style/AppTheme"]]></replacevalue>
-								</replace>
-								<replace
 									file="${project.build.directory}/classes/archetype-resources/app/build.gradle">
 									<replacetoken><![CDATA[compile "com.android.support:recyclerview-v7:$appcompatv7Version"]]></replacetoken>
 									<replacevalue><![CDATA[compile "com.android.support:recyclerview-v7:$appcompatv7Version"

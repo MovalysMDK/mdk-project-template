@@ -32,7 +32,7 @@
         android:allowBackup="false"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/MDKTheme" >
+        android:theme="@style/AppTheme" >
         <activity
             android:name="com.adeuza.movalysfwk.mobile.mf4android.activity.ParameterDialogActivity"
             android:label="@string/activityname_parameterdialog"
