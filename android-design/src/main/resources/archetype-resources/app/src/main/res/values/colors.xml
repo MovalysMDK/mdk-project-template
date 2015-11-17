@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="primary">#d3121e</color>
+    <color name="primary_dark">#000000</color>
+    <color name="accent">#ffd3121e</color>
+    <color name="textColorPrimary">#1c1c1b</color>
+    <color name="primaryActionButtonTint">#ffffff</color>
+    <color name="secondaryActionButtonTint">#ffffff</color>
+    <color name="actionButtonTint">#ffffff</color>
+    <color name="primaryActionButtonBackground">#a6a6a6</color>
+    <color name="secondaryActionButtonBackground">#a6a6a6</color>
+    <color name="actionButtonBackground">#a6a6a6</color>
+    <color name="actionButtonBackgroundDisable">#e6e6e6</color>
+    <color name="windowBackground">#ededed</color>
+    <color name="titleBackgroundColor">#05738f</color>
+    <color name="titleColor">#ffffff</color>
+    <color name="actionButtonColor">#d3121e</color>
+    <color name="disableActionButtonColor">#b46368</color>
+    <color name="presenterColor">#2bab70</color>
+
+</resources>
