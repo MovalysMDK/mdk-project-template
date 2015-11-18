@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="AppTheme" parent="MDKWidgetTheme.Light.DarkActionBar">
+    <style name="AppTheme" parent="MDKAppBaseTheme">
 
     </style>
 
