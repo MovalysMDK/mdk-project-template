@@ -94,7 +94,7 @@
 								<replace
 									file="${project.build.directory}/classes/archetype-resources/pom.xml">
 									<replacetoken><![CDATA[<artifactId>mf4mdd-android</artifactId>]]></replacetoken>
-									<replacevalue><![CDATA[<artifactId>mf4mdd-android-classy</artifactId>]]></replacevalue>
+									<replacevalue><![CDATA[<artifactId>mf4mdd-android-design</artifactId>]]></replacevalue>
 								</replace>
 <!-- 								<replace -->
 <!-- 									file="${project.build.directory}/classes/archetype-resources/mbandroid/pom.xml"> -->
