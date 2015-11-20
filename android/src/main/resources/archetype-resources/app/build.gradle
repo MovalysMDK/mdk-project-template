@@ -63,6 +63,7 @@ dependencies {
     compile "com.android.support:appcompat-v7:$appcompatv7Version"
     compile "com.android.support:recyclerview-v7:$appcompatv7Version"
     compile "com.android.support:design:$appcompatv7Version"
+    compile "com.android.support:palette-v7:$appcompatv7Version"
    
     compile group:mdkAndroidLibGroup, name:"mdk", version:mdkAndroidVersion, ext:"aar", changing:mdkAndroidChanging
     compile group:mdkAndroidLibGroup, name:"mdk-widget-legacy", version:mdkAndroidVersion, ext:"aar", changing:mdkAndroidChanging
