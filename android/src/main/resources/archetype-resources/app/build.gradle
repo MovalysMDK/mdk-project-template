@@ -63,6 +63,8 @@ dependencies {
     compile "com.android.support:appcompat-v7:$appcompatv7Version"
     compile "com.android.support:recyclerview-v7:$appcompatv7Version"
     compile "com.android.support:design:$appcompatv7Version"
+    // dependencies for the presenter and media component
+    compile "com.android.support:palette-v7:$appcompatv7Version"
    
     compile group:mdkAndroidLibGroup, name:"mdk", version:mdkAndroidVersion, ext:"aar", changing:mdkAndroidChanging
     compile group:mdkAndroidLibGroup, name:"mdk-widget-legacy", version:mdkAndroidVersion, ext:"aar", changing:mdkAndroidChanging
@@ -80,8 +82,8 @@ dependencies {
 
 	// dependencies for the media component
 	compile group:mdkWidgetGroup, name:"widget-media", version:mdkWidgetVersion, ext:"aar", changing:mdkWidgetChanging
-    compile "com.android.support:palette-v7:$appcompatv7Version"
     compile "com.larswerkman:lobsterpicker:1.0.0"
+    compile "com.caverock:androidsvg:1.2.1"
 
     compile "com.squareup.okhttp:okhttp:$okHttpVersion"
     compile "com.google.code.gson:gson:$gsonVersion"
