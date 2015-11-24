@@ -110,7 +110,9 @@
 									file="${project.build.directory}/classes/archetype-resources/app/build.gradle">
 									<replacetoken><![CDATA[compile "com.android.support:recyclerview-v7:$appcompatv7Version"]]></replacetoken>
 									<replacevalue><![CDATA[compile "com.android.support:recyclerview-v7:$appcompatv7Version"
-    compile "com.android.support:cardview-v7:$appcompatv7Version"]]></replacevalue>
+    compile "com.android.support:cardview-v7:$appcompatv7Version"
+    compile "com.google.android.gms:play-services-location:8.1.0"
+    compile "com.google.android.gms:play-services-maps:8.1.0"]]></replacevalue>
 								</replace>
 								<replace
 									file="${project.build.directory}/classes/archetype-resources/app/build.gradle">
