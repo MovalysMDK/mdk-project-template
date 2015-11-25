@@ -23,7 +23,8 @@
         <item name="mdkTitleStyle">@style/MDKTitleStyle</item>
 
         <!-- fixedlist title style -->
-        <item name="mdkFixedListTitleStyle">@style/MDKFixedListTitleStyle</item>
+        <item name="mdk_b_fixedListTitleTextColor">@color/titleColor</item>
+        <item name="mdk_b_fixedListTitleBackground">@color/titleBackgroundColor</item>
 
         <!-- floating action button style -->
         <item name="mdk_b_fabStyle">@style/MDKFabStyle</item>
@@ -55,12 +56,6 @@
         <item name="android:textColor">@color/titleColor</item>
         <item name="android:background">@color/titleBackgroundColor</item>
         <item name="android:height">72dp</item>
-    </style>
-
-    <!-- FixedList style -->
-    <style name="MDKFixedListTitleStyle" parent="TextAppearance.AppCompat.Title">
-        <item name="android:textSize">?attr/mdk_t_mediumTextSize</item>
-        <item name="android:textColor">@color/titleColor</item>
     </style>
 
     <!-- Floating action button style -->
