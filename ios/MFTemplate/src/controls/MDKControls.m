@@ -25,3 +25,4 @@
 @implementation MDKFixedList @end
 @implementation MDKEnumImage @end
 @implementation MDKPosition @end
+@implementation MDKEnumList @end
