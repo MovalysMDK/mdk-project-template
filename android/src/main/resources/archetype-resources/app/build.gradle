@@ -89,7 +89,7 @@ dependencies {
     androidTestCompile group:mdkAndroidLibGroup, name:"mdk-test", version:mdkAndroidVersion, ext:"aar", changing:mdkAndroidChanging
     androidTestCompile group:"com.soprasteria.movalysmdk.espresso", name:"mdk-espresso", version:mdkEspressoVersion, ext:"aar", changing:mdkEspressoChanging
     
-    androidTestCompile 'com.squareup.spoon:spoon-client:1.1.9'
+    androidTestCompile 'com.squareup.spoon:spoon-client:1.2.1'
 }
 
 mdkdbkeystore {
