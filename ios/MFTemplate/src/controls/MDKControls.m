@@ -26,3 +26,4 @@
 @implementation MDKEnumImage @end
 @implementation MDKPosition @end
 @implementation MDKEnumList @end
+@implementation MDKMedia @end

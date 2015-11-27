@@ -26,4 +26,5 @@ IB_DESIGNABLE @interface MDKFixedList : MDKUIExternalFixedList @end
 IB_DESIGNABLE @interface MDKEnumImage : MDKUIExternalEnumImage @end
 IB_DESIGNABLE @interface MDKPosition : MDKUIExternalPosition @end
 IB_DESIGNABLE @interface MDKEnumList : MDKUIExternalEnumList @end
+IB_DESIGNABLE @interface MDKMedia : MDKUIExternalMedia @end
 
