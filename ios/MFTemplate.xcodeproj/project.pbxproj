@@ -17,6 +17,7 @@
 		4EF45F9718F304CE00C7027C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4EF45F9518F304CE00C7027C /* InfoPlist.strings */; };
 		4EF45F9A18F3051800C7027C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4EF45F9818F3051800C7027C /* InfoPlist.strings */; };
 		731336D918A942F4005A9F55 /* Framework-config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 731336D718A942F4005A9F55 /* Framework-config.plist */; };
+		B02A812F1C0DED0A00580411 /* PhotoFixedListItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B02A812E1C0DED0A00580411 /* PhotoFixedListItemCell.xib */; };
 		B032BC081940CB49002AEDB3 /* MFCoreDataRunInit+Encryption.m in Sources */ = {isa = PBXBuildFile; fileRef = B032BC071940CB49002AEDB3 /* MFCoreDataRunInit+Encryption.m */; };
 		B077941F19470CA600F74DB3 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B077941E19470CA600F74DB3 /* Splash.storyboard */; };
 		B0C7492F1B5F967F0052E2A6 /* soprasteria.png in Resources */ = {isa = PBXBuildFile; fileRef = B0C7492E1B5F967F0052E2A6 /* soprasteria.png */; };
@@ -72,6 +73,7 @@
 		4EF45F9918F3051800C7027C /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; lineEnding = 0; name = fr; path = InfoPlist.strings; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.simpleColoring; };
 		731336D718A942F4005A9F55 /* Framework-config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Framework-config.plist"; sourceTree = "<group>"; };
 		911CAF6A88244E21B4EEDAD0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B02A812E1C0DED0A00580411 /* PhotoFixedListItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PhotoFixedListItemCell.xib; path = xib/PhotoFixedListItemCell.xib; sourceTree = "<group>"; };
 		B032BC061940CB49002AEDB3 /* MFCoreDataRunInit+Encryption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "MFCoreDataRunInit+Encryption.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		B032BC071940CB49002AEDB3 /* MFCoreDataRunInit+Encryption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "MFCoreDataRunInit+Encryption.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		B077941E19470CA600F74DB3 /* Splash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
@@ -371,6 +373,7 @@
 		E2105C3F185F4BF5001AF162 /* xib */ = {
 			isa = PBXGroup;
 			children = (
+				B02A812E1C0DED0A00580411 /* PhotoFixedListItemCell.xib */,
 			);
 			name = xib;
 			sourceTree = "<group>";
@@ -498,6 +501,7 @@
 				4E1DF55F18EF067900033C6C /* Images.xcassets in Resources */,
 				4BDA939E1712E92900CB3832 /* Settings.bundle in Resources */,
 				B0F711C51ABC35ED00424B1F /* Framework-components.plist in Resources */,
+				B02A812F1C0DED0A00580411 /* PhotoFixedListItemCell.xib in Resources */,
 				E48A6A351758D86F00D6AEA0 /* Localizable-framework.strings in Resources */,
 				4EF45F9A18F3051800C7027C /* InfoPlist.strings in Resources */,
 				B0C7492F1B5F967F0052E2A6 /* soprasteria.png in Resources */,
