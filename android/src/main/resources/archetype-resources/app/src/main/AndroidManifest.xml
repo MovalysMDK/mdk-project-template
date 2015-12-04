@@ -70,6 +70,7 @@
             </intent-filter>
         </activity>
         <!--//@generated-end-->
+        <service android:name="com.adeuza.movalysfwk.mobile.mf4android.service.PushServiceImpl" />
     </application>
 
 </manifest>
