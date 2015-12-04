@@ -19,6 +19,9 @@
         <item name="mdk_b_primaryCommandBackground">@drawable/round_button</item>
         <item name="mdk_b_secondaryCommandBackground">@drawable/round_button</item>
 
+        <!-- CardView style -->
+        <item name="mdkCardViewStyle">@style/MDKCardViewStyle</item>
+        
         <!-- cardview title style -->
         <item name="mdkTitleStyle">@style/MDKTitleStyle</item>
 
@@ -50,6 +53,14 @@
         <item name="android:titleTextStyle">?attr/mdk_t_largeTextSize</item>
     </style>
 
+    <!-- CardView Style -->
+    <style name="MDKCardViewStyle" parent="CardView.Light">
+        <item name="android:layout_marginLeft">2dp</item>
+        <item name="android:layout_marginRight">2dp</item>
+        <item name="android:layout_marginTop">2dp</item>
+        <item name="cardElevation">8dp</item>
+    </style>
+    
     <!-- cardview title style -->
     <style name="MDKTitleStyle" parent="TextAppearance.AppCompat.Title">
         <item name="android:textSize">?attr/mdk_t_largeTextSize</item>
