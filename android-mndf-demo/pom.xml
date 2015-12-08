@@ -14,7 +14,7 @@
 	<parent>
 		<groupId>com.sopragroup.adeuza.movalysfwk</groupId>
 		<artifactId>mdk-project-template</artifactId>
-		<version>6.0.0</version>
+		<version>6.0.1-SNAPSHOT</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 
@@ -112,8 +112,7 @@
 								</replace>
 								<replace file="${project.build.directory}/classes/archetype-resources/app/src/main/AndroidManifest.xml">
 									<replacetoken><![CDATA[</application>]]></replacetoken>
-									<replacevalue><![CDATA[<meta-data android:name="com.google.android.geo.API_KEY"
-        android:value="@string/mapsApikey" />
+									<replacevalue><![CDATA[<meta-data android:name="com.google.android.geo.API_KEY" android:value="@string/mapsApikey" />
     </application>]]></replacevalue>
 								</replace>
 								<replace file="${project.build.directory}/classes/archetype-resources/app/src/main/res/values/dev__project__properties.xml">
