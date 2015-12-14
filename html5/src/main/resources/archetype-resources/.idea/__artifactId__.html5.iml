@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/docs" />
+      <excludeFolder url="file://$MODULE_DIR$/target" />
+      <excludeFolder url="file://$MODULE_DIR$/tools/debug" />
+      <excludeFolder url="file://$MODULE_DIR$/version" />
+      <excludeFolder url="file://$MODULE_DIR$/webapp/.sass-cache" />
+      <excludeFolder url="file://$MODULE_DIR$/webapp/build" />
+      <excludeFolder url="file://$MODULE_DIR$/webapp/node_modules" />
+      <excludeFolder url="file://$MODULE_DIR$/webapp/src/app/data/dao/debug" />
+      <excludeFolder url="file://$MODULE_DIR$/webapp/src/app/data/dao/mappings/debug" />
+      <excludeFolder url="file://$MODULE_DIR$/webapp/src/app/data/dao/nosql/debug" />
+      <excludeFolder url="file://$MODULE_DIR$/webapp/src/app/data/dao/sql/debug" />
+      <excludeFolder url="file://$MODULE_DIR$/webapp/src/app/data/factories/debug" />
+      <excludeFolder url="file://$MODULE_DIR$/webapp/src/app/data/model/debug" />
+      <excludeFolder url="file://$MODULE_DIR$/webapp/src/app/debug" />
+      <excludeFolder url="file://$MODULE_DIR$/webapp/src/assets/data/nosql/debug" />
+      <excludeFolder url="file://$MODULE_DIR$/webapp/src/assets/data/sql/debug" />
+      <excludeFolder url="file://$MODULE_DIR$/webapp/src/assets/i18n/debug" />
+      <excludeFolder url="file://$MODULE_DIR$/webapp/src/assets/styles/debug" />
+      <excludeFolder url="file://$MODULE_DIR$/webapp/src/debug" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

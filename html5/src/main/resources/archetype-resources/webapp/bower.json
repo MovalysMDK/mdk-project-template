@@ -1,0 +1,23 @@
+{
+ 	"name": "${artifactId}",
+  	"version": "${version}",
+  	"repository": {
+    	"type": "git",
+    	"url": "TODO"
+  	},
+  	"description": "${artifactId}",
+ 	"json": "bower.json",
+    "dependencies": {
+        "mdk-html5-core": "Cotopaxi",
+        "mdk-html5-ui": "Cotopaxi"
+    },
+    "overrides": {
+        "modernizr": {
+            "main": "modernizr.js"
+        },
+        "ngCordova": {
+            "main": "dist/ng-cordova.min.js"
+        }
+    },
+    "private": true
+}
