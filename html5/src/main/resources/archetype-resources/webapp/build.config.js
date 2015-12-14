@@ -9,6 +9,8 @@ module.exports = {
      */
     build_dir: 'build',
     compile_dir: 'bin',
+    environment: 'production',
+
 
     /**
      * This is a collection of file patterns that refer to our app code (the
@@ -30,7 +32,8 @@ module.exports = {
     },
 
     fwk_files: {
-        tpl: ['build/vendor/mdk-html5-ui/lib/**/*.html'],
+        tpl: ['build/vendor/mdk-html5-lib-ui/lib/**/*.html'],
+        js: ['build/vendor/mdk-html5-lib-ui/lib/**/*.js', 'build/vendor/mdk-html5-lib-core/lib/**/*.js']
     },
 
     vendor_files:{
