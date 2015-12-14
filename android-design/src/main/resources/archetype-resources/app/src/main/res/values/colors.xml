@@ -17,6 +17,6 @@
     <color name="titleColor">#ffffff</color>
     <color name="actionButtonColor">#d3121e</color>
     <color name="disableActionButtonColor">#b46368</color>
-    <color name="presenterColor">#2bab70</color>
+    <color name="negativeColor">#d3121e</color>
 
 </resources>

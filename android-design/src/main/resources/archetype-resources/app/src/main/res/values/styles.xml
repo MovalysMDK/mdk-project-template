@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="AppTheme" parent="MDKAppBaseTheme">
+    <style name="AppTheme" parent="MDKWidgetTheme.Light.DarkActionBar">
 
         <!-- technical attributes -->
         <item name="mdk_t_textColorPrimary">@color/textColorPrimary</item>
 
-        <!-- inverted style on text and labels / errors -->
+        <!-- inverted style on text and labels -->
         <item name="mdk_b_labelTextStyle">normal</item>
-        <item name="mdk_b_errorTextStyle">normal</item>
         <item name="mdk_b_editTextStyle">bold</item>
+
+        <!-- negative commands -->
+        <item name="mdk_b_negativeCommandTint">@color/negativeColor</item>
+
+        <!-- error fields -->
+        <item name="mdk_b_errorTextStyle">normal</item>
+        <item name="mdk_b_errorTextColor">@color/negativeColor</item>
 
         <!-- round tinted commands -->
         <item name="mdk_b_primaryCommandTint">@color/primaryActionButtonTint</item>
