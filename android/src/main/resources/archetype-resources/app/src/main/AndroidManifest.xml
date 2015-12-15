@@ -63,10 +63,8 @@
             android:name="${package}.screens.defaultscreen.MainActivity"
             android:label="MainActivity" >
             <intent-filter>
-                <action android:name="${package}.action.PROJECT_MAIN" />
-
-                <category android:name="${package}.category.MF4A" />
-                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
         <!--//@generated-end-->
