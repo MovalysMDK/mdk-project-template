@@ -1,0 +1,30 @@
+{
+ 	"name": "${artifactId}",
+  	"version": "${version}",
+  	"repository": {
+    	"type": "git",
+    	"url": "TODO"
+  	},
+  	"description": "${artifactId}",
+ 	"json": "bower.json",
+    "dependencies": {
+        "mdk-html5-lib-core": "master",
+        "mdk-html5-lib-ui": "master"
+    },
+    "overrides": {
+        "modernizr": {
+            "main": "modernizr.js"
+        },
+        "ngCordova": {
+            "main": "dist/ng-cordova.min.js"
+        }
+    },
+    "private": true,
+    "resolutions": {
+      "angular": "=1.4.3",
+      "angular-cookies": "=1.4.3",
+      "angular-translate-storage-cookie": "=2.7.2",
+      "angular-translate": "=2.7.2",
+      "angular-ui-router": "=0.2.15"
+    }
+}

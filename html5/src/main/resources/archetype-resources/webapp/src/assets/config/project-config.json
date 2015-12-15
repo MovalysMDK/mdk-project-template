@@ -1,0 +1,65 @@
+{
+	"app_name": "${applicationName}",
+	"group_id": "${groupId}",
+	"app_version": "${version}",
+	"server_url": "",
+	"username": "",
+    "databaseConfig":{
+        "name":"${artifactId}",
+        "version":"1"
+    },
+    "dataBaseType":{
+        "browser": {
+            "chrome": [
+                {
+                    "comparator": ">=",
+                    "version": "23",
+                    "database": "IndexedDB"
+                },
+                {
+                    "version": "*",
+                    "database": "WebSql"
+                }
+            ],
+            "safari": [
+                {
+                    "comparator": ">=",
+                    "version": "8",
+                    "database": "IndexedDB"
+                },
+                {
+                    "version": "*",
+                    "database": "WebSql"
+                }
+            ]
+        },
+        "native": {
+        	"windows": [ 
+        		{ 
+        			"version": "*", 
+        			"database": "WebSql" 
+        		} 
+        	], 
+            "ios":[
+                {
+                    "version": "*",
+                    "database":"WebSql"
+                }
+            ],
+            "android":[
+                {
+                    "comparator":">=",
+                    "version": "4.4",
+                    "database":"IndexedDB"
+                },
+                {
+                    "version": "*",
+                    "database":"WebSql"
+                }
+            ]
+        }
+    },
+	"logLevel": "INFO",
+    "notificationsTimeout": 5000,
+	"notificationVibrationEnable": true
+}

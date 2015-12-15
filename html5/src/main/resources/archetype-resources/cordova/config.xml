@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="${groupId}" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>${artifactId}</name>
+    <description>${artifactId}</description>
+    <author email="sebastien.maitre@sopra.com" href="http://www.sopra.com">
+        Sopra
+    </author>
+    <feature name="http://api.phonegap.com/1.0/device" />
+    <preference name="permissions" value="none" />
+    <!-- DO NOT KNOW WHY!!!! -->
+    <!-- <preference name="orientation" value="default" /> -->
+    <preference name="target-device" value="universal" />
+    <preference name="fullscreen" value="true" />
+    <preference name="webviewbounce" value="false" />
+    <preference name="UIWebViewBounce" value="false" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="prerendered-icon" value="true" />
+    <preference name="stay-in-webview" value="false" />
+    <preference name="ios-statusbarstyle" value="black-opaque" />
+    <preference name="detect-data-types" value="true" />
+    <preference name="exit-on-suspend" value="false" />
+    <preference name="show-splash-screen-spinner" value="true" />
+    <preference name="auto-hide-splash-screen" value="true" />
+    <preference name="disable-cursor" value="false" />
+    <preference name="android-minSdkVersion" value="14" />
+    <preference name="android-installLocation" value="auto" />
+
+    <preference name="SplashScreen" value="screen" />
+    <preference name="SplashScreenDelay" value="10000" />
+
+    <!--<icon src="assets/pictures/icon/icon.png" />-->
+    <!--<icon gap:density="ldpi" gap:platform="android" src="assets/pictures/icon/android/icon_36_Ldpi.png" />-->
+    <!--<icon gap:density="mdpi" gap:platform="android" src="assets/pictures/icon/android/icon_48_Mdpi.png" />-->
+    <!--<icon gap:density="hdpi" gap:platform="android" src="assets/pictures/icon/android/icon_72_Hdpi.png" />-->
+    <!--<icon gap:density="xhdpi" gap:platform="android" src="assets/pictures/icon/android/icon_96_Xhdpi.png" />-->
+    <!--<icon gap:platform="ios" height="57" src="assets/pictures/icon/ios/icon_57.png" width="57" />-->
+    <!--<icon gap:platform="ios" height="72" src="assets/pictures/icon/ios/icon_72.png" width="72" />-->
+    <!--<icon gap:platform="ios" height="114" src="assets/pictures/icon/ios/icon_57_2x.png" width="114" />-->
+    <!--<icon gap:platform="ios" height="144" src="assets/pictures/icon/ios/icon_72_2x.png" width="144" />-->
+    <!--<icon gap:platform="webos" src="assets/pictures/icon/webos/icon_64.png" />-->
+    <!--<icon gap:platform="winphone" src="assets/pictures/icon/windows-phone/icon_48.png" />=-->
+    <!--<icon gap:platform="winphone" gap:role="background" src="assets/pictures/icon/windows-phone/icon_173.png" />-->
+    <!--<gap:splash gap:density="ldpi" gap:platform="android" src="assets/pictures/screen/android/splashscreenLdpiPortrait.png" />-->
+    <!--<gap:splash gap:density="mdpi" gap:platform="android" src="assets/pictures/screen/android/splashscreenMdpiPortrait.png" />-->
+    <!--<gap:splash gap:density="hdpi" gap:platform="android" src="assets/pictures/screen/android/splashscreenHdpiPortrait.png" />-->
+    <!--<gap:splash gap:density="xhdpi" gap:platform="android" src="assets/pictures/screen/android/splashscreenXhdpiPortrait.png" />-->
+    <!--<gap:splash gap:platform="ios" height="480" src="assets/pictures/screen/ios/splashscreenIphonePortrait.png" width="320" />-->
+    <!--<gap:splash gap:platform="ios" height="960" src="assets/pictures/screen/ios/splashscreenIphonePortrait2x.png" width="640" />-->
+    <!--<gap:splash gap:platform="ios" height="1024" src="assets/pictures/screen/ios/splashscreenIpadPortrait.png" width="768" />-->
+    <!--<gap:splash gap:platform="ios" height="768" src="assets/pictures/screen/ios/splashscreenIpadLandscape.png" width="1024" />-->
+    <!--<gap:splash gap:platform="winphone" src="assets/pictures/screen/windows-phone/splashscreenPortrait.png" />-->
+
+    <!-- ADD FOR FILE SYSTEM ACCESS -->
+    <preference name="AndroidPersistentFileLocation" value="Internal" />
+    <preference name="iosPersistentFileLocation" value="Library" />
+
+    <plugin name="Camera" value="CDVCamera" />
+    <plugin name="Notification" value="CDVNotification" />
+    <plugin name="Geolocation" value="CDVLocation" />
+    <plugin name="NetworkStatus" value="CDVConnection" />
+    <plugin name="File" value="CDVFile" />
+    <plugin name="FileTransfer" value="CDVFileTransfer" />
+    <feature name="StatusBar">
+        <param name="ios-package" value="CDVStatusBar" onload="true" />
+    </feature>
+    <access origin="*" />
+</widget>
