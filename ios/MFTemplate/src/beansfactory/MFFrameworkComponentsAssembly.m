@@ -106,6 +106,8 @@
     [prototypes setObject:[MDKSendEmailCommand class] forKey:@"SendEmailCommand"];
     [prototypes setObject:[MDKCallPhoneNumberCommand class] forKey:@"CallPhoneNumberCommand"];
     [prototypes setObject:[MDKOpenURLCommand class] forKey:@"OpenURLCommand"];
+    [prototypes setObject:[MDKOpenScanCommand class] forKey:@"OpenScanCommand"];
+    [prototypes setObject:[MDKPickMediaCommand class] forKey:@"PickMediaCommand"];
 }
 
 
