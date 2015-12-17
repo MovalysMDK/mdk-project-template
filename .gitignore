@@ -2,5 +2,7 @@
 .classpath
 .project
 target
-ios/MFTemplate.xcodeproj/project.xcworkspace/xcshareddata/
+ios/MFTemplate.xcodeproj/project.xcworkspace/xcsharedata/
 ios/MFTemplate.xcodeproj/xcuserdata/
+ios/MFTemplate.xcodeproj/project.xcworkspace/xcshareddata/
+ios/MFTemplate.xcodeproj/project.xcworkspace/xcuserdata/
