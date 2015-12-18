@@ -67,7 +67,7 @@ module.exports = function(grunt) {
             },
             fwk: {
                 options: {
-                    base: 'build/vendor/mdk-html5-ui/lib',
+                    base: 'build/vendor/mdk-html5-lib-ui/lib',
                     rename: function (moduleName) {
                         return 'mfui/' + moduleName;
                     }
@@ -190,11 +190,11 @@ module.exports = function(grunt) {
                         dest: '<%= build_dir %>/assets/',
                         expand: true
                     }, {
-                        cwd: 'build/vendor/mdk-html5-core/assets', src: ['**','!**/*.scss','!**/*.css'],
+                        cwd: 'build/vendor/mdk-html5-lib-core/assets', src: ['**','!**/*.scss','!**/*.css'],
                         dest: '<%= build_dir %>/assets/',
                         expand: true
                     }, {
-                        cwd: 'build/vendor/mdk-html5-ui/assets', src: ['**','!**/*.scss','!**/*.css'],
+                        cwd: 'build/vendor/mdk-html5-lib-ui/assets', src: ['**','!**/*.scss','!**/*.css'],
                         dest: '<%= build_dir %>/assets/',
                         expand: true
                     },
@@ -547,8 +547,8 @@ module.exports = function(grunt) {
             assets: {
                 files: [
                     'src/assets/**/*',
-                    'build/vendor/mdk-html5-core/assets/**/*',
-                    'build/vendor/mdk-html5-ui/assets/**/*'
+                    'build/vendor/mdk-html5-lib-core/assets/**/*',
+                    'build/vendor/mdk-html5-lib-ui/assets/**/*'
                 ],
                 tasks: [
                     'jshint',
@@ -564,8 +564,8 @@ module.exports = function(grunt) {
              */
             framework: {
                 files: [
-                    'build/vendor/mdk-html5-core/lib/**/*',
-                    'build/vendor/mdk-html5-ui/lib/**/*'
+                    'build/vendor/mdk-html5-lib-core/lib/**/*',
+                    'build/vendor/mdk-html5-lib-ui/lib/**/*'
                 ],
                 tasks: [
                     'jshint',
@@ -686,7 +686,7 @@ module.exports = function(grunt) {
                         }
                     }
                 },
-                src: ['build/vendor/mdk-html5-core/Gruntfile.js', 'build/vendor/mdk-html5-ui/Gruntfile.js']
+                src: ['build/vendor/mdk-html5-lib-core/Gruntfile.js', 'build/vendor/mdk-html5-lib-ui/Gruntfile.js']
             }
         }
 
