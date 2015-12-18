@@ -22,8 +22,6 @@
 		B077941F19470CA600F74DB3 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B077941E19470CA600F74DB3 /* Splash.storyboard */; };
 		B0C7492F1B5F967F0052E2A6 /* soprasteria.png in Resources */ = {isa = PBXBuildFile; fileRef = B0C7492E1B5F967F0052E2A6 /* soprasteria.png */; };
 		B0CEFF651BF5D459007AEBB4 /* MDKControls.m in Sources */ = {isa = PBXBuildFile; fileRef = B0CEFF641BF5D459007AEBB4 /* MDKControls.m */; };
-		B0D002B61AD7C5220001045D /* Pods.debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = B0D002B41AD7C5220001045D /* Pods.debug.xcconfig */; };
-		B0D002B71AD7C5220001045D /* Pods.release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = B0D002B51AD7C5220001045D /* Pods.release.xcconfig */; };
 		B0E7771119D41D1C00B90A34 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0E7771019D41D1C00B90A34 /* Security.framework */; };
 		B0F711C51ABC35ED00424B1F /* Framework-components.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0F711C41ABC35ED00424B1F /* Framework-components.plist */; };
 		C701F3BB16491ED80047FFA1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C701F3BA16491ED80047FFA1 /* UIKit.framework */; };
@@ -493,11 +491,9 @@
 			files = (
 				4E1DF55618EEF0F600033C6C /* Localizable-framework.strings in Resources */,
 				4E1DF55718EEF0F600033C6C /* Localizable-project.strings in Resources */,
-				B0D002B71AD7C5220001045D /* Pods.release.xcconfig in Resources */,
 				4EF45F9718F304CE00C7027C /* InfoPlist.strings in Resources */,
 				E4697CA21652805B004C5248 /* splashImage.png in Resources */,
 				B077941F19470CA600F74DB3 /* Splash.storyboard in Resources */,
-				B0D002B61AD7C5220001045D /* Pods.debug.xcconfig in Resources */,
 				4E1DF55F18EF067900033C6C /* Images.xcassets in Resources */,
 				4BDA939E1712E92900CB3832 /* Settings.bundle in Resources */,
 				B0F711C51ABC35ED00424B1F /* Framework-components.plist in Resources */,
@@ -671,6 +667,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
@@ -708,6 +705,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				ENABLE_TESTABILITY = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -747,6 +745,7 @@
 				GCC_PREFIX_HEADER = MFTemplate/src/Prefix.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/MFTemplate/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "${groupId}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -777,6 +776,7 @@
 				GCC_PREFIX_HEADER = MFTemplate/src/Prefix.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/MFTemplate/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "${groupId}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
