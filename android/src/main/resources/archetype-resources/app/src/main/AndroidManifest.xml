@@ -34,11 +34,6 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.adeuza.movalysfwk.mobile.mf4android.activity.ParameterDialogActivity"
-            android:label="@string/activityname_parameterdialog"
-            android:theme="@style/Theme.Dialog" >
-        </activity>
-        <activity
             android:name="com.adeuza.movalysfwk.mobile.mf4android.activity.ResetSettingsAndExitDialogActivity"
             android:label="@string/activityname_resetsettingsandexitdialog"
             android:theme="@style/Theme.Dialog" >
@@ -68,7 +63,6 @@
             </intent-filter>
         </activity>
         <!--//@generated-end-->
-        <service android:name="com.adeuza.movalysfwk.mobile.mf4android.service.PushServiceImpl" />
     </application>
 
 </manifest>
