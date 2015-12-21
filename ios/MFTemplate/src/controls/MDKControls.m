@@ -29,3 +29,4 @@
 @implementation MDKMedia @end
 @implementation MDKWebView @end
 @implementation MDKPickerList @end
+@implementation MDKSwitch @end
