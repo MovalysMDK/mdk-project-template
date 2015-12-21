@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>com.adeuza.movalysfwk</groupId>
 		<artifactId>mdk-project-parent</artifactId>
-		<version>5.1.1-SNAPSHOT</version>
+		<version>6.0.1-SNAPSHOT</version>
 	</parent>
 	
 	<groupId>${groupId}</groupId>
@@ -14,60 +14,7 @@
 	<name>${artifactId}</name>
 	<version>${version}</version>
 	<packaging>pom</packaging>
-	
-	<!--TODO
-	<scm>
-		<connection>scm:git:</connection>
-		<developerConnection>scm:git:</developerConnection>
-		<url></url>
-	</scm>
-	-->
-	
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-enforcer-plugin</artifactId>
-				<version>1.0.1</version>
-				<executions>
-					<execution>
-						<id>enforce-versions</id>
-						<goals>
-							<goal>enforce</goal>
-						</goals>
-						<configuration>
-							<rules>
-								<requireMavenVersion>
-									<version>3.0.0</version>
-								</requireMavenVersion>
-							</rules>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-release-plugin</artifactId>
-				<!-- 2.2.2 is bugged: http://jira.codehaus.org/browse/MRELEASE-724 -->				
-				<version>2.2.1</version>				
-				<configuration>
-					<tagNameFormat>@{project.version}</tagNameFormat>
-					<arguments>-DskipAdjava</arguments>
-					<releaseProfiles>release</releaseProfiles>
-					<autoVersionSubmodules>true</autoVersionSubmodules>
-				</configuration>
-			</plugin>			
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-resources-plugin</artifactId>
-				<version>2.5</version>
-				<configuration>
-					<encoding>UTF-8</encoding>
-					<overwrite>true</overwrite>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+
 	
 	<profiles>
 		<profile>
