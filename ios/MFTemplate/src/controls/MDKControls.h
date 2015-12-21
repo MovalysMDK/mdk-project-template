@@ -30,4 +30,6 @@ IB_DESIGNABLE @interface MDKMedia : MDKUIExternalMedia @end
 IB_DESIGNABLE @interface MDKWebView : MDKUIExternalWebView @end
 IB_DESIGNABLE @interface MDKPickerList : MDKUIExternalPickerList @end
 IB_DESIGNABLE @interface MDKSwitch : MDKUIExternalSwitch @end
+IB_DESIGNABLE @interface MDKNumberPicker : MDKUIExternalNumberPicker @end
+
 
