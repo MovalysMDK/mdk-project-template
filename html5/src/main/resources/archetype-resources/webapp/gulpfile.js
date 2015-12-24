@@ -57,12 +57,21 @@ gulp.task('connect', function () {
 
 /**
  * Compile Sass files to one CSS file
+
+ Switched to libsass
  */
 gulp.task('sass', function () {
+    return gulp.src(userConfig.app_files.sass)
+        .pipe( sass({includePaths:['build/vendor/bootstrap-sass-official/assets/stylesheets']}).on('error', sass.logError) )
+        .pipe(rename(pkg.name + '-' + pkg.version + '.css'))
+        .pipe(gulp.dest('build/assets/styles/'));
+
+    /*
     return sass(userConfig.app_files.sass, {loadPath: ['build/vendor/bootstrap-sass-official/assets/stylesheets']})
         .on('error', sass.logError)
         .pipe(rename(pkg.name + '-' + pkg.version + '.css'))
         .pipe(gulp.dest('build/assets/styles/'));
+    */
 });
 
 
