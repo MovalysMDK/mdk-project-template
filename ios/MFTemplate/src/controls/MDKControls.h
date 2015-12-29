@@ -32,5 +32,5 @@ IB_DESIGNABLE @interface MDKPickerList : MDKUIExternalPickerList @end
 IB_DESIGNABLE @interface MDKSwitch : MDKUIExternalSwitch @end
 IB_DESIGNABLE @interface MDKNumberPicker : MDKUIExternalNumberPicker @end
 IB_DESIGNABLE @interface MDKScanner : MDKUIExternalScanner @end
-
+IB_DESIGNABLE @interface MDKSignature : MDKUIExternalSignature @end
 

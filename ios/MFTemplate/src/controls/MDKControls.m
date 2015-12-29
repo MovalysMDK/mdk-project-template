@@ -32,3 +32,4 @@
 @implementation MDKSwitch @end
 @implementation MDKNumberPicker @end
 @implementation MDKScanner @end
+@implementation MDKSignature @end
