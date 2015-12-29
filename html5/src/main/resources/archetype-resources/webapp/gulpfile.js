@@ -2,7 +2,7 @@
 
 var gulp = require("gulp"),
     connect = require('gulp-connect'),
-    sass = require('gulp-ruby-sass'),
+    sass = require('gulp-sass'),
     rename = require('gulp-rename'),
     clean = require('gulp-clean'),
     jshint = require('gulp-jshint'),
