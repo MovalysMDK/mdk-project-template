@@ -26,9 +26,9 @@ packageNPM.cordovaPlugins = packageNPM.cordovaPlugins || [];
 
 // Check and delete ios if windows platform
 var iOS = true;
-if ( config.platforms.indexOf("ios") != -1 && process.platform != 'darwin' ){
+if ( packageNPM.platforms.indexOf("ios") != -1 && process.platform != 'darwin' ){
     iOS = false;
-    config.platforms.splice( config.platforms.indexOf("ios"), 1 );
+    packageNPM.platforms.splice( packageNPM.platforms.indexOf("ios"), 1 );
 }
 
 
@@ -162,18 +162,18 @@ gulp.task('cordova:build:android', false, function(cb){
 
 // Run cordova build
 gulp.task('cordova:build', false, function(cb){
-    cordova.build(config.platforms, function(err){
+    cordova.build(packageNPM.platforms, function(err){
         return cb(err);
     });
 });
 
 // Init platforms for crdova project
 gulp.task('cordova:platform:update', false, function(cb){
-    cordova.platforms('remove', config.platforms, function(errRm){
+    cordova.platforms('remove', packageNPM.platforms, function(errRm){
         if (errRm){
             return cb(errRm);
         }
-        cordova.platforms('add', config.platforms, function(errAdd){
+        cordova.platforms('add', packageNPM.platforms, function(errAdd){
             return cb(errAdd);
         });
     });
@@ -280,7 +280,7 @@ gulp.task('copy:webapp', false, function(){
 
 // Copy the whole pictures folder
 gulp.task('copy:pictures', false, function(){
-    return gulp.src( config.platforms.map( function(p){return './pictures/' + p + '/**/*';} ),
+    return gulp.src( packageNPM.platforms.map( function(p){return './pictures/' + p + '/**/*';} ),
         {
             base: './pictures'
         })
@@ -289,7 +289,7 @@ gulp.task('copy:pictures', false, function(){
 
 // Copy the cordovafork/ folder
 gulp.task('copy:cordovafork', false, function(){
-    return gulp.src(config.platforms.map( function(p){return './cordovafork/' + p + '/**/*';} ),
+    return gulp.src(packageNPM.platforms.map( function(p){return './cordovafork/' + p + '/**/*';} ),
         {
             base: './cordovafork'
         })
