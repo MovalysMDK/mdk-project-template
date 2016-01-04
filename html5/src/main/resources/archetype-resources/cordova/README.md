@@ -7,7 +7,7 @@
 
 *Location: <project>/cordova/README.md*
 
-This directory <project>/cordova contains PhoneGap (aka Apache Cordova) project.
+This directory <project>/cordova contains Apache Cordova project.
 
 
 ## What is Cordova ##
@@ -29,7 +29,7 @@ Cordova is available for the following platforms: iOS, Android, Blackberry, Wind
 
 
 
-To run the app (into a WebView) in a mobile device (real or emulator) see the next link: http://docs.phonegap.com/en/3.3.0/guide_cli_index.md.html
+To run the app (into a WebView) in a mobile device (real or emulator) see the next link: https://cordova.apache.org/docs/en/5.4.0/guide/cli/index.html
 
 
 
@@ -38,7 +38,7 @@ To run the app (into a WebView) in a mobile device (real or emulator) see the ne
 
 BEFORE STARTING : Cordova works well on any device, and a Cordova project initialised on a mac can be copied and used
                   on a windows platform without any issue.
-                  HOWEVER it is deeply recommanded to use a mac for iOs testing, and windows8 for windows8 & wp8 testing,
+                  HOWEVER it is deeply recommended to use a mac for iOs testing, and windows8 for windows8 & wp8 testing,
                   simply because iOs debugging requires xCode & Safari, and because wp8 debug requires visual
                   studio 2013 or higher.
 
@@ -56,18 +56,18 @@ You will need npm & bower installed.
 
 2. `$ npm install -g plugman`
 
-### STEP 1 : config the grunt script ###
+### STEP 1 : config the project script ###
 -------------------------------------------------------
 
 1. `$ cd <project>/cordova`
 
-2. update the file grunt.config.js
+2. update the file build.config.js
 
 
 ### STEP 2 : initialize the platform needed and its plugins ###
 -----------------------------------------------
 
-`$ grunt init`
+`$ gulp init`
 
 
 #### for iOs ####

@@ -4,8 +4,8 @@ var gulp = require("gulp"),
     connect = require('gulp-connect'),
     sass = require('gulp-sass'),
     rename = require('gulp-rename'),
-    clean = require('gulp-clean'),
     jshint = require('gulp-jshint'),
+    del = require('del'),
     concat = require('gulp-concat'),
     stripJsonComments = require('gulp-strip-json-comments'),
     debug = require('gulp-debug'),
@@ -62,16 +62,9 @@ gulp.task('connect', function () {
  */
 gulp.task('sass', function () {
     return gulp.src(userConfig.app_files.sass)
-        .pipe( sass({includePaths:['build/vendor/bootstrap-sass-official/assets/stylesheets']}).on('error', sass.logError) )
+        .pipe(sass({includePaths: [userConfig.build_dir +  '/vendor/bootstrap-sass-official/assets/stylesheets']}).on('error', sass.logError))
         .pipe(rename(pkg.name + '-' + pkg.version + '.css'))
-        .pipe(gulp.dest('build/assets/styles/'));
-
-    /*
-    return sass(userConfig.app_files.sass, {loadPath: ['build/vendor/bootstrap-sass-official/assets/stylesheets']})
-        .on('error', sass.logError)
-        .pipe(rename(pkg.name + '-' + pkg.version + '.css'))
-        .pipe(gulp.dest('build/assets/styles/'));
-    */
+        .pipe(gulp.dest(userConfig.build_dir +  '/assets/styles/'));
 });
 
 
@@ -79,8 +72,7 @@ gulp.task('sass', function () {
  * The directories to delete when `gulp clean` is executed.
  */
 gulp.task('clean', function () {
-    return gulp.src(['build/', 'build/vendor'], {read: false})
-        .pipe(clean());
+    return del([userConfig.build_dir +  '/']);
 });
 
 /**
@@ -92,6 +84,7 @@ gulp.task('html2js', function () {
             moduleName: 'templates-app'
         }))
         .pipe(concat('templates-app.js'))
+        .pipe(uglify())
         .pipe(gulp.dest(userConfig.build_dir));
 
     return gulp.src(userConfig.fwk_files.tpl)
@@ -139,8 +132,6 @@ gulp.task('jshint', function () {
 gulp.task('bowerDepToHtml', function () {
     return gulp.src(userConfig.build_dir + '/index.html')
         .pipe(wiredep({
-            optional: 'configuration',
-            goes: 'here'
         }))
         .pipe(gulp.dest(userConfig.build_dir));
 });
@@ -161,7 +152,7 @@ gulp.task('injectToHtml', function () {
         userConfig.build_dir + '/assets/styles/' + pkg.name + '-' + pkg.version + '.css',
     ], {read: false});
 
-    return target.pipe(inject(sources, {addRootSlash: false, ignorePath: 'build'}))
+    return target.pipe(inject(sources, {addRootSlash: false, ignorePath: userConfig.build_dir}))
         .pipe(gulp.dest(userConfig.build_dir))
         .pipe(connect.reload());
 
@@ -178,14 +169,25 @@ gulp.task('injectToHtml', function () {
  * `build_dir`.
  */
 gulp.task('copy:buildAppAssets', function () {
-    gulp.src('build/vendor/**/fonts/**')
+    gulp.src(userConfig.build_dir +  '/vendor/**/fonts/**')
         .pipe(flatten())
         .pipe(gulp.dest(userConfig.build_dir + '/assets/fonts'));
-    gulp.src(['src/assets/**', 'src/assets/!**/*.scss', 'src/assets/!**/*.css'])
+    gulp.src(['src/assets/**',
+                '!**/*.scss',
+                '!**/*.md',
+                '!**/debug/*'])
         .pipe(gulp.dest(userConfig.build_dir + '/assets'));
-    gulp.src(['build/vendor/mdk-html5-core/assets/**', 'build/vendor/mdk-html5-core/assets/!**/*.scss', 'build/vendor/mdk-html5-core/assets/!**/*.css'])
+    gulp.src([userConfig.build_dir +  '/vendor/mdk-html5-lib-core/assets/**',
+                '!' + userConfig.build_dir +  '/vendor/**/*.css',
+                '!**/*.scss',
+                '!**/*.md',
+                '!**/debug/*'])
         .pipe(gulp.dest(userConfig.build_dir + '/assets'));
-    gulp.src(['build/vendor/mdk-html5-ui/assets/**', 'build/vendor/mdk-html5-ui/assets/!**/*.scss', 'build/vendor/mdk-html5-ui/assets/!**/*.css'])
+    gulp.src([userConfig.build_dir +  '/vendor/mdk-html5-lib-ui/assets/**',
+                '!' + userConfig.build_dir +  '/vendor/**/*.css',
+                '!**/*.scss',
+                '!**/*.md',
+                '!**/debug/*'])
         .pipe(gulp.dest(userConfig.build_dir + '/assets'));
     return gulp.src('src/index.html')
         .pipe(gulp.dest(userConfig.build_dir));
@@ -202,7 +204,6 @@ gulp.task('copy:buildAppjs', function () {
 gulp.task('removeComments', function () {
     return gulp.src([userConfig.build_dir + '/assets/**/*.json', userConfig.build_dir + '/src/**/*.json'], {base: './'})
         .pipe(stripJsonComments())
-        .pipe(debug({title: 'File:'}))
         .pipe(gulp.dest('.'));
 });
 
@@ -220,16 +221,6 @@ gulp.task('build', function (callback) {
         'injectToHtml',
         callback);
 });
-
-
-/**
- * The `webserver` task build the app and run it in a webserver
- */
-gulp.task('webserver-build', [
-    'build',
-    'connect'
-]);
-
 
 gulp.task('delta', function () {
     gulp.watch(userConfig.app_files.js).on('change', function (file) {
@@ -257,8 +248,8 @@ gulp.task('delta', function () {
 
     gulp.watch([
         'src/assets/**/*',
-        'build/vendor/mdk-html5-core/assets/**/*',
-        'build/vendor/mdk-html5-ui/assets/**/*'
+        userConfig.build_dir +  '/vendor/mdk-html5-lib-core/assets/**/*',
+        userConfig.build_dir +  '/vendor/mdk-html5-lib-ui/assets/**/*'
     ]).on('change', function () {
         runSequence(
             ['sass', 'copy:buildAppAssets'],
@@ -295,59 +286,19 @@ gulp.task('delta', function () {
  */
 gulp.task('watch', function (callback) {
     runSequence(
-        'connect',
         'build',
+        'connect',
         'delta',
         callback);
 });
 
-/**
- * The default task is to build and compile.
- */
-gulp.task('default', ['build']);
-
-gulp.task('concat:compileCss', function () {
-    gulp.src([
-        userConfig.build_dir + '/vendor/**/*.css',
-        userConfig.build_dir + '/assets/styles/<%= pkg.name %>-<%= pkg.version %>.css'])
-        .pipe(concat(pkg.name + '-' + pkg.version + '.css'))
-        .pipe(gulp.dest(userConfig.compile_dir + '/assets/styles/'))
-
-});
-
-//gulp.task('concat:compileJs', function () {
-//    gulp.src([
-//        userConfig.build_dir + '/vendor/**/*.js'
-//       'module.prefix',
-//       userConfig.build_dir + '/src/app/app.js',
-//       userConfig.build_dir + '/src/app/modules.js',
-//       userConfig.build_dir + '/src/app/**/*.js',
-//       userConfig.build_dir + '/templates-app.js',
-//       userConfig.build_dir + '/templates-fwk.js',
-//       'module.suffix'
-//    ])
-//        .pipe(debug())
-//        .pipe(concat(pkg.name + '-' + pkg.version + '.js'))
-//        .pipe(stripDebug())
-//        .pipe(uglify())
-//        .pipe(gulp.dest(userConfig.compile_dir + '/assets/'))
-
-//});
-
-//gulp.task('uglify', function () {
-//    return gulp.src(userConfig.compile_dir + '/assets/' + pkg.name + '-' + pkg.version + '.js')
-//        .pipe(debug())
-//        .pipe(uglify())
-//        .pipe(gulp.dest(userConfig.compile_dir))
-//});
-
 
 /**
- * gulp-chug is used to run external gulfiles as part of a gulp task inside another gulpfile
- * build:fwk permits to launched the gulpfile of mdk-html5-core and mdk-html5-ui.
+ * gulp-chug is used to run external gulpfiles as part of a gulp task inside another gulpfile
+ * build:fwk permits to launched the gulpfile of mdk-html5-core and mdk-html5-lib-ui.
  */
 gulp.task('build:fwk', function () {
-    gulp.src(['build/vendor/mdk-html5-core/gulpfile.js', 'build/vendor/mdk-html5-ui/gulpfile.js'])
+    gulp.src([userConfig.build_dir + '/vendor/mdk-html5-lib-core/gulpfile.js', userConfig.build_dir + '/vendor/mdk-html5-lib-ui/gulpfile.js'])
         .pipe(chug())
 });
 

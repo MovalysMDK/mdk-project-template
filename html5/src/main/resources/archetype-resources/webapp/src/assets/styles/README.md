@@ -26,7 +26,7 @@ The default style is defined in MFUI framework, whose main SCSS file is there:
 |- webapp
 |  |- build
 |  |  |- vendor
-|  |  |  |- mdk-html5-ui
+|  |  |  |- mdk-html5-lib-ui
 |  |  |  |  |- assets
 |  |  |  |  |  |- styles
 |  |  |  |  |  |  |- framework.scss
@@ -38,7 +38,7 @@ The other SCSS files (referenced by `framework.scss`) are in these directories :
 |- webapp
 |  |- build
 |  |  |- vendor
-|  |  |  |- mdk-html5-ui
+|  |  |  |- mdk-html5-lib-ui
 |  |  |  |  |- assets
 |  |  |  |  |  |- styles
 |  |  |  |  |- lib
@@ -62,7 +62,7 @@ main.scss
   |-> project SCSSS files
 ````
 
-## Framework styling `webapp/build/vendor/mdk-html5-ui/assets/styles`
+## Framework styling `webapp/build/vendor/mdk-html5-lib-ui/assets/styles`
 -----------------------------------------------------
 
 This styling is in readonly.
