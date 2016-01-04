@@ -7,8 +7,15 @@
     </author>
     <feature name="http://api.phonegap.com/1.0/device" />
     <preference name="permissions" value="none" />
-    <!-- DO NOT KNOW WHY!!!! -->
-    <!-- <preference name="orientation" value="default" /> -->
+    <!-- Allow SMS links to open messaging app -->
+    <allow-intent href="sms:*" />
+    <!-- Allow tel: links to open the dialer -->
+    <allow-intent href="tel:*" />
+    <!-- Allow geo: links to open maps -->
+    <allow-intent href="geo:*" />
+    <!-- Allow geo: links to open mail app -->
+    <allow-intent href="mailto:*" />
+
     <preference name="target-device" value="universal" />
     <preference name="fullscreen" value="true" />
     <preference name="webviewbounce" value="false" />
