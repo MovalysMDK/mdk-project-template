@@ -43,6 +43,8 @@ gulp.task('default', 'Executes gulp build', ['build']);
 gulp.task('init', 'Inits the Cordova project: install NPM modules, and updates plugins and platforms', function(cb){
     runSequence(
         'npm:install',
+        'files:permissions:hooks',
+        'rename:ios:resources',
         'cordova:init',
         cb);
 });
@@ -310,6 +312,13 @@ gulp.task('processhtml', false, function(){
         .pipe( gulp.dest('./www/') );
 });
 
+
+
+// *****************************************************************************
+// ********************* FIX ***************************************************
+// *****************************************************************************
+
+
 // Fixes iOS ressource folders name, while waiting for mvn archetype:generate to
 // update it on generation
 gulp.task('rename:ios:resources', false, function(){
@@ -319,18 +328,23 @@ gulp.task('rename:ios:resources', false, function(){
         fs.renameSync( './pictures/ios/${artifactId}', './pictures/ios/' + config.project_name );
     }catch(e){
         if ( e.code != 'ENOENT' ){
-            throw e;
+            console.log("WARN: pictures/ios/${artifactId} folder could not be renamed");
         }
     }
 
-    // cordovafork
+});
+
+// Fixes Cordova hooks permissions (overwritten by Maven when deploying)
+gulp.task('files:permissions:hooks', false, function(){
+
     try{
-        fs.renameSync( './cordovafork/ios/${artifactId}', './cordovafork/ios/' + config.project_name );
-    }catch(e){
-        if ( e.code != 'ENOENT' ){
-            throw e;
-        }
-    }
+        fs.chmodSync('./hooks/after_plugin_add/010_register_plugin.js', '755');
+    }catch(e){}
+
+    try{
+        fs.chmodSync('./hooks/after_plugin_rm/010_deregister_plugin.js', '755');
+    }catch(e){}
+
 });
 
 
