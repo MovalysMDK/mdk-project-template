@@ -24,7 +24,7 @@
 
 	<fileSets>
 		<fileSet>
-			<directory>root</directory>
+			<directory>${project.build.directory}/classes/root</directory>
 			<includes>
 				<include>README.*</include>
 			</includes>
@@ -32,7 +32,7 @@
 			<outputDirectory>/</outputDirectory>
 		</fileSet>
 		<fileSet>
-			<directory>root</directory>
+			<directory>${project.build.directory}/classes/root</directory>
 			<includes>
 				<include>**/*</include>
 			</includes>
