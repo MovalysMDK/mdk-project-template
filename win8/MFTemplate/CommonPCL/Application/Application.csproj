@@ -10,6 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>App</RootNamespace>
     <AssemblyName>Application</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <TargetFrameworkProfile>Profile32</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
