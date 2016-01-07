@@ -17,7 +17,12 @@
         },
         "ngCordova": {
             "main": "dist/ng-cordova.min.js"
-        }
+        },
+      "ionic": {
+        "main": [
+          "release/js/ionic.bundle.js"
+        ]
+      }
     },
     "private": true,
     "resolutions": {
