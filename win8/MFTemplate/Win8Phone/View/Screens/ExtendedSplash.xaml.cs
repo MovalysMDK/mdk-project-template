@@ -34,7 +34,8 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using basenamespace.ViewModel;
-using basenamespace.listdetail.ui;
+	//@generated-start[navigation-imports][X]
+	//@generated-end
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
