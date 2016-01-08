@@ -37,10 +37,10 @@ if ( packageNPM.platforms.indexOf("ios") != -1 && process.platform != 'darwin' )
 // *****************************************************************************
 
 // Default task, if no parameter given
-gulp.task('default', 'Executes gulp build', ['build']);
+gulp.task('default', 'Execute gulp build', ['build']);
 
 // Inits a project
-gulp.task('init', 'Inits the Cordova project: install NPM modules, and updates plugins and platforms', function(cb){
+gulp.task('init', 'Init the Cordova project: install NPM modules, and updates plugins and platforms', function(cb){
     runSequence(
         'npm:install',
         'files:permissions:hooks',
@@ -58,8 +58,9 @@ gulp.task('build', 'Build the cordova project', function(cb){
 });
 
 // Run Android
-gulp.task('run:android', 'Run your project on Android. Platform must be running,\
-	and application already built.', function(cb){
+gulp.task('run:android', 'Run your project on Android. ' +
+    'Platform must be running, and application already built.',
+    function(cb){
     cordova.run('android', function(err){
         return cb(err);
     });
@@ -67,8 +68,8 @@ gulp.task('run:android', 'Run your project on Android. Platform must be running,
 
 if ( iOS ){
     // iOS
-    gulp.task('run:ios', 'Run your project on iOS. Platform must be running,\
-	and application already built.', function(cb){
+    gulp.task('run:ios', 'Run your project on iOS. ' +
+    'Platform must be running, and application already built.', function(cb){
         cordova.run('ios', function(err){
             return cb(err);
         });

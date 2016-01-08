@@ -1,26 +1,26 @@
 'use strict';
 
-var gulp = require("gulp"),
-    connect = require('gulp-connect'),
-    sass = require('gulp-sass'),
-    rename = require('gulp-rename'),
-    jshint = require('gulp-jshint'),
-    del = require('del'),
-    concat = require('gulp-concat'),
-    stripJsonComments = require('gulp-strip-json-comments'),
-    debug = require('gulp-debug'),
-    inject = require('gulp-inject'),
-    runSequence = require('run-sequence'),
-    ngHtml2Js = require('gulp-ng-html2js'),
-    flatten = require('gulp-flatten'),
-    gutil = require('gulp-util'),
-    argv = require('yargs').argv,
-    uglify = require('gulp-uglify'),
-    protractor = require("gulp-protractor").protractor,
-    chug = require('gulp-chug'),
-    Server = require('karma').Server,
-    open = require('gulp-open'),
-    wiredep = require('wiredep').stream;
+var gulp                = require('gulp-help')(require("gulp")),
+    connect             = require('gulp-connect'),
+    sass                = require('gulp-sass'),
+    rename              = require('gulp-rename'),
+    jshint              = require('gulp-jshint'),
+    del                 = require('del'),
+    concat              = require('gulp-concat'),
+    stripJsonComments   = require('gulp-strip-json-comments'),
+    debug               = require('gulp-debug'),
+    inject              = require('gulp-inject'),
+    runSequence         = require('run-sequence'),
+    ngHtml2Js           = require('gulp-ng-html2js'),
+    flatten             = require('gulp-flatten'),
+    gutil               = require('gulp-util'),
+    argv                = require('yargs').argv,
+    uglify              = require('gulp-uglify'),
+    protractor          = require("gulp-protractor").protractor,
+    chug                = require('gulp-chug'),
+    Server              = require('karma').Server,
+    open                = require('gulp-open'),
+    wiredep             = require('wiredep').stream;
 
 /**
  * Load in our build configuration file.
@@ -43,10 +43,17 @@ if (argv.prod) {
 
 }
 
+// *****************************************************************************
+// ******************* PUBLIC **************************************************
+// *****************************************************************************
+
+// Default task, if no parameter given
+gulp.task('default', 'Execute gulp build', ['build']);
+
 /**
  * gulp-connect is a plugin to run a webserver (with LiveReload)
  */
-gulp.task('connect', function () {
+gulp.task('connect', false, function () {
     return connect.server({
         root: 'build',
         port: 8000,
@@ -57,10 +64,8 @@ gulp.task('connect', function () {
 
 /**
  * Compile Sass files to one CSS file
-
- Switched to libsass
  */
-gulp.task('sass', function () {
+gulp.task('sass', 'Compile Sass files to one CSS file',function () {
     return gulp.src(userConfig.app_files.sass)
         .pipe(sass({includePaths: [userConfig.build_dir +  '/vendor/bootstrap-sass-official/assets/stylesheets']}).on('error', sass.logError))
         .pipe(rename(pkg.name + '-' + pkg.version + '.css'))
@@ -71,14 +76,14 @@ gulp.task('sass', function () {
 /**
  * The directories to delete when `gulp clean` is executed.
  */
-gulp.task('clean', function () {
+gulp.task('clean', 'Clean the directory build', function () {
     return del([userConfig.build_dir +  '/']);
 });
 
 /**
  * converting AngularJS templates to JavaScript
  */
-gulp.task('html2js', function () {
+gulp.task('html2js', false, function () {
     gulp.src(userConfig.app_files.tpl)
         .pipe(ngHtml2Js({
             moduleName: 'templates-app'
@@ -113,7 +118,7 @@ gulp.task('html2js', function () {
 var jshintFilesToInspect;
 
 
-gulp.task('jshint', function () {
+gulp.task('jshint', 'Execute Jshint to detect errors and potential problems in code', function () {
     if (jshintFilesToInspect === undefined) {
         jshintFilesToInspect = userConfig.app_files.js;
         gulp.src('./gulpfile.js')
@@ -129,7 +134,7 @@ gulp.task('jshint', function () {
 /**
  * Wire Bower dependencies to the source code.
  */
-gulp.task('bowerDepToHtml', function () {
+gulp.task('bowerDepToHtml', false, function () {
     return gulp.src(userConfig.build_dir + '/index.html')
         .pipe(wiredep({
         }))
@@ -140,7 +145,7 @@ gulp.task('bowerDepToHtml', function () {
  * This task permits to inject file references into index.html.
  * Once the injection is done , we do a connect.reload in order to perform a livereload.
  */
-gulp.task('injectToHtml', function () {
+gulp.task('injectToHtml', false, function () {
     var target = gulp.src(userConfig.build_dir + '/index.html');
     // It's not necessary to read the files (will speed up things), we're only after their paths:
     var sources = gulp.src([
@@ -168,7 +173,7 @@ gulp.task('injectToHtml', function () {
  * our project assets (images, fonts, etc.) and javascripts into
  * `build_dir`.
  */
-gulp.task('copy:buildAppAssets', function () {
+gulp.task('copy:buildAppAssets', false, function () {
     gulp.src(userConfig.build_dir +  '/vendor/**/fonts/**')
         .pipe(flatten())
         .pipe(gulp.dest(userConfig.build_dir + '/assets/fonts'));
@@ -193,7 +198,7 @@ gulp.task('copy:buildAppAssets', function () {
         .pipe(gulp.dest(userConfig.build_dir));
 });
 
-gulp.task('copy:buildAppjs', function () {
+gulp.task('copy:buildAppjs', false, function () {
     return gulp.src(userConfig.app_files.js)
         .pipe(gulp.dest(userConfig.build_dir + '/src/app'));
 });
@@ -201,7 +206,7 @@ gulp.task('copy:buildAppjs', function () {
 /**
  * Remove comments from JSON files
  */
-gulp.task('removeComments', function () {
+gulp.task('removeComments', false, function () {
     return gulp.src([userConfig.build_dir + '/assets/**/*.json', userConfig.build_dir + '/src/**/*.json'], {base: './'})
         .pipe(stripJsonComments())
         .pipe(gulp.dest('.'));
@@ -211,7 +216,7 @@ gulp.task('removeComments', function () {
 // =======================================================
 // ========  BUILD =======================================
 // =======================================================
-gulp.task('build', function (callback) {
+gulp.task('build', 'Build the webapp project', function (callback) {
     jshintFilesToInspect = userConfig.app_files.js;
     runSequence(
         ['html2js', 'jshint', 'copy:buildAppAssets'],
@@ -222,7 +227,7 @@ gulp.task('build', function (callback) {
         callback);
 });
 
-gulp.task('delta', function () {
+gulp.task('delta', false, function () {
     gulp.watch(userConfig.app_files.js).on('change', function (file) {
         jshintFilesToInspect = file.path;
         runSequence(
@@ -284,7 +289,7 @@ gulp.task('delta', function () {
  * `watch` task is called `delta` and then add a new task called `watch`
  * that does a clean build before watching for changes.
  */
-gulp.task('watch', function (callback) {
+gulp.task('watch', 'Build the project and connect the application to localhost:8000', function (callback) {
     runSequence(
         'build',
         'connect',
@@ -297,7 +302,7 @@ gulp.task('watch', function (callback) {
  * gulp-chug is used to run external gulpfiles as part of a gulp task inside another gulpfile
  * build:fwk permits to launched the gulpfile of mdk-html5-core and mdk-html5-lib-ui.
  */
-gulp.task('build:fwk', function () {
+gulp.task('build:fwk', false, function () {
     gulp.src([userConfig.build_dir + '/vendor/mdk-html5-lib-core/gulpfile.js', userConfig.build_dir + '/vendor/mdk-html5-lib-ui/gulpfile.js'])
         .pipe(chug())
 });
@@ -305,7 +310,7 @@ gulp.task('build:fwk', function () {
 /**
  * Run test once and exit
  */
-gulp.task('test', function (done) {
+gulp.task('test', 'Run test once and exit', function (done) {
     new Server({
         configFile: __dirname + '/karma.conf.js',
         singleRun: true
@@ -318,7 +323,7 @@ gulp.task('test', function (done) {
  * Protractor runs tests against your application running in a real browser, interacting with it as a user would.
  * see at https://docs.angularjs.org/guide/e2e-testing
  */
-gulp.task('protractor', function () {
+gulp.task('protractor', 'Run tests "end-to-end"', function () {
     gulp.src(["./src/tests/e2e/*.js"])
         .pipe(protractor({
             configFile: "protractor.conf.js",
