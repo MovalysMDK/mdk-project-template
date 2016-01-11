@@ -15,6 +15,8 @@ var gulp 		= require('gulp-help')(require('gulp')),
     async 		= require('async'),
     fs 			= require('fs'),
     path 		= require('path'),
+	argv        = require('yargs').argv,
+	gutil       = require('gulp-util'),
     del        = require('del');
 
 var config 		= require('./build.config.js');
@@ -31,6 +33,17 @@ if ( packageNPM.platforms.indexOf("ios") != -1 && process.platform != 'darwin' )
     packageNPM.platforms.splice( packageNPM.platforms.indexOf("ios"), 1 );
 }
 
+if (argv.prod) {
+    gutil.log('**************************************************');
+    gutil.log('*****GULP TASK LAUNCHED IN PRODUCTION MODE********');
+    gutil.log('**************************************************');
+
+} else {
+    gutil.log('**************************************************');
+    gutil.log('*********GULP TASK LAUNCHED IN DEV MODE***********');
+    gutil.log('**************************************************');
+    gutil.log('  use --prod on gulp command line, to launch the task in production mode \n');
+}
 
 // *****************************************************************************
 // ******************* PUBLIC **************************************************
@@ -204,7 +217,7 @@ gulp.task('clean:cordova', false, function(){
 // Removes every logging debug instructions from JS files
 gulp.task('clean:debug', false, function(){
     return gulp.src('./www/src/**/*.js', {base: './www/src'})
-        .pipe( stripDebug() )
+        .pipe(gulpIf(function(){return argv.prod;}, stripDebug()))
         .pipe( gulp.dest('./www/src') )
 });
 
