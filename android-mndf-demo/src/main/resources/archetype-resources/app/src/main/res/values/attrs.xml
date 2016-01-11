@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-
-    <attr name="mdkTitleStyle" format="reference"/>
-    <attr name="mdk_b_fabStyle" format="reference"/>
-    <attr name="mdk_b_actionButtonStyle" format="reference"/>
-    <attr name="mdkCardViewStyle" format="reference"/>
-
-</resources>

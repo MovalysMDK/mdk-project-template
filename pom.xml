@@ -67,8 +67,6 @@
 		<module>html5</module>
 		<module>win8</module>
 		<module>android</module>
-		<module>android-design</module>
-		<module>android-mndf-demo</module>
 	</modules>
 
 	<build>
