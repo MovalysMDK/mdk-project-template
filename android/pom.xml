@@ -61,7 +61,7 @@
                         	<tasks>
                             	<copy file="../commons/src/main/resources/root/commons/UML Movalys Framework Profile.mdzip" todir="${project.build.directory}/classes/archetype-resources/docs/modelisation/" verbose="true" overwrite="true">
                                 </copy>
-                            	<copy file="../commons/src/main/resources/root/commons/MOV-MM-Referentiel_de_donnees-V1.9.xls" todir="${project.build.directory}/classes/archetype-resources/tools/" verbose="true" overwrite="true">
+                            	<copy file="../commons/src/main/resources/root/commons/MOV-MM-Referentiel_de_donnees-V1.10.xls" todir="${project.build.directory}/classes/archetype-resources/tools/" verbose="true" overwrite="true">
                                 </copy>                               
                         	</tasks>
                         </configuration>
