@@ -56,7 +56,7 @@
                                 
                             	<copy file="../commons/src/main/resources/root/commons/UML Movalys Framework Profile.mdzip" todir="${project.build.directory}/classes/archetype-resources/__applicationName__/docs/modelisation/" verbose="true" overwrite="true">
 		                        </copy>
-		                        <copy file="../commons/src/main/resources/root/commons/MOV-MM-Referentiel_de_donnees-V1.10.xls" todir="${project.build.directory}/classes/archetype-resources/__applicationName__/tools/" verbose="true" overwrite="true">
+		                        <copy file="../commons/src/main/resources/root/commons/MOV-MM-Referentiel_de_donnees-V1.11.xls" todir="${project.build.directory}/classes/archetype-resources/__applicationName__/tools/" verbose="true" overwrite="true">
 		                        </copy>
                                          
                                 <replace token="MFTemplate" value="$${applicationName}" dir="${project.build.outputDirectory}/archetype-resources/">                                 
