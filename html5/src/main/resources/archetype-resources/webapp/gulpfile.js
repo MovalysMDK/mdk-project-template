@@ -236,15 +236,8 @@ gulp.task('delta', false, function () {
             'injectToHtml');
     });
 
-    gulp.watch(userConfig.fwk_files.js).on('change', function (file) {
-        jshintFilesToInspect = file.path;
-        runSequence(
-            ['jshint', 'copy:buildAppjs'],
-            'bowerDepToHtml',
-            'injectToHtml');
-    });
-
-    gulp.watch(userConfig.fwk_files.tpl).on('change', function (file) {
+    gulp.watch(['build/vendor/mdk-html5-lib-core/lib/**/*',
+        'build/vendor/mdk-html5-lib-ui/lib/**/*']).on('change', function (file) {
         runSequence(
             ['html2js', 'sass', 'copy:buildAppAssets', 'copy:buildAppjs'],
             'bowerDepToHtml',
