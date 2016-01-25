@@ -13,8 +13,12 @@
     <allow-intent href="tel:*" />
     <!-- Allow geo: links to open maps -->
     <allow-intent href="geo:*" />
-    <!-- Allow geo: links to open mail app -->
+    <!-- Allow mailto: links to open mail app -->
     <allow-intent href="mailto:*" />
+    <!-- Allow Internet -->
+    <allow-intent href="http://*" />
+    <allow-intent href="https://*" />
+    <allow-intent href="ftp://*" />
 
     <preference name="target-device" value="universal" />
     <preference name="webviewbounce" value="false" />
