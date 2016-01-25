@@ -16,9 +16,10 @@
     <!-- Allow mailto: links to open mail app -->
     <allow-intent href="mailto:*" />
     <!-- Allow Internet -->
-    <allow-intent href="http://*" />
-    <allow-intent href="https://*" />
-    <allow-intent href="ftp://*" />
+    <access origin="*" />
+    <access origin="http://*" launch-external="yes" />
+    <access origin="https://*" launch-external="yes" />
+    <access origin="ftp://*" launch-external="yes" />
 
     <preference name="target-device" value="universal" />
     <preference name="webviewbounce" value="false" />
@@ -51,5 +52,4 @@
     <feature name="StatusBar">
         <param name="ios-package" value="CDVStatusBar" onload="true" />
     </feature>
-    <access origin="*" />
 </widget>
