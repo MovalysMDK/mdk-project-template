@@ -37,5 +37,8 @@
     "underscore": "^1.6.0",
     "wiredep": "^2.2.2",
     "yargs": "^3.30.0"
+  },
+  "scripts": {
+    "postinstall" : "node ./node_modules/protractor/bin/webdriver-manager update"
   }
 }
