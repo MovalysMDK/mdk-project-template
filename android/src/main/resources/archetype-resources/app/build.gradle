@@ -145,6 +145,7 @@ task buildDist(type: Zip) {
 spoon {
     // for debug output
     debug = true
+    adbTimeout = 60*10
 
     // To run a single test class
     //className = 'fully.qualified.TestCase'
