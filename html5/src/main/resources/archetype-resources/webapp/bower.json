@@ -8,8 +8,8 @@
   	"description": "${artifactId}",
  	"json": "bower.json",
     "dependencies": {
-        "mdk-html5-lib-core": "master",
-        "mdk-html5-lib-ui": "master"
+        "mdk-html5-lib-core": "1.2.0",
+        "mdk-html5-lib-ui": "1.2.0"
     },
     "overrides": {
         "modernizr": {
