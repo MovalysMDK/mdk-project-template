@@ -1,0 +1,150 @@
+//
+//  Localizable-framework.strings
+//
+//  Created by Movalys MDK.
+//  Copyright (c) 2012 Sopra Group. All rights reserved.
+//
+
+/********************* Unhandled Exception Message ***************/
+"MFUnhandledExceptionTitle" = "Unhandled exception";
+"MFUnhandledExceptionMessage" = "Exception ...\n%@\n%@";
+"MFUnhandledExceptionQuitButton" = "Quit";
+"MFUnhandledExceptionSendLogButton" = "Send Log";
+
+/********************* Custom Exception Message ***************/
+"MFCSSConflictExceptionTitle" = "CSS conflict exception";
+"MFCSSConflictExceptionMessage" = "Two different CSS stylesheets (\"%@\",\"%@\") are given for the controller %@. You must specify only one custom CSS stylesheet by ViewController";
+
+
+/********************* Error message ************************/
+"MFTooShortStringUIValidationError" = "Too short value";
+"MFTooLongStringUIValidationError" = "Too long value";
+"MFMandatoryFieldUIValidationError" = "Mandatory field";
+"MFNoMatchingValueUIValidationError" = "No matching value found";
+"MFInvalidEmailValueUIValidationError" = "The value isn't a valid email address";
+"MFInvalidUrlValueUIValidationError" = "The value isn't a valid URL";
+"MFInvalidPhoneNumberValueUIValidationError" = "The value isn't a valid phone number";
+"MFInvalidDoubleValueUIValidationError" = "The value isn't a valid double number";
+"MFInvalidIntegerValueUIValidationError" = "The value isn't a valid integer number";
+"MFCantSendMailTechnicalError" = "This device can't send mail";
+
+/*********************** Button label *************************/
+"closeButton" = "Close";
+
+/*********************** PickerList Component Buttons *************************/
+"MFPickerListCancelButtonTitle" = "Cancel";
+"MFPickerListSaveButtonTitle" = "OK";
+"MFPickerList_noData_title" = "No data";
+"MFPickerList_noData_message" = "This component can not be displayed because it does not have any data";
+"MFPickerList_noData_button" = "OK";
+
+/*********************** Debug email ************************/
+"DebugLogEmailHTMLBody" = "Email for debugging application named %@";
+"DebugLogEmailHTMLBodyWithNoAttachment" = "Email for debugging application named %@ : no log file available.";
+"DebugLogEmailTitle" = "[Application %@] - Log";
+"DebugLogEmailAttachmentName" = "LogFile%d.zip.log";
+
+/*********************** Create email resulted alert *****************************/
+"SendMailCancelledInfoTitle" = "Send Email Result";
+"SendMailCancelledInfoMessage" = "User cancellation";
+"SendMailSavedCancelButtonTitle" = "Ok";
+"SendMailSavedAlertTitle" = "Save Email Result";
+"SendMailSavedAlertMessage" = "Email saved successfully";
+"SendMailSentCancelButtonTitle" = "Ok";
+"SendMailSentAlertTitle" = "Send Email Result";
+"SendMailSentAlertMessage" = "Email sent successfully";
+"SendMailFailedCancelButtonTitle" = "Ok";
+"SendMailFailedAlertTitle" = "Send Email Result";
+"SendMailFailedAlertMessage" = "Email sending failed";
+"SendMailDefaultCancelButtonTitle" = "Ok";
+"SendMailDefaultAlertTitle" = "Send Email Result";
+"SendMailDefaultAlertMessage" = "Email didn't send";
+
+/*********************** Menu labels with action name  ****************/
+"menu__action_MFImportDatabaseAction__label" = "Import database";
+"menu__action_MFExportDatabaseAction__label" = "Export database";
+"menu__action_MFResetDatabaseAction__label" = "Reset database";
+"menu__action_MFExportLogsAction__label" = "Export logs";
+"menu__action_MFEmailLogsAction__label" = "Email logs";
+"MFEmailLogsActionSubject" = "Application Logs ";
+
+/*********************** Alert fwk actions : title, message, button label  *******************/
+"MFExportDatabaseAction_alertok_title" = "Database Export";
+"MFExportDatabaseAction_alertok_message" = "Database export succeeded";
+"MFExportDatabaseAction_alertok_button" = "OK";
+
+"MFImportDatabaseAction_alertok_title" = "Database Import";
+"MFImportDatabaseAction_alertok_message" = "Database import succeeded";
+"MFImportDatabaseAction_alertok_button" = "OK";
+
+"MFResetDatabaseAction_alertok_title" = "Reset database";
+"MFResetDatabaseAction_alertok_message" = "Reset database succeeded";
+"MFResetDatabaseAction_alertok_button" = "OK";
+
+"error_nosettingsparameterized" = "Application is not parameterized in the settings. You must define settings before starting application.";
+"error_nosettingsparameterized_quitbutton" = "OK";
+
+/*********************** Form ********************/
+
+"form_back" = "Back";
+"form_save" = "Save";
+"form_cancel" = "Cancel";
+
+"alert_discardchanges_title" = "Warning, modifications not saved";
+"alert_discardchanges_message" = "Discard changes ?";
+"alert_discardchanges_no" = "No";
+"alert_discardchanges_yes" = "Yes";
+
+"alert_savechanges_title" = "Warning, modifications not saved";
+"alert_savechanges_message" = "Do you want to save now ?";
+"alert_savechanges_no" = "No";
+"alert_savechanges_yes" = "Yes";
+
+"form_savefailed_title" = "Invalid data";
+"form_savefailed_message" = "Form contains invalid data";
+"form_savefailed_ok" = "Ok";
+
+"form_no_data" = "No data found";
+
+/*********************** WaitingView messages ********************/
+"waiting.view.loading.data" = "Loading data";
+"waiting.view.saving.photo" = "Saving photo...";
+"waiting.view.refreshing.list" = "Refreshing list";
+"waiting.view.indeterminate" = "Please wait...";
+
+/*********************** Signature Component Buttons *************************/
+"MFSignatureCancelButtonTitle" = "Cancel";
+"MFSignatureSaveButtonTitle" = "OK";
+"MFSignatureClearButtonTitle" = "Clear";
+
+/*********************** Photo *************************/
+"photoControllerTitle" = "Photo";
+"photoControllerDetailsTitle" = "Details";
+"photoErrorAlertTitle" = "Error";
+"savingPhotoErrorAlertMessage" = "Save failed";
+"photoAlertOKValue" = "OK";
+"photoNoCameraErrorMessage" = "No camera found";
+
+"photoThumbnail_date_label" = "Date";
+"photoThumbnail_title_label" = "Title";
+"photoThumbnail_description_label" = "Description";
+"photoThumbnail_localisation_label" = "Localisation";
+
+/*********************** General *************************/
+"clearButton" = "Clear";
+"okButton" = "OK";
+"enterText" = "enter text";
+"enterNumber" = "enter number";
+
+/*********************** Position Component *************************/
+"MFPositionError" = "Error";
+"MFPositionErrorMessage" = "Unable to get your position";
+"MFPositionLatitudePlaceholderRW" = "Enter a latitude";
+"MFPositionLongitudePlaceholderRW" = "Enter a longitude";
+"MFPositionLatitudePlaceholderRO" = "Latitude";
+"MFPositionLongitudePlaceholderRO" = "Longitude";
+
+/*********************** Search Panel *******************************/
+"MFFormSearchViewController_title" = "Filter";
+"MFFormSearchViewController_leftButton_title" = "Cancel";
+"MFFormSearchViewController_rightButton_title" = "OK";

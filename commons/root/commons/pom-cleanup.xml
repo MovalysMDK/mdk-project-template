@@ -1,0 +1,39 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.sopragroup.adeuza.movalysfwk</groupId>
+	<artifactId>mdk-project</artifactId>
+	<version>4.2.2-SNAPSHOT</version>	
+	
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>Delete unused files</id>
+						<phase>clean</phase>
+						<configuration>
+							<tasks>
+							    <delete includeemptydirs="true">
+                                	<fileset dir=".." defaultexcludes="false">
+                                    	<include name="*/docs/"/>
+                                        <include name="*/tools/"/>
+                                	</fileset>
+                                </delete>
+  								<delete>
+    								<fileset dir=".." includes="**/delete-safely*.txt"/>
+  								</delete>
+							</tasks>
+						</configuration>
+						<goals>
+                                <goal>run</goal>
+                        </goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

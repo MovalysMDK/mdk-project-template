@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="dataloader" pattern="src[app]:${groupId}.loader..*" />
+</component>

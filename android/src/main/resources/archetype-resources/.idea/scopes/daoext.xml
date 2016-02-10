@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="daoext" pattern="src[app]:${groupId}.dao.*DaoImpl" />
+</component>

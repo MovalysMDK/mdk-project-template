@@ -1,0 +1,46 @@
+##
+# ANDROID GENERATION
+## 
+
+1) Install the apklib of MDK Framework
+
+mvn -B archetype:generate \
+	-DarchetypeGroupId=com.adeuza.movalysfwk \
+	-DarchetypeArtifactId=mdk-apklib-template \
+	-DarchetypeVersion=${mkkapklibversion} \
+	-DarchetypeCatalog=http://pdtinteg.ptx.fr.sopra/artifactory/prj-mdk-releases,http://pdtinteg.ptx.fr.sopra/artifactory/prj-mdk-snapshots \
+	-DgroupId=com.adeuza.movalysfwk \
+	-DartifactId=mdkapklib \
+	-Dversion=${mkkapklibversion}
+	
+mv mdkapklib mdkapklib-${mkkapklibversion}
+
+cd mdkapklib-${mkkapklibversion}
+
+mvn clean install
+
+cd ..
+
+
+2) Generate the android project with the following command :
+
+mvn archetype:generate \
+	-DarchetypeGroupId=com.sopragroup.adeuza.movalysfwk \
+	-DarchetypeArtifactId=mdk-android-project-template \
+	-DarchetypeVersion=${project.version} \
+	-DarchetypeCatalog=http://pdtinteg.ptx.fr.sopra/artifactory/prj-mdk-releases,http://pdtinteg.ptx.fr.sopra/artifactory/prj-mdk-snapshots \
+	-DxmiFile="../commons/modelisation.xml"
+	
+
+3) Rename the generated directory to 'android' and generate the project
+
+cd android
+
+mvn clean install
+
+cd ..
+
+
+4) Launch the following command
+
+mvn -f commons/pom-cleanup.xml clean

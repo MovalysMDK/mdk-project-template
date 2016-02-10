@@ -1,0 +1,10 @@
+//
+//  InfoPlist.strings
+//
+//  Created by Movalys MDK.
+//  Copyright (c) 2014 Sopra. All rights reserved.
+//
+
+
+"CFBundleDisplayName" = "MFTemplate";
+"CFBundleName" = "MFTemplate";

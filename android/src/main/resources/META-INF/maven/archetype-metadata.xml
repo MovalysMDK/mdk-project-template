@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archetype-descriptor name="mdk-android-archetype">
+	<requiredProperties>
+	    <requiredProperty key="applicationName"/>
+	    <requiredProperty key="xmiFile">
+	    	<defaultValue>docs/modelisation/${artifactId}.xml</defaultValue>
+	    </requiredProperty>
+	    <requiredProperty key="generationVersion">
+	    	<defaultValue>2.0.0</defaultValue>
+	    </requiredProperty>
+	    <requiredProperty key="adjavaDebug">
+	    	<defaultValue>false</defaultValue>
+	    </requiredProperty>
+	    <requiredProperty key="version">
+	    	<defaultValue>1.0.0-SNAPSHOT</defaultValue>
+	    </requiredProperty>
+	</requiredProperties>
+
+	<fileSets>
+		
+	    <!-- root filtered -->
+		<fileSet filtered="true" encoding="UTF-8">
+		    <directory></directory>
+			<includes>
+				<include>build.gradle</include>
+				<include>grade.properties</include>
+				<include>settings.gradle</include>
+			</includes>
+		</fileSet>
+		
+		<!-- root non filtered -->
+		<fileSet filtered="false" encoding="UTF-8">
+		    <directory></directory>
+			<includes>
+				<include>.gitignore</include>
+				<include>gradlew</include>
+				<include>gradlew.bat</include>
+			</includes>
+		</fileSet>
+	    
+		<!-- app -->
+		<fileSet filtered="true" encoding="UTF-8">
+			<directory>app</directory>
+			<includes>
+				<include>**/*.xml</include>
+				<include>**/*.properties</include>
+				<include>**/*.gradle</include>
+			</includes>
+			<excludes>
+				<exclude>src/res/**/*</exclude>
+				<exclude>src/main/java/**/*</exclude>
+				<exclude>src/androidTest/java/**/*</exclude>
+				<exclude>libs/**/*</exclude>
+			</excludes>
+		</fileSet>
+					
+		<!-- src/main/java is packaged structure -->
+		<fileSet filtered="true" encoding="UTF-8" packaged="true">
+			<directory>app/src/main/java</directory>
+			<includes>
+				<include>**/*.java</include>
+			</includes>
+		</fileSet>
+		
+		<!-- src/androidTest/java is packaged structure -->
+		<fileSet filtered="true" encoding="UTF-8" packaged="true">
+			<directory>app/src/androidTest/java</directory>
+			<includes>
+				<include>**/*.java</include>
+			</includes>
+		</fileSet>
+		
+		<!-- not filtered android resources -->
+		<fileSet filtered="false">
+			<directory>app</directory>
+			<includes>
+				<include>src/main/res/**/*</include>
+				<include>src/androidTest/res/**/*</include>
+				<include>libs/**/*</include>
+			</includes>
+			<excludes>
+				<exclude>src/main/res/values/**/*</exclude>
+			</excludes>
+		</fileSet>
+		
+		<!-- filtered android resources -->		
+		<fileSet filtered="true">
+			<directory>app</directory>
+			<includes>
+				<include>src/main/res/values/**/*</include>
+			</includes>
+		</fileSet>		
+		
+		<!-- docs -->	
+		<fileSet filtered="false" encoding="UTF-8">
+			<directory>docs</directory>
+			<includes>
+				<include>**/*</include>
+			</includes>
+		</fileSet>
+		
+		<!-- qrcode filtered resources -->
+		<fileSet filtered="true" encoding="UTF-8">
+			<directory>qrcode</directory>
+			<includes>
+				<include>**/*</include>
+			</includes>
+			<excludes>
+				<exclude>**/*.png</exclude>
+			</excludes>
+		</fileSet>
+
+		<!-- qrcode non filtered resources -->
+		<fileSet filtered="false" encoding="UTF-8">
+			<directory>qrcode</directory>
+			<includes>
+				<include>**/*.png</include>
+			</includes>
+		</fileSet>
+
+		<!-- version -->	
+		<fileSet filtered="false" encoding="UTF-8">
+			<directory>version</directory>
+			<includes>
+				<include>**/*.xml</include>
+			</includes>
+		</fileSet>
+
+		<!-- .idea -->
+	    <fileSet filtered="true" encoding="UTF-8">
+			<directory>.idea</directory>
+			<includes>
+				<include>**/*.xml</include>
+			</includes>
+		</fileSet>
+		
+	    <!-- gradle -->
+	    <fileSet filtered="false" encoding="UTF-8">
+			<directory>gradle</directory>
+			<includes>
+				<include>**/*</include>
+			</includes>
+		</fileSet>
+		
+	</fileSets>
+
+</archetype-descriptor>

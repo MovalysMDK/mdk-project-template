@@ -1,0 +1,40 @@
+//
+//  Prefix.pch
+//  MFTemplate
+//
+//  Created by Movalys MDK.
+//  Copyright (c) 2012 Sopra Group. All rights reserved.
+//
+// Prefix header for all source files of the 'MFTemplate' target in the 'MFTemplate' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_1
+#warning "This project uses features only available in iOS SDK 5.1 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import <CoreData/CoreData.h>
+    
+    #define MR_ENABLE_ACTIVE_RECORD_LOGGING 0
+    #import <MagicalRecord/CoreData+MagicalRecord.h>
+    
+    #import <MFCore/foundationExt/MFCoreFoundationExt.h>
+    #import <MFCore/log/MFCoreLog.h>
+    #import <MFCore/error/MFCoreError.h>
+    #import <MFCore/bean/MFCoreBean.h>
+    #import <MFCore/form/descriptor/MFCoreFormDescriptor.h>
+    #import <MFCore/action/MFCoreAction.h>
+    #import <MFCore/application/MFCoreApplication.h>
+    #import <MFCore/coredata/MFCoreCoredata.h>
+    #import <MFCore/dataloader/MFCoreDataloader.h>
+    #import <MFCore/i18n/MFCoreI18n.h>
+    #import <MFUI/MFUI.h>
+
+	//@generated-start[gen-imports][X]
+	//@generated-end
+
+#endif

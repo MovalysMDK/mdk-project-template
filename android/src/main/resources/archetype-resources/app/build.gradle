@@ -1,0 +1,133 @@
+apply plugin: 'com.android.application'
+apply plugin: 'mdkdbkeystore'
+apply plugin: 'mdkdrawablecheck'
+apply plugin: 'mdkkeytool'
+apply plugin: 'com.github.dcendents.android-maven'
+
+group = "${groupId}"
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion "21.1.2"
+
+    defaultConfig {
+        applicationId "${groupId}"
+        minSdkVersion 10
+        targetSdkVersion 21
+        versionCode 100
+        versionName "1.0"
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("android.keystore")
+            storePassword "a2aandroidSC"
+            keyAlias "android"
+            keyPassword "a2aandroidSC"
+        }
+    }
+
+    buildTypes {
+        debug {
+            testCoverageEnabled = true
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+
+    lintOptions {
+          abortOnError false
+    }
+
+    jacoco {
+        version = "0.7.1.201405082137"
+    }
+
+    packagingOptions {
+        exclude 'META-INF/LICENCE.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'LICENSE.txt'
+    }
+}
+
+dependencies {
+    compile "com.android.support:appcompat-v7:$appcompatv7Version"
+    compile "com.soprasteria.mdk:mdk:$mdkAndroidVersion@aar"
+    compile "com.soprasteria.mdk:mdk-$databaseVariant:$mdkAndroidVersion@aar"
+    compile "com.soprasteria.mdk:mdk-workspace:$mdkAndroidVersion@aar"
+    compile "com.soprasteria.mdk:mdk-scanner:$mdkAndroidVersion@aar"
+
+    compile "ch.acra:acra:$acraVersion"
+    compile "com.squareup.okhttp:okhttp:$okHttpVersion"
+    compile "com.google.code.gson:gson:$gsonVersion"
+
+    androidTestCompile 'junit:junit:4.11'
+}
+
+mdkdbkeystore {
+    password "a2aandroidSC"
+    alias "dbcrypt"
+    outputFile file("${project.projectDir}/src/main/res/raw/dbkeystore")
+}
+
+mdkkeytool {
+    keystore file("${project.projectDir}/android.keystore")
+	dname "CN=steria.com"
+    keypass "a2aandroidSC"
+	storepass "a2aandroidSC"
+    alias "android"
+}
+
+mdkdrawablecheck {
+    inputDirectory file("${project.projectDir}/src/main/res")
+    outputDirectory file("${project.projectDir}/report")
+}
+
+task androidJavadocs(type: Javadoc) {
+    options {
+        linksOffline "http://d.android.com/reference", "${android.sdkDirectory}/docs/reference"
+    }
+    exclude '**/BuildConfig.java'
+    exclude '**/R.java'
+    source = android.sourceSets.main.java.sourceFiles
+    classpath += project.files(project.android.getBootClasspath().join(File.pathSeparator))
+}
+
+task androidJavadocsJar(type: Jar, dependsOn: androidJavadocs) {
+    classifier = 'javadoc'
+    from androidJavadocs.destinationDir
+}
+
+task androidSourcesJar(type: Jar) {
+    classifier = 'sources'
+    from android.sourceSets.main.java.sourceFiles
+}
+
+artifacts {
+    archives androidSourcesJar
+    archives androidJavadocsJar
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: mdkArtifactoryRepoReleases) {
+                authentication(userName: mdkArtifactoryUsername, password: mdkArtifactoryPassword)
+            }
+            snapshotRepository(url: mdkArtifactoryRepoSnapshots) {
+                authentication(userName: mdkArtifactoryUsername, password: mdkArtifactoryPassword)
+            }
+        }
+    }
+}
+
+task buildDist(type: Zip) {
+    into 'jars'
+    from { subprojects.configurations.runtime }
+    from { subprojects.jar }
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+

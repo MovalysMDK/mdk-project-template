@@ -1,0 +1,29 @@
+##
+# IOS GENERATION
+## 
+
+1) Generate the ios project with the following command :
+
+mvn archetype:generate \
+   	-DarchetypeGroupId=com.sopragroup.adeuza.movalysfwk \
+    -DarchetypeArtifactId=mdk-ios-project-template \
+    -DarchetypeVersion=${project.version} \
+    -DarchetypeCatalog=http://pdtinteg.ptx.fr.sopra/artifactory/prj-mdk-releases,http://pdtinteg.ptx.fr.sopra/artifactory/prj-mdk-snapshots \
+    -DxmiFile="../commons/modelisation.xml"
+    
+
+2) Rename the generated directory to 'ios' and generate the project
+
+cd ios
+
+pod install
+
+mvn clean install
+
+cd ..
+
+
+3) Launch the following command
+
+mvn -f commons/pom-cleanup.xml clean
+

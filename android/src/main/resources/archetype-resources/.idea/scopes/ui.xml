@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="ui" pattern="src[app]:${groupId}.application..*||src[app]:${groupId}.panel..*||lib:android.widget..*" />
+</component>

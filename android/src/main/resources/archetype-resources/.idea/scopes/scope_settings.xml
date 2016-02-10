@@ -1,0 +1,27 @@
+<component name="DependencyValidationManager">
+  <state>
+    <option name="SKIP_IMPORT_STATEMENTS" value="false" />
+    <deny_rule from_scope="model" to_scope="dao" is_deny="true" />
+    <deny_rule from_scope="model" to_scope="viewmodel" is_deny="true" />
+    <deny_rule from_scope="model" to_scope="daoext" is_deny="true" />
+    <deny_rule from_scope="model" to_scope="dataloader" is_deny="true" />
+    <deny_rule from_scope="model" to_scope="action" is_deny="true" />
+    <deny_rule from_scope="model" to_scope="ui" is_deny="true" />
+    <deny_rule from_scope="dao" to_scope="daoext" is_deny="true" />
+    <deny_rule from_scope="dao" to_scope="viewmodel" is_deny="true" />
+    <deny_rule from_scope="dao" to_scope="action" is_deny="true" />
+    <deny_rule from_scope="dao" to_scope="dataloader" is_deny="true" />
+    <deny_rule from_scope="dao" to_scope="action" is_deny="true" />
+    <deny_rule from_scope="dao" to_scope="ui" is_deny="true" />
+    <deny_rule from_scope="daoext" to_scope="viewmodel" is_deny="true" />
+    <deny_rule from_scope="daoext" to_scope="dataloader" is_deny="true" />
+    <deny_rule from_scope="daoext" to_scope="action" is_deny="true" />
+    <deny_rule from_scope="daoext" to_scope="ui" is_deny="true" />
+    <deny_rule from_scope="viewmodel" to_scope="action" is_deny="true" />
+    <deny_rule from_scope="viewmodel" to_scope="ui" is_deny="true" />
+    <deny_rule from_scope="dataloader" to_scope="viewmodel" is_deny="true" />
+    <deny_rule from_scope="dataloader" to_scope="action" is_deny="true" />
+    <deny_rule from_scope="dataloader" to_scope="ui" is_deny="true" />
+    <deny_rule from_scope="action" to_scope="ui" is_deny="true" />
+  </state>
+</component>

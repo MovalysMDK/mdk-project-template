@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="dao" pattern="src[app]:${groupId}.dao.Abstract*||src[app]:com.sopragroup.mdk.handson.mesnotesdefrais.dao.*Dao||src[app]:com.sopragroup.mdk.handson.mesnotesdefrais.dao.*Field" />
+</component>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name"><!-- MF_DEV_MANDATORY put the application name-->${applicationName}</string>
+	<string name="splash_version"><!-- MF_DEV_MANDATORY put the application name-->${applicationName} - %1$s</string><!-- %1$s remplacé par le numéro de version -->	
+</resources>

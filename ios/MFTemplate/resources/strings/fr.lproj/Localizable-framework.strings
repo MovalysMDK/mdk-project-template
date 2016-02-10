@@ -1,0 +1,153 @@
+//
+//  Localizable-framework.strings
+//
+//  Created by Movalys MDK.
+//  Copyright (c) 2012 Sopra Group. All rights reserved.
+//
+
+/********************* Unhandled Exception Message ***************/
+"MFUnhandledExceptionTitle" = "Erreur inconnue";
+"MFUnhandledExceptionMessage" = "Erreur ...\n%@\n%@";
+"MFUnhandledExceptionQuitButton" = "Quitter";
+"MFUnhandledExceptionSendLogButton" = "Erreur lors de l'envoi de log";
+
+/********************* Custom Exception Message ***************/
+"MFCSSConflictExceptionTitle" = "Erreur : conflit CSS";
+"MFCSSConflictExceptionMessage" = "Deux feuilles de style CSS différentes (\"%@\",\"%@\") sont spécifiées pour le contrôleur %@. Vous devez spécifier une seule feuille de style personnalisée par contrôleur.";
+
+/********************* Error message ************************/
+"MFTooShortStringUIValidationError" = "Valeur trop petite";
+"MFTooLongStringUIValidationError" = "Valeur trop grande";
+"MFMandatoryFieldUIValidationError" = "Champ obligatoire";
+"MFNoMatchingValueUIValidationError" = "Aucune valeur trouvée";
+"MFInvalidEmailValueUIValidationError" = "La saisie n'est pas une adresse e-mail valide";
+"MFInvalidUrlValueUIValidationError" = "La saisie n'est pas une URL valide";
+"MFInvalidPhoneNumberValueUIValidationError" = "La saisie n'est pas un numéro de téléphone valide";
+"MFInvalidDoubleValueUIValidationError" = "La saisie n'est pas un nombre décimal valide";
+"MFInvalidIntegerValueUIValidationError" = "La saisie n'est pas un nombre entier valide";
+"MFCantSendMailTechnicalError" = "Cet appareil ne peut pas envoyer d'e-mail";
+
+/*********************** Button label *************************/
+"closeButton" = "Fermer";
+
+/*********************** PickerList Component Buttons *************************/
+"MFPickerListCancelButtonTitle" = "Annuler";
+"MFPickerListSaveButtonTitle" = "OK";
+"MFPickerList_noData_title" = "Aucune donnée";
+"MFPickerList_noData_message" = "Ce composant ne peut être affiché car il n'a pas de donnée.";
+"MFPickerList_noData_button" = "OK";
+
+/*********************** Debug email ************************/
+"DebugLogEmailHTMLBody" = "E-mail de débuggage de l'application %@";
+"DebugLogEmailHTMLBodyWithNoAttachment" = "E-mail de débuggage de l'application %@ : pas de fichier de log disponible.";
+"DebugLogEmailTitle" = "[Application %@] - Log";
+"DebugLogEmailAttachmentName" = "LogFile%d.zip.log";
+
+/*********************** Create email resulted alert ****************/
+"SendMailCancelledInfoTitle" = "Envoi de message";
+"SendMailCancelledInfoMessage" = "Annulation par l'utilisateur";
+"SendMailSavedCancelButtonTitle" = "Ok";
+"SendMailSavedAlertTitle" = "Sauvegarde";
+"SendMailSavedAlertMessage" = "Message sauvegardé avec succès";
+"SendMailSentCancelButtonTitle" = "Ok";
+"SendMailSentAlertTitle" = "Envoi";
+"SendMailSentAlertMessage" = "Message envoyé avec succès";
+"SendMailFailedCancelButtonTitle" = "Ok";
+"SendMailFailedAlertTitle" = "Envoi";
+"SendMailFailedAlertMessage" = "Echec de l'envoi du message";
+"SendMailDefaultCancelButtonTitle" = "Ok";
+"SendMailDefaultAlertTitle" = "Envoi";
+"SendMailDefaultAlertMessage" = "Le message n'a pas été envoyé";
+
+/*********************** Menu labels with action name  ****************/
+"menu__action_MFImportDatabaseAction__label" = "Import Base de données";
+"menu__action_MFExportDatabaseAction__label" = "Export Base de données";
+"menu__action_MFResetDatabaseAction__label" = "Reset Base de données";
+"menu__action_MFExportLogsAction__label" = "Export des logs";
+"menu__action_MFEmailLogsAction__label" = "Envoi des logs par email";
+"MFEmailLogsActionSubject" = "Logs de l'Application";
+
+/*********************** Alert fwk actions : title, message, button label  ******/
+"MFExportDatabaseAction_alertok_title" = "Export Base de données";
+"MFExportDatabaseAction_alertok_message" = "Export Base de données réussi";
+"MFExportDatabaseAction_alertok_button" = "OK";
+
+"MFImportDatabaseAction_alertok_title" = "Import Base de données ";
+"MFImportDatabaseAction_alertok_message" = "Import Base de données réussi";
+"MFImportDatabaseAction_alertok_button" = "OK";
+
+"MFResetDatabaseAction_alertok_title" = "Reset Base de données";
+"MFResetDatabaseAction_alertok_message" = "Reset Base de données réussi";
+"MFResetDatabaseAction_alertok_button" = "OK";
+
+"error_nosettingsparameterized" = "L'application n'est pas parametrée dans les réglages. Vous devez définir les réglages avant de démarrer l'application.";
+"error_nosettingsparameterized_quitbutton" = "OK";
+
+/*********************** Form *******/
+
+"form_back" = "Retour";
+"form_save" = "Enregistrer";
+"form_cancel" = "Annuler";
+
+"alert_discardchanges_title" = "Attention, les modifications ne sont pas enregistrées";
+"alert_discardchanges_message" = "Perdre les changements ?";
+"alert_discardchanges_no" = "Non";
+"alert_discardchanges_yes" = "Oui";
+
+"alert_savechanges_title" = "Attention, les modifications ne sont pas enregistrées";
+"alert_savechanges_message" = "Voulez-vous enregistrer les changements ?";
+"alert_savechanges_no" = "Non";
+"alert_savechanges_yes" = "Oui";
+
+"form_savefailed_title" = "Invalid data";
+"form_savefailed_message" = "Form contains invalid data";
+"form_savefailed_ok" = "Ok";
+
+"form_no_data" = "Aucun résultat";
+
+
+/*********************** WaitingView messages ********************/
+
+"waiting.view.loading.data" = "Chargement des données";
+"waiting.view.saving.photo" = "Sauvegarde de la photo en cours...";
+"waiting.view.refreshing.list" = "Actualisation de la liste";
+"waiting.view.indeterminate" = "Patientez svp...";
+
+
+/*********************** Signature Component Buttons *************************/
+"MFSignatureCancelButtonTitle" = "Annuler";
+"MFSignatureSaveButtonTitle" = "OK";
+"MFSignatureClearButtonTitle" = "Effacer";
+
+/*********************** Photo *************************/
+"photoControllerTitle" = "Photo";
+"photoControllerDetailsTitle" = "Détails";
+"photoErrorAlertTitle" = "Erreur";
+"savingPhotoErrorAlertMessage" = "Impossible de sauvegarder la photo";
+"photoAlertOKValue" = "OK";
+"photoNoCameraErrorMessage" = "Aucun appareil photo trouvé";
+
+"photoThumbnail_date_label" = "Date";
+"photoThumbnail_title_label" = "Titre";
+"photoThumbnail_description_label" = "Description";
+"photoThumbnail_localisation_label" = "Localisation";
+
+
+/*********************** General *************************/
+"clearButton" = "Effacer";
+"okButton" = "OK";
+"enterText" = "saisir un texte";
+"enterNumber" = "saisir un nombre";
+
+/*********************** Position Component *************************/
+"MFPositionError" = "Erreur";
+"MFPositionErrorMessage" = "Impossible de déterminer de votre position";
+"MFPositionLatitudePlaceholderRW" = "Saisir une latitude";
+"MFPositionLongitudePlaceholderRW" = "Saisir une longitude";
+"MFPositionLatitudePlaceholderRO" = "Latitude";
+"MFPositionLongitudePlaceholderRO" = "Longitude";
+
+/*********************** Search Panel *******************************/
+"MFFormSearchViewController_title" = "Filtre";
+"MFFormSearchViewController_leftButton_title" = "Annuler";
+"MFFormSearchViewController_rightButton_title" = "OK";

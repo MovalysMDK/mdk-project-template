@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archetype-descriptor name="web-archetype">
+	<requiredProperties>
+	    <requiredProperty key="productId">
+	    	<defaultValue>${artifactId}</defaultValue>
+	    </requiredProperty>
+	    <requiredProperty key="xmiFile">
+	    	<defaultValue>${artifactId}/docs/modelisation/${artifactId}.xml</defaultValue>
+	    </requiredProperty>
+	</requiredProperties>
+	
+	<fileSets>
+
+	    <fileSet filtered="false" encoding="UTF-8">
+	        <directory/>
+			<includes>
+				<include>Podfile</include>
+				<include>computeCoverage.sh</include>
+			</includes>
+	    </fileSet>
+
+	    <fileSet filtered="false" encoding="UTF-8">
+	        <directory>version</directory>
+			<includes>
+				<include>lastGeneration.xml</include>
+			</includes>
+	    </fileSet>
+	    	
+	    <fileSet filtered="false" encoding="UTF-8">
+	        <directory>conf</directory>
+			<includes>
+				<include>uncrustify.cfg</include>
+			</includes>
+	    </fileSet>
+	    
+		<!-- Project.xcodeproj filtered resources -->
+		<fileSet filtered="true" encoding="UTF-8">
+			<directory>__productId__.xcodeproj</directory>
+			<includes>
+				<include>**/*</include>
+			</includes>
+		</fileSet>
+		
+		<!-- Project filtered resources -->
+		<fileSet filtered="true" encoding="UTF-8">
+			<directory>__productId__</directory>
+			<includes>
+				<include>**/*.txt</include>
+				<include>**/*.h</include>
+				<include>**/*.m</include>
+				<include>**/*.pch</include>
+				<include>**/*.xml</include>
+				<include>**/*.strings</include>
+				<include>**/*.nss</include>
+				<include>**/*.json</include>
+			</includes>
+			<excludes>
+				<exclude>**/*.png</exclude>
+				<exclude>src/application/AppLogging.h</exclude>
+			</excludes>
+		</fileSet>
+		
+		<!-- Project non-filtered resources -->
+		<fileSet filtered="false">
+			<directory>__productId__</directory>
+			<includes>
+				<include>**/*.plist</include>
+				<include>**/*.png</include>
+				<include>**/*.xmi</include>
+				<include>**/*.vpp</include>
+				<include>**/.keep</include>
+				<include>**/*.storyboard</include>
+				<include>**/*.xib</include>
+				<include>**/*.xls</include>
+				<include>**/*.mdzip</include>
+				<include>**/*.html</include>
+				<include>**/*.js</include>
+				<include>src/application/AppLogging.h</include>
+			</includes>
+		</fileSet>
+	</fileSets>
+
+</archetype-descriptor>

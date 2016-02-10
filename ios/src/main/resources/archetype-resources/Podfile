@@ -1,0 +1,4 @@
+	platform :ios, '5.1'
+
+	pod 'MFCore', '1.4.1'
+	pod 'MFUI', '1.4.1'

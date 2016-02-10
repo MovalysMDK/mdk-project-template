@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="model" pattern="src[app]:${groupId}.model.*" />
+</component>

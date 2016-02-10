@@ -1,0 +1,118 @@
+<!--
+
+    Copyright (C) 2010 Sopra Steria Group (movalys.support@soprasteria.com)
+
+    This file is part of Movalys MDK.
+    Movalys MDK is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Lesser General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+    Movalys MDK is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    GNU Lesser General Public License for more details.
+    You should have received a copy of the GNU Lesser General Public License
+    along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.sopragroup.adeuza.movalysfwk</groupId>
+		<artifactId>mdk-project-template</artifactId>
+		<version>6.0.0-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+
+	<artifactId>mdk-ios-project-template</artifactId>
+	<packaging>jar</packaging>
+
+	<name>MDK IOS Project Template</name>
+
+	<organization>
+	    <name>Sopra</name>
+	</organization>
+
+	<licenses>
+		<license>
+			<name>GNU LGPL 3</name>
+			<url>http://www.gnu.org/licenses/lgpl.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+	
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<compileSource>1.7</compileSource>
+		<target>1.7</target>
+	</properties>
+	
+	<build>
+		<plugins>
+			<plugin>
+        		<artifactId>maven-antrun-plugin</artifactId>
+        		<executions>
+                	<execution>
+                        <id>Copy and rename module files</id>
+                        <phase>generate-sources</phase>
+                        <configuration>
+                                <tasks>
+                                         <copy todir="${project.build.outputDirectory}/archetype-resources/__productId__" verbose="true" overwrite="true">
+                                                <fileset dir="${basedir}/MFTemplate">
+                                                        <include name="**/*" />
+                                                </fileset>
+    											<mapper>
+        											<chainedmapper>
+        												<filtermapper>
+                                                        	<replacestring from="MFTemplate" to="__productId__" />
+                                                		</filtermapper>
+        											</chainedmapper>
+        										</mapper>
+                                        </copy>                                         
+                                         <copy todir="${project.build.outputDirectory}/archetype-resources/__productId__.xcodeproj" verbose="true" overwrite="true">
+                                                <fileset dir="${basedir}/MFTemplate.xcodeproj">
+                                                        <include name="**/*" />
+                                                </fileset>
+    											<mapper>
+        											<chainedmapper>
+        												<filtermapper>
+                                                        	<replacestring from="MFTemplate" to="__productId__" />
+                                                		</filtermapper>
+        											</chainedmapper>
+        										</mapper>
+                                        </copy>                                         
+                                         <copy todir="${project.build.outputDirectory}/archetype-resources/__productId__/resources/strings/" verbose="true" overwrite="true">
+                                                <fileset dir="${basedir}/MFTemplate/resources/strings/">
+                                                        <include name="**/*" />
+                                                </fileset>
+                                                <mapper>
+                                                    <chainedmapper>
+                                                        <filtermapper>
+                                                            <replacestring from="MFTemplate" to="__productId__" />
+                                                        </filtermapper>
+                                                    </chainedmapper>
+                                                </mapper>
+                                        </copy>                                        
+                                        
+		                                <copy file="../commons/root/commons/UML Movalys Framework Profile.mdzip" todir="${project.build.directory}/classes/archetype-resources/__productId__/docs/modelisation/" verbose="true" overwrite="true">
+		                                </copy>
+		                                <copy file="../commons/root/commons/MOV-MM-Referentiel_de_donnees-V1.0.xls" todir="${project.build.directory}/classes/archetype-resources/__productId__/tools/" verbose="true" overwrite="true">
+		                                </copy>
+                                         
+                                        <replace token="MFTemplate" value="${productId}" dir="${project.build.outputDirectory}/archetype-resources/">                                 
+              								<include name="**/*" />
+            							</replace>
+                                </tasks>
+                        </configuration>
+                        <goals>
+                                <goal>run</goal>
+                        </goals>
+                	</execution>
+        		</executions>
+			</plugin>
+		</plugins>
+
+	</build>
+
+</project>

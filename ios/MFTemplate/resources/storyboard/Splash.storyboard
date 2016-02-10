@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="DNg-Ik-K1R">
+    <dependencies>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <scenes>
+        <!--Simple Splash View Controller-->
+        <scene sceneID="kqX-IB-pJo">
+            <objects>
+                <viewController storyboardIdentifier="MFSimpleSplashViewController" autoresizesArchivedViewToFullSize="NO" id="DNg-Ik-K1R" customClass="MFSimpleSplashViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Uya-Az-p07"/>
+                        <viewControllerLayoutGuide type="bottom" id="P9e-5g-ix5"/>
+                    </layoutGuides>
+                    <view key="view" clipsSubviews="YES" contentMode="scaleAspectFit" id="wip-nE-8cl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Jtq-ay-uTS">
+                                <rect key="frame" x="142" y="291" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="37" id="4df-l1-GoH"/>
+                                    <constraint firstAttribute="height" constant="37" id="HHN-Rg-BAW"/>
+                                </constraints>
+                                <color key="color" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UfV-Mr-JqJ">
+                                <rect key="frame" x="0.0" y="381" width="320" height="187"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Generated with Movalys Framework" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c2C-rU-Mxb">
+                                        <rect key="frame" x="0.0" y="159" width="320" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="22" id="5rx-TC-gvi"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bFa-hg-vxd">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="2"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="2" id="7Fi-F9-4We"/>
+                                        </constraints>
+                                        <color key="progressTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="trackTintColor" red="0.50196081399917603" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </progressView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoSopra.png" translatesAutoresizingMaskIntoConstraints="NO" id="NBK-Zz-EEZ">
+                                        <rect key="frame" x="0.0" y="10" width="320" height="146"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.95121464416058399" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="NBK-Zz-EEZ" firstAttribute="top" secondItem="bFa-hg-vxd" secondAttribute="bottom" constant="8" id="4Kc-lE-A0r"/>
+                                    <constraint firstItem="bFa-hg-vxd" firstAttribute="leading" secondItem="UfV-Mr-JqJ" secondAttribute="leading" id="EdC-li-iAW"/>
+                                    <constraint firstItem="c2C-rU-Mxb" firstAttribute="top" secondItem="NBK-Zz-EEZ" secondAttribute="bottom" constant="3" id="JKG-e9-2mN"/>
+                                    <constraint firstItem="NBK-Zz-EEZ" firstAttribute="leading" secondItem="UfV-Mr-JqJ" secondAttribute="leading" id="PrV-9Y-ki8"/>
+                                    <constraint firstItem="bFa-hg-vxd" firstAttribute="top" secondItem="UfV-Mr-JqJ" secondAttribute="top" id="SUA-PN-WUI"/>
+                                    <constraint firstAttribute="trailing" secondItem="NBK-Zz-EEZ" secondAttribute="trailing" id="XUa-0I-1sn"/>
+                                    <constraint firstAttribute="bottom" secondItem="c2C-rU-Mxb" secondAttribute="bottom" constant="6" id="gNg-YF-bUE"/>
+                                    <constraint firstAttribute="trailing" secondItem="bFa-hg-vxd" secondAttribute="trailing" id="hgM-SG-hjb"/>
+                                    <constraint firstItem="c2C-rU-Mxb" firstAttribute="leading" secondItem="UfV-Mr-JqJ" secondAttribute="leading" id="p9e-pj-tlW"/>
+                                    <constraint firstAttribute="trailing" secondItem="c2C-rU-Mxb" secondAttribute="trailing" id="wnV-JH-w8K"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="300" id="x1r-gV-W4g"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splashImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="1Hj-b5-Agc">
+                                <rect key="frame" x="0.0" y="49" width="320" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="P9e-5g-ix5" firstAttribute="top" secondItem="UfV-Mr-JqJ" secondAttribute="bottom" id="4HH-Db-b6T"/>
+                            <constraint firstItem="1Hj-b5-Agc" firstAttribute="leading" secondItem="wip-nE-8cl" secondAttribute="leading" id="4en-rq-G9V"/>
+                            <constraint firstItem="UfV-Mr-JqJ" firstAttribute="leading" secondItem="wip-nE-8cl" secondAttribute="leading" id="5kp-2y-Iha"/>
+                            <constraint firstAttribute="centerY" secondItem="Jtq-ay-uTS" secondAttribute="centerY" constant="-25.5" id="64R-Mf-BDZ"/>
+                            <constraint firstItem="UfV-Mr-JqJ" firstAttribute="top" relation="lessThanOrEqual" secondItem="Jtq-ay-uTS" secondAttribute="bottom" priority="750" constant="53" id="Erq-LU-EsL"/>
+                            <constraint firstAttribute="trailing" secondItem="UfV-Mr-JqJ" secondAttribute="trailing" id="Fi1-xR-zA7"/>
+                            <constraint firstAttribute="centerX" secondItem="Jtq-ay-uTS" secondAttribute="centerX" constant="-0.5" id="ngr-GR-MQC"/>
+                            <constraint firstItem="1Hj-b5-Agc" firstAttribute="top" secondItem="Uya-Az-p07" secondAttribute="bottom" constant="29" id="pLv-kT-VGJ"/>
+                            <constraint firstAttribute="trailing" secondItem="1Hj-b5-Agc" secondAttribute="trailing" id="rH7-cy-dle"/>
+                            <constraint firstItem="Jtq-ay-uTS" firstAttribute="top" relation="greaterThanOrEqual" secondItem="1Hj-b5-Agc" secondAttribute="bottom" constant="42" id="sIo-5c-8DQ"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="320" height="568"/>
+                    <connections>
+                        <outlet property="indicatorView" destination="Jtq-ay-uTS" id="D4t-Hw-9dh"/>
+                        <outlet property="progressView" destination="bFa-hg-vxd" id="2aY-vu-dgg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GbD-Ay-Eg2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="195" y="-173"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="LogoSopra.png" width="310" height="107"/>
+        <image name="splashImage.png" width="380" height="260"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
