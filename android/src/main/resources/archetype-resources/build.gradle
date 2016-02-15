@@ -12,6 +12,8 @@ buildscript {
                 password mdkArtifactoryPassword
             }
         }
+        // >>>> SNAPSHOT
+        // DO NOT REMOVE -> This tag is used by release scripts
         maven {
             url mdkArtifactoryRepoSnapshots
             credentials {
@@ -19,6 +21,7 @@ buildscript {
                 password mdkArtifactoryPassword
             }
         }
+        // >>>> end SNAPSHOT
         jcenter()
 
     }
@@ -57,6 +60,8 @@ allprojects {
                 password mdkArtifactoryPassword
             }
         }
+        // >>>> SNAPSHOT
+        // DO NOT REMOVE -> This tag is used by release scripts
         maven {
             url mdkArtifactoryRepoSnapshots
             credentials {
@@ -64,6 +69,7 @@ allprojects {
                 password mdkArtifactoryPassword
             }
         }
+        // >>>> end SNAPSHOT
         jcenter()
     }
 
