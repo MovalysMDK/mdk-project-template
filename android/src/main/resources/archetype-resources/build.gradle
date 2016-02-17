@@ -12,16 +12,7 @@ buildscript {
                 password mdkArtifactoryPassword
             }
         }
-        // >>>> SNAPSHOT
-        // DO NOT REMOVE -> This tag is used by release scripts
-        maven {
-            url mdkArtifactoryRepoSnapshots
-            credentials {
-                username mdkArtifactoryUsername
-                password mdkArtifactoryPassword
-            }
-        }
-        // >>>> end SNAPSHOT
+        
         jcenter()
 
     }
@@ -60,16 +51,7 @@ allprojects {
                 password mdkArtifactoryPassword
             }
         }
-        // >>>> SNAPSHOT
-        // DO NOT REMOVE -> This tag is used by release scripts
-        maven {
-            url mdkArtifactoryRepoSnapshots
-            credentials {
-                username mdkArtifactoryUsername
-                password mdkArtifactoryPassword
-            }
-        }
-        // >>>> end SNAPSHOT
+        
         jcenter()
     }
 
@@ -83,9 +65,9 @@ allprojects {
 
         // library versions
         appcompatv7Version = "23.1.0"
-        mdkAndroidVersion = '6.2.0-SNAPSHOT'
-        mdkWidgetVersion = '1.2.0-SNAPSHOT'
-        mdkEspressoVersion = '1.2.0-SNAPSHOT'
+        mdkAndroidVersion = '6.2.0-RC3'
+        mdkWidgetVersion = '1.2.0-RC3'
+        mdkEspressoVersion = '1.2.0-RC3'
 
         mdkAndroidChanging = !isReleaseVersion(mdkAndroidVersion)
         mdkWidgetChanging = !isReleaseVersion(mdkAndroidVersion)
