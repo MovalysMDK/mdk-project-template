@@ -6,9 +6,8 @@ This generated project has :
 - a `webapp` part ([Read more](webapp/README.md)) which is an HTML5 project (fork of [ng-boilerplate] (https://github.com/ngbp/ng-boilerplate)) using :
     - AngularJS and associated plugins
     - Bootstrap
-    - MFCore (Movalys Framework)
-    - MFUI (Movalys Framework for UI)
+    - mdk-html-lib-core (Movalys Framework)
+    - mdk-html-lib-ui (Movalys Framework for UI)
     
 
 - a `cordova` part ([Read more](cordova/README.md)) which is a Cordova/PhoneGap project
-    
