@@ -5,9 +5,9 @@
 	use_frameworks!
 	inhibit_all_warnings!
 
-	pod 'MFCore', :git => 'gitmovalys.ptx.fr.sopra:mdk-ios-lib-core.git', :branch => 'master'
-	pod 'MFUI', :git => 'gitmovalys.ptx.fr.sopra:mdk-ios-lib-ui.git', :branch => 'master'
-	pod 'MDKControl', :git => 'gitmovalys.ptx.fr.sopra:mdk-ios-control.git', :branch => 'master'
+	pod 'MFCore', :git => 'gitmovalys@git.ptx.fr.sopra:mdk-ios-lib-core.git', :branch => 'master'
+	pod 'MFUI', :git => 'gitmovalys@git.ptx.fr.sopra:mdk-ios-lib-ui.git', :branch => 'master'
+	pod 'MDKControl', :git => 'gitmovalys@git.ptx.fr.sopra:mdk-ios-control.git', :branch => 'master'
 
 	post_install do |installer_representation|
 		installer_representation.pods_project.targets.each do |target|
@@ -15,7 +15,7 @@
 				config.build_settings['ENABLE_STRICT_OBJC_MSGSEND'] = 'NO'
 				config.build_settings['CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES'] = 'YES'
 				if target.name == "Pods-MFUI"
-					config.build_settings['LD_RUNPATH_SEARCH_PATHS'] = '$(CONFIGURATION_BUILD_DIR)'			
+					config.build_settings['LD_RUNPATH_SEARCH_PATHS'] = '$(CONFIGURATION_BUILD_DIR)'
 				end
 			end
 		end
