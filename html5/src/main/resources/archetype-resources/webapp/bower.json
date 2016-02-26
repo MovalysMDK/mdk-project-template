@@ -8,8 +8,8 @@
   	"description": "${artifactId}",
  	"json": "bower.json",
     "dependencies": {
-        "mdk-html5-lib-core": "gitmovalys@git.ptx.fr.sopra:mdk-html5-lib-core.git#master",
-        "mdk-html5-lib-ui": "gitmovalys@git.ptx.fr.sopra:mdk-html5-lib-ui.git#master"
+        "mdk-html5-lib-core": "1.3.0-RC3",
+        "mdk-html5-lib-ui": "1.3.0-RC3"
     },
     "overrides": {
         "modernizr": {
