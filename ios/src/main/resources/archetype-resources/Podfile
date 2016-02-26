@@ -5,9 +5,9 @@
 	use_frameworks!
 	inhibit_all_warnings!
 
-	pod 'MFCore', '2.2.0-RC4'
-	pod 'MFUI', '2.2.0-RC4'
-	pod 'MDKControl', '1.2.0-RC4'
+	pod 'MFCore', :git => 'gitmovalys@git.ptx.fr.sopra:mdk-ios-lib-core.git', :branch => 'master'
+	pod 'MFUI', :git => 'gitmovalys@git.ptx.fr.sopra:mdk-ios-lib-ui.git', :branch => 'master'
+	pod 'MDKControl', :git => 'gitmovalys@git.ptx.fr.sopra:mdk-ios-control.git', :branch => 'master'
 
 	post_install do |installer_representation|
 		installer_representation.pods_project.targets.each do |target|
