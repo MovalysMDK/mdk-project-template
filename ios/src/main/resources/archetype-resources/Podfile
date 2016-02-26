@@ -5,9 +5,9 @@
 	use_frameworks!
 	inhibit_all_warnings!
 
-	pod 'MFCore', '2.2.0-RC4'
-	pod 'MFUI', '2.2.0-RC4'
-	pod 'MDKControl', '1.2.0-RC4'
+	pod 'MFCore', :path => '../../../mdk-ios-lib-core'
+	pod 'MFUI', :path => '../../../mdk-ios-lib-ui'
+	pod 'MDKControl', :path => '../../../mdk-ios-control'
 
 	post_install do |installer_representation|
 		installer_representation.pods_project.targets.each do |target|
