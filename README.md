@@ -1,5 +1,4 @@
 # mdk-project-template
-**Movalys MDK Framework version description**
 
 ## What is mdk-project-template?
 
