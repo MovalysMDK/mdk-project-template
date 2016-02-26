@@ -3,9 +3,8 @@
 
 ## What is mdk-project-template?
 
-mdk-project-template is part of the Movalys MDK Framework.
-
-For each platform, it describes the output project's structure for files and folders.
+mdk-project-templates contains the project templates used by Movalys MDK to create a new MDK project.
+Project templates are maven archetypes.
 
 ## Documentation
 
