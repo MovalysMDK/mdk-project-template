@@ -132,7 +132,6 @@
 				<executions>
 					<execution>
 						<id>format-licence</id>
-						<phase>verify</phase>
 						<goals>
 							<goal>format</goal>
 						</goals>
