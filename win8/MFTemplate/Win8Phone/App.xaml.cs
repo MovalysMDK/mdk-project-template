@@ -18,12 +18,35 @@ namespace basenamespace
         /// </summary>
         public void completeMergedDictionaries()
         {
+            addRessource("/mdk-phone/Themes/MFGeolocator.xaml");
+            addRessource("/mdk-phone/Themes/MFPhotoThumbnail.xaml");
+            addRessource("/mdk-phone/Themes/Field/MFButton.xaml");
+            addRessource("/mdk-phone/Themes/Field/MFCheckBox.xaml");
+            addRessource("/mdk-phone/Themes/Field/MFDatePicker.xaml");
+            addRessource("/mdk-phone/Themes/Field/MFEnumImage.xaml");
+            addRessource("/mdk-phone/Themes/Field/MFInteger.xaml");
+            addRessource("/mdk-phone/Themes/Field/MFLabel.xaml");
+            addRessource("/mdk-phone/Themes/Field/MFMultiLineText.xaml");
+            addRessource("/mdk-phone/Themes/Field/MFNumberPicker.xaml");
+            addRessource("/mdk-phone/Themes/Field/MFRadioEnum.xaml");
+            addRessource("/mdk-phone/Themes/Field/MFRegExpButton.xaml");
+            addRessource("/mdk-phone/Themes/Field/MFSignature.xaml");
+            addRessource("/mdk-phone/Themes/Field/MFSlider.xaml");
+            addRessource("/mdk-phone/Themes/Field/MFTextBox.xaml");
+            addRessource("/mdk-phone/Themes/Field/MFWebView.xaml");
+            addRessource("/mdk-phone/Themes/List/MFFixedList.xaml");
+            addRessource("/mdk-phone/Themes/List/MFList1D.xaml");
+            addRessource("/mdk-phone/Themes/List/MFList1DSearch.xaml");
+            addRessource("/mdk-phone/Themes/List/MFList2D.xaml");
+            addRessource("/mdk-phone/Themes/List/MFSpinner.xaml");
+            addRessource("/mdk-phone/Themes/List/MFSearchSpinner.xaml");
+            addRessource("/mdk-phone/Themes/DefaultStyle.xaml");
+        }
+        
+        private void addRessource(String path)
+        {
             ResourceDictionary dict = new ResourceDictionary();
-            Uri uri = new Uri("ms-appx:/mdk-phone/Themes/MFGeolocator.xaml", UriKind.Absolute);
-            dict.Source = uri;
-            Application.Current.Resources.MergedDictionaries.Add(dict);
-            dict = new ResourceDictionary();
-            uri = new Uri("ms-appx:/mdk-phone/Themes/Component/Field/MFPhotoThumbnail.xaml", UriKind.Absolute);
+            uri = new Uri("ms-appx:" + path, UriKind.Absolute);
             dict.Source = uri;
             Application.Current.Resources.MergedDictionaries.Add(dict);
         }

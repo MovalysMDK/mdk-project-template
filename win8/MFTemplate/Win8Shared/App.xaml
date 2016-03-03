@@ -7,36 +7,8 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-
-                <!-- 
-                    Styles that define common aspects of the platform look and feel
-                    Required by Visual Studio project and item templates
-                 -->
-                <ResourceDictionary Source="/mdk-store/Themes/Field/MFButton.xaml" />
-                <ResourceDictionary Source="/mdk-store/Themes/Field/MFCheckBox.xaml" />
-                <ResourceDictionary Source="/mdk-store/Themes/Field/MFDatePicker.xaml" />
-                <ResourceDictionary Source="/mdk-store/Themes/Field/MFEnumImage.xaml" />
-                <ResourceDictionary Source="/mdk-store/Themes/Field/MFInteger.xaml" />
-                <ResourceDictionary Source="/mdk-store/Themes/Field/MFLabel.xaml" />
-                <ResourceDictionary Source="/mdk-store/Themes/Field/MFMultiLineText.xaml" />
-                <ResourceDictionary Source="/mdk-store/Themes/Field/MFNumberPicker.xaml" />
-                <ResourceDictionary Source="/mdk-store/Themes/Field/MFRadioEnum.xaml" />
-                <ResourceDictionary Source="/mdk-store/Themes/Field/MFRegExpButton.xaml" />
-                <ResourceDictionary Source="/mdk-store/Themes/Field/MFSignature.xaml" />
-                <ResourceDictionary Source="/mdk-store/Themes/Field/MFSlider.xaml" />
-                <ResourceDictionary Source="/mdk-store/Themes/Field/MFTextBox.xaml" />
-                <ResourceDictionary Source="/mdk-store/Themes/Field/MFWebView.xaml" />
-                <ResourceDictionary Source="/mdk-store/Themes/List/MFFixedList.xaml" />
-                <ResourceDictionary Source="/mdk-store/Themes/List/MFList1D.xaml" />
-                <ResourceDictionary Source="/mdk-store/Themes/List/MFList1DSearch.xaml" />
-                <ResourceDictionary Source="/mdk-store/Themes/List/MFList2D.xaml" />
-                <ResourceDictionary Source="/mdk-store/Themes/List/MFSpinner.xaml" />
-                <ResourceDictionary Source="/mdk-store/Themes/List/MFSearchSpinner.xaml" />
-                <ResourceDictionary Source="/mdk-store/Themes/DefaultStyle.xaml" />
-                <!-- <ResourceDictionary Source="/mdk-store/Themes/MFGeolocator.xaml" /> -->
                 <ResourceDictionary Source="Themes/CustomStyle.xaml" />
             </ResourceDictionary.MergedDictionaries>
-
         </ResourceDictionary>
     </Application.Resources>
 </Application>
