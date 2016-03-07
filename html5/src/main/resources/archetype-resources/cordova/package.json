@@ -36,6 +36,7 @@
     "cordova-plugin-inappbrowser@1.0.1",
     "cordova-plugin-vibration@1.2.0",
     "cordova-plugin-media-capture@1.0.1",
-    "cordova-plugin-whitelist@1.2.0"
+    "cordova-plugin-whitelist@1.2.0",
+    "cordova-sqlite-legacy@0.7.17"
   ]
 }

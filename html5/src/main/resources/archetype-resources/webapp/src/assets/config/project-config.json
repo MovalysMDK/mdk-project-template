@@ -37,7 +37,7 @@
         	"windows": [ 
         		{ 
         			"version": "*", 
-        			"database": "WebSql" 
+        			"database": "Sqlite" 
         		} 
         	], 
             "ios":[
