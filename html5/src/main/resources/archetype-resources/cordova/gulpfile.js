@@ -178,9 +178,21 @@ gulp.task('cordova:build:android', false, function(cb){
 
 // Run cordova build
 gulp.task('cordova:build', false, function(cb){
-    cordova.build(packageNPM.platforms, function(err){
-        return cb(err);
-    });
+    var aPackage = packageNPM.platforms, length = aPackage.length, i = 0 , windowsOptions = {'platforms': ['windows'],'options': {argv: ['--archs="x86"']}};
+    for(;i<length;i+=1){
+        if(aPackage[i] === 'windows'){
+            aPackage.splice(i,1);
+            cordova.build( windowsOptions, function(err){
+                return cb(err);
+            });
+        }
+    }
+    if(aPackage.length > 0){
+        cordova.build(aPackage, function(err){
+            return cb(err);
+        });
+    }
+
 });
 
 // Init platforms for crdova project
