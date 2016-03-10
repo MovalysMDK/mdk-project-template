@@ -1,6 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="${groupId}" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>${artifactId}</name>
+    <hook type="after_plugin_add" src="scripts/after_plugin_add/010_register_plugin.js" />
+    <hook type="after_plugin_rm" src="scripts/after_plugin_rm/010_deregister_plugin.js" />
+    <platform name="windows">
+      <hook type="after_platform_add" src="scripts/windows/appWindowsAfterPlatformAdd.js" />
+    </platform>
+
+	<name>${artifactId}</name>
     <description>${artifactId}</description>
     <author email="sebastien.maitre@sopra.com" href="http://www.sopra.com">
         Sopra

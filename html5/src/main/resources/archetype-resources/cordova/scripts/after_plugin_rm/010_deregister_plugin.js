@@ -1,0 +1,38 @@
+#!/usr/bin/env node
+
+/**
+ * Remove plugins from cordovaPlugins array after_plugin_rm
+ */
+module.exports = function (context) {
+
+    var fs = require('fs');
+    var packageJSON = require('../../package.json');
+
+    packageJSON.cordovaPlugins = packageJSON.cordovaPlugins || [];
+
+    context.opts.plugins.forEach(function (plugin) {
+        var index = -1;
+        packageJSON.cordovaPlugins.forEach(function (p, i) {
+            if (p.match(plugin) !== null) {
+                index = i;
+                return false;
+            }
+        });
+
+        if (index > -1) {
+            packageJSON.cordovaPlugins.splice(index, 1);
+        } else {
+            //If it didnt find a match, it may be listed as {id,locator}
+            for (var i = 0, j = packageJSON.cordovaPlugins.length; i < j; i++) {
+                var packagePlugin = packageJSON.cordovaPlugins[i];
+                if (typeof packagePlugin == 'object' && packagePlugin.id == plugin) {
+                    packageJSON.cordovaPlugins.splice(index, 1);
+                    break;
+                }
+            }
+        }
+    });
+
+    fs.writeFile('package.json', JSON.stringify(packageJSON, null, 2));
+
+}

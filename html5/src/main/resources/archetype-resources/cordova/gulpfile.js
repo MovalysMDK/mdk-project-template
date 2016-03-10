@@ -364,11 +364,15 @@ gulp.task('rename:ios:resources', false, function(){
 gulp.task('files:permissions:hooks', false, function(){
 
     try{
-        fs.chmodSync('./hooks/after_plugin_add/010_register_plugin.js', '755');
+        fs.chmodSync('./scripts/after_plugin_add/010_register_plugin.js', '755');
     }catch(e){}
 
     try{
-        fs.chmodSync('./hooks/after_plugin_rm/010_deregister_plugin.js', '755');
+        fs.chmodSync('./scripts/after_plugin_rm/010_deregister_plugin.js', '755');
+    }catch(e){}
+
+    try{
+        fs.chmodSync('./scripts/windows/appWindowsAfterPlatformAdd.js', '755');
     }catch(e){}
 
 });
