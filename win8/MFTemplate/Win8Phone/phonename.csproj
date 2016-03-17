@@ -93,7 +93,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mdk-common">
-      <HintPath>..\packages\mdk-common.2.1.0\lib\portable-win81+wpa81\mdk-common.dll</HintPath>
+      <HintPath>..\packages\mdk-common.2.2.0-SNAPSHOT\lib\portable-win81+wpa81\mdk-common.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -106,7 +106,7 @@
     <SDKReference Include="SQLite.WP81, Version=3.9.2">
       <Name>SQLite for Windows Phone 8.1</Name>
     </SDKReference>
-    <SDKReference Include="MovalysMDK.WP81, Version=2.1.0">
+    <SDKReference Include="MovalysMDK.WP81, Version=2.2.0">
       <Name>Movalys MDK for Windows Phone 8.1</Name>
     </SDKReference>
   </ItemGroup>
