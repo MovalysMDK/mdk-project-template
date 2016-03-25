@@ -139,8 +139,8 @@
     <SDKReference Include="MovalysMDK.WinRT81, Version=2.2.0">
       <Name>Movalys MDK for Windows Runtime %28Windows 8.1%29</Name>
     </SDKReference>
-    <SDKReference Include="SQLite.WinRT81, Version=3.9.2">
-      <Name>SQLite for Windows Runtime %28Windows 8.1%29</Name>
+    <SDKReference Include="SQLite.WinRT, Version=3.9.2">
+      <Name>SQLite for Windows Runtime</Name>
     </SDKReference>
   </ItemGroup>
   <ItemGroup>
