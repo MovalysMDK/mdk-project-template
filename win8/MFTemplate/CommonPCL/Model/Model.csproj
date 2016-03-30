@@ -51,7 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mdk-common">
-      <HintPath>..\..\packages\mdk-common.2.1.0-SNAPSHOT\lib\portable-win81+wpa81\mdk-common.dll</HintPath>
+      <HintPath>..\..\packages\mdk-common.2.2.0-SNAPSHOT\lib\portable-win81+wpa81\mdk-common.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup />
