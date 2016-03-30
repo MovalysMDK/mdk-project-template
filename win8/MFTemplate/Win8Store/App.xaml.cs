@@ -46,7 +46,7 @@ namespace basenamespace
         private void addRessource(String path)
         {
             ResourceDictionary dict = new ResourceDictionary();
-            uri = new Uri("ms-appx:" + path, UriKind.Absolute);
+            Uri uri = new Uri("ms-appx:" + path, UriKind.Absolute);
             dict.Source = uri;
             Application.Current.Resources.MergedDictionaries.Add(dict);
         }
