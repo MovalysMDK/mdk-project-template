@@ -26,12 +26,16 @@
         EntryPoint="safeprojectname.App">
         <m2:VisualElements
             DisplayName="safeprojectname"
-            Logo="Assets\Logo.png"
-            SmallLogo="Assets\SmallLogo.png"
+            Square150x150Logo="Assets\Logo.png"
+            Square30x30Logo="Assets\SmallLogo.png"
             Description="safeprojectname"
             ForegroundText="light"
             BackgroundColor="#464646">
-            <m2:DefaultTile ShowName="allLogos" />
+            <m2:DefaultTile>
+			  <m2:ShowNameOnTiles>
+				<m2:ShowOn Tile="square150x150Logo" />
+			  </m2:ShowNameOnTiles>
+			</m2:DefaultTile>
             <m2:SplashScreen Image="Assets\SplashScreen.png" />
         </m2:VisualElements>
     </Application>
