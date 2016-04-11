@@ -24,16 +24,16 @@
     <Application Id="App"
         Executable="safeprojectname.exe"
         EntryPoint="safeprojectname.App">
-        <VisualElements
+        <m2:VisualElements
             DisplayName="safeprojectname"
             Logo="Assets\Logo.png"
             SmallLogo="Assets\SmallLogo.png"
             Description="safeprojectname"
             ForegroundText="light"
             BackgroundColor="#464646">
-            <DefaultTile ShowName="allLogos" />
-            <SplashScreen Image="Assets\SplashScreen.png" />
-        </VisualElements>
+            <m2:DefaultTile ShowName="allLogos" />
+            <m2:SplashScreen Image="Assets\SplashScreen.png" />
+        </m2:VisualElements>
     </Application>
   </Applications>
   <Capabilities>
