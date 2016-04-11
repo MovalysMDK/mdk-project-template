@@ -8,7 +8,6 @@ var gulp                = require('gulp-help')(require("gulp")),
     del                 = require('del'),
     concat              = require('gulp-concat'),
     stripJsonComments   = require('gulp-strip-json-comments'),
-    debug               = require('gulp-debug'),
     inject              = require('gulp-inject'),
     runSequence         = require('run-sequence'),
     ngHtml2Js           = require('gulp-ng-html2js'),
@@ -326,4 +325,3 @@ gulp.task('protractor', 'Run tests "end-to-end"', function () {
             throw e
         });
 });
-
