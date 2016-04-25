@@ -19,7 +19,7 @@ namespace basenamespace
         public void completeMergedDictionaries()
         {
             addRessource("/mdk-store/Themes/MFGeolocator.xaml");
-            addRessource("/mdk-store/Themes/MFPhotoThumbnail.xaml");
+            addRessource("/mdk-store/Themes/Component/Field/MFPhotoThumbnail.xaml");
             addRessource("/mdk-store/Themes/Field/MFButton.xaml");
             addRessource("/mdk-store/Themes/Field/MFCheckBox.xaml");
             addRessource("/mdk-store/Themes/Field/MFDatePicker.xaml");
