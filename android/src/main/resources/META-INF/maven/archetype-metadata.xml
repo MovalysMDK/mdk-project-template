@@ -74,6 +74,7 @@
 		<fileSet filtered="false">
 			<directory>app</directory>
 			<includes>
+				<include>src/main/assets/**/*</include>
 				<include>src/main/res/**/*</include>
 				<include>src/androidTest/res/**/*</include>
 				<include>libs/**/*</include>

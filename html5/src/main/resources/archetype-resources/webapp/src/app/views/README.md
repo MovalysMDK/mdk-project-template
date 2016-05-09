@@ -50,7 +50,6 @@ They can contain any number of the framework component, such as :
 		# mf-hide-label         : true to set mf-label hidden
   		# mf-required           : true if the value of this field cannot be null
   		# mf-readonly           : true if this field is in read-only mode
-  		# mf-onchange           : function to call in controller when change has occurred on input
   		# mf-css-class-container: the name of the class containing the custom style. Add your style in the custom scss file
   		# mf-placeholder        : the text inside the input
   		
@@ -63,7 +62,6 @@ They can contain any number of the framework component, such as :
   		# mf-hide-label         : true to set mf-label hidden
   		# mf-required           : true if the value of this field cannot be null
   		# mf-readonly           : true if this field is in read-only mode
-  		# mf-onchange           : function to call in controller when change has occurred on input
   		# mf-css-class-container: the name of the class containing the custom style. Add your style in the custom scss file
   		# mf-placeholder        : the text inside the input
 
@@ -165,7 +163,6 @@ They can contain any number of the framework component, such as :
   		# mf-hide-label         : true to set mf-label hidden
   		# mf-required           : true if the value of this field cannot be null
   		# mf-readonly           : true if this field is in read-only mode
-  		# mf-onchange           : function to call in controller when change has occurred on input
   		# mf-css-class-container: the name of the class containing the custom style. Add your style in the custom scss file
   		# mf-placeholder        : the text inside the input
   		
@@ -179,7 +176,6 @@ They can contain any number of the framework component, such as :
   		# mf-hide-label           : true to set mf-label hidden
   		# mf-required             : true if the value of this field cannot be null
   		# mf-readonly             : true if this field is in read-only mode
-  		# mf-onchange             : function to call in controller when change has occurred on input
   		# mf-css-class-container  : the name of the class containing the custom style. Add your style in the custom scss file
   		# mf-value-attribute      : attribute of an item object considered as the identifier
   		
@@ -228,7 +224,6 @@ They can contain any number of the framework component, such as :
         # mf-hide-label         : true to set mf-label hidden
         # mf-required           : true if the value of this field cannot be null
         # mf-readonly           : true if this field is in read-only mode
-        # mf-onchange           : function to call in controller when change has occurred on input
         # mf-css-class-container: the name of the class containing the custom style. Add your style in the custom scss file
         
  - mf-list, for simple list inputs
