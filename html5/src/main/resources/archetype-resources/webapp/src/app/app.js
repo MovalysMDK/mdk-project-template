@@ -66,7 +66,7 @@ angular.module('MFApplication')
         });
 
         MFInitCordova.register('MFInitCordova');
-        MFInitConfiguration.register('MFInitConfiguration');
+        MFInitConfiguration.register('MFInitConfiguration', ['MFInitCordova']);
         MFInitOpenDataBase.register('MFInitOpenDataBase', ['MFInitConfiguration']);
         MFInitCreateMDKTables.register('MFInitCreateMDKTables', ['MFInitOpenDataBase', 'MFInitConfiguration']);
         MFInitFillInMDKTables.register('MFInitFillInMDKTables', ['MFInitCreateMDKTables', 'MFInitConfiguration']);
