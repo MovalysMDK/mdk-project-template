@@ -8,6 +8,6 @@ module.exports = function(context) {
 
   var exec = require('child_process').exec;
 
-  exec("cordova plugin add cordova-sqlite-legacy@0.7.17");
+  exec("cordova plugin add cordova-sqlite-legacy@1.3.1");
 
 }
