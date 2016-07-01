@@ -270,7 +270,7 @@ gulp.task('copy:buildAppAssets', false, function () {
                 '!**/*.md',
                 '!**/debug/*'])
         .pipe(gulp.dest(userConfig.build_dir + '/assets'));
-    return gulp.src('src/index.html')
+    return gulp.src(['src/index.html', 'src/cordovaLoader.html'])
         .pipe(gulp.dest(userConfig.build_dir));
 });
 

@@ -8,22 +8,27 @@
 
   <!-- Avoid browser and user scale -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
-  <!-- bower:css -->
-  <!-- endbower -->
+  <!-- build:vendorCSS vendor.css -->
+      <!-- bower:css -->
+      <!-- endbower -->
+  <!-- endbuild -->
 
   <!-- inject:css -->
   <!-- endinject -->
 
-  <script src="assets/script/winstore-jscompat.js"></script>
-
   <!-- build:js:buildCordova cordova.js -->
   <!-- /build -->
 
-  <!-- bower:js -->
-  <!-- endbower -->
+  <!-- build:vendorJS vendor.js -->
+      <script src="assets/script/winstore-jscompat.js"></script>
+      <!-- bower:js -->
+      <!-- endbower -->
+  <!-- endbuild -->
 
-  <!-- inject:js -->
-  <!-- endinject -->
+  <!-- build:appJS app.js -->
+      <!-- inject:js -->
+      <!-- endinject -->
+  <!-- endbuild -->
 </head>
 
 <body ng-app="@@moduleName" ng-controller="MFRootScopeCtrl">

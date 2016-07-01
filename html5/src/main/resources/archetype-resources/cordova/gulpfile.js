@@ -17,10 +17,37 @@ var gulp 		= require('gulp-help')(require('gulp')),
     path 		= require('path'),
 	argv        = require('yargs').argv,
 	gutil       = require('gulp-util'),
-    del        = require('del');
+    del         = require('del'),
+    usemin      = require('gulp-usemin'),
+    uglify      = require('gulp-uglify'),
+    rev         = require('gulp-rev'),
+    minifyCss   = require('gulp-minify-css');
 
 var config 		= require('./build.config.js');
 var packageNPM	= require('./package.json');
+
+// minification options
+var compressOptions = {
+    sequences     : true,  // join consecutive statements with the "comma operator"
+    properties    : true,  // optimize property access: a["foo"] -> a.foo
+    dead_code     : false, // discard unreachable code
+    drop_debugger : true,  // discard "debugger" statements
+    unsafe        : false, // some unsafe optimizations (see below)
+    conditionals  : true,  // optimize if-s and conditional expressions
+    comparisons   : true,  // optimize comparisons
+    evaluate      : true,  // evaluate constant expressions
+    booleans      : true,  // optimize boolean expressions
+    loops         : true,  // optimize loops
+    unused        : false, // drop unused variables/functions
+    hoist_funs    : true,  // hoist function declarations
+    hoist_vars    : false, // hoist variable declarations
+    if_return     : true,  // optimize if-s followed by return/continue
+    join_vars     : true,  // join var declarations
+    cascade       : true,  // try to cascade `right` into `left` in sequences
+    side_effects  : true,  // drop side-effect-free statements
+    warnings      : false, // warn about potentially dangerous optimizations/code
+    global_defs   : {}     // global definitions
+};
 
 // Initiating package.json['cordovaPlugins'] if it does not exist
 packageNPM.cordovaPlugins = packageNPM.cordovaPlugins || [];
@@ -60,6 +87,12 @@ gulp.task('init', 'Init the Cordova project: install NPM modules, and updates pl
         'rename:ios:resources',
         'cordova:init',
         cb);
+});
+
+gulp.task('removeLogs', function () {
+    return gulp.src('./www/vendor/mdk*/**/*.js')
+        .pipe(stripDebug())
+        .pipe(gulp.dest('./www/vendor'));
 });
 
 // Builds the project for every platforms added
@@ -253,6 +286,9 @@ gulp.task('build:prepare', false, function(cb){
 
 // Copy JS files from overrides (into bower.json) to cordova www
 gulp.task('copy:overrides', false, function(){
+	// Do not copy overrides in production, it will be done on processhtml task
+    if(argv.prod) return;
+	
     var base = '../webapp/build/vendor';
     gulp.src( getOverrides('../webapp/bower.json', base), {base: base} )
         .pipe( gulp.dest( './www/vendor' ) );
@@ -260,7 +296,9 @@ gulp.task('copy:overrides', false, function(){
 
 // Copy only JS files for every vendors to cordova www
 gulp.task('copy:vendor', false, function(){
-
+	// Do not copy vendor in production, it will be done on processhtml task
+    if(argv.prod) return;
+	
     // Copy JS files described in the main section of bower file
     var copyFromBowerMain = lazypipe()
         .pipe( readBower )
@@ -302,7 +340,13 @@ gulp.task('copy:vendor', false, function(){
 
 // Copy the whole webapp folder except vendors/ to cordova www
 gulp.task('copy:webapp', false, function(){
-    return gulp.src(['../webapp/build/**/*', '!../webapp/build/vendor/**', '!../webapp/build/vendor', 'config.xml'])
+	// Do not copy webapp js files in production, it will be done on processhtml task (appJS)
+    var filesToCopy = ['../webapp/build/**/*', '!../webapp/build/vendor/**', '!../webapp/build/vendor', 'config.xml'];
+    if(argv.prod) {
+        filesToCopy.push('!../webapp/build/**/*.js', '!../webapp/build/src/**', '!../webapp/build/src');
+    }
+
+    return gulp.src(filesToCopy)
         .pipe( gulp.dest('./www/') );
 });
 
@@ -335,9 +379,15 @@ gulp.task('copy:cordovafork', false, function(){
 gulp.task('processhtml', false, function(){
     return gulp.src('../webapp/build/index.html')
         .pipe( processHTML() )
-        .pipe( gulp.dest('./www/') );
+		.pipe(gulpIf(argv.prod,
+			usemin({
+				vendorJS: [ uglify({mangle: false, compress: compressOptions}), rev() ],
+				appJS: [ uglify({mangle: false, compress: compressOptions}), rev() ],
+                vendorCSS: [ minifyCss(), 'concat' ]
+			})
+		))
+		.pipe( gulp.dest('./www/') );
 });
-
 
 
 // *****************************************************************************
