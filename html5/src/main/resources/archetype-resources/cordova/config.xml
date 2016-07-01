@@ -58,4 +58,5 @@
     <feature name="StatusBar">
         <param name="ios-package" value="CDVStatusBar" onload="true" />
     </feature>
+    <plugin name="ionic-plugin-keyboard" spec="~2.2.1" />
 </widget>
