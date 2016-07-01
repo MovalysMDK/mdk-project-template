@@ -2,7 +2,9 @@
   "author": "Sopra Steria Group",
   "name": "${artifactId}",
   "version": "0.0.1",
-  "dependencies": {},
+  "dependencies": {
+  	"gulp-replace-task": "^0.11.0"
+  },
   "devDependencies": {
     "character-parser": "^1.2.1",
     "console-browserify": "^1.1.0",
@@ -16,6 +18,8 @@
     "gulp-help": "^1.6.1",
     "gulp-inject": "^3.0.0",
     "gulp-jshint": "^1.12.0",
+    "gulp-jshint-checkstyle-reporter": "^1.0.0",
+    "gulp-ng-config": "*",
     "gulp-ng-html2js": "^0.2.0",
     "gulp-open": "^1.0.0",
     "gulp-protractor": "^1.0.0",

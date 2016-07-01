@@ -9,7 +9,8 @@
  	"json": "bower.json",
     "dependencies": {
         "mdk-html5-lib-core": "gitmovalys@git.ptx.fr.sopra:mdk-html5-lib-core.git#master",
-        "mdk-html5-lib-ui": "gitmovalys@git.ptx.fr.sopra:mdk-html5-lib-ui.git#master"
+        "mdk-html5-lib-ui": "gitmovalys@git.ptx.fr.sopra:mdk-html5-lib-ui.git#master",
+        "angular-mocks": "~1.5.5"
     },
     "overrides": {
         "modernizr": {

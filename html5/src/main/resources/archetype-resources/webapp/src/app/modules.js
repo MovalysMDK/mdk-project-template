@@ -3,6 +3,7 @@
 /**
  * DECLARATION OF THE MODULES AND THEIR DEPENDENCIES
  */
+angular.module('mockModule', ['MFApplication', 'ngMockE2E', 'ngResource']);
 
 angular.module('data', ['mfcore']);
 angular.module('actions', ['data', 'mfcore']);

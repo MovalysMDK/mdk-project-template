@@ -1,0 +1,11 @@
+{
+	"version": "1.0.0",
+	"env": {
+		"dev": {
+			"TARGET_ENV": "dev"
+		},
+		"prod": {
+			"TARGET_ENV": "prod"
+		}
+	}
+}

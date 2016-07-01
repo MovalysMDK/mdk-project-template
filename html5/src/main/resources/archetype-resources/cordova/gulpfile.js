@@ -210,8 +210,8 @@ gulp.task('cordova:platform:update', false, function(cb){
 // Cordova part of init task
 gulp.task('cordova:init', false, function(cb){
     runSequence(
-        'cordova:platform:update',
         'cordova:plugin:update',
+        'cordova:platform:update',
         cb);
 });
 

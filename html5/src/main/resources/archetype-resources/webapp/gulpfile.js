@@ -19,7 +19,9 @@ var gulp                = require('gulp-help')(require("gulp")),
     chug                = require('gulp-chug'),
     Server              = require('karma').Server,
     open                = require('gulp-open'),
-    wiredep             = require('wiredep').stream;
+    wiredep             = require('wiredep').stream,
+	ngConfig  			= require('gulp-ng-config'),
+    replaceTask         = require('gulp-replace-task');
 
 /**
  * Load in our build configuration file.
@@ -40,6 +42,47 @@ if (argv.prod) {
     gutil.log('  use --prod on gulp command line, to launch the task in production mode \n');
 
 
+}
+
+/**
+ * Retrieve environment argv
+ */
+var dev = argv.dev;
+var qualif = argv.qualif;
+var recette = argv.recette;
+var prod = argv.prod;
+var mock = argv.mock;
+
+if (!dev && !qualif && !recette && !prod){
+	dev = true;
+}
+
+var getEnvironment = function(){
+	var environmentName = 'dev';
+
+	if (dev){
+			environmentName = 'dev';
+	}
+	else if (qualif){
+			environmentName = 'qualif';
+	}
+	else if (recette){
+			environmentName = 'recette';
+	}
+	else if (prod){
+		environmentName = 'prod';
+	}
+
+	return environmentName;
+};
+
+/**
+ * sets the mock environment if necessary
+ */
+var bootstrapModule = 'MFApplication';
+
+if (mock) {
+    bootstrapModule = 'mockModule';
 }
 
 // *****************************************************************************
@@ -71,11 +114,20 @@ gulp.task('sass', 'Compile Sass files to one CSS file',function () {
         .pipe(gulp.dest(userConfig.build_dir +  '/assets/styles/'));
 });
 
-
 /**
  * The directories to delete when `gulp clean` is executed.
  */
 gulp.task('clean', 'Clean the directory build', function () {
+    return del([userConfig.build_dir +  '/assets',
+		userConfig.build_dir +  '/src',
+		userConfig.build_dir +  '/index.html',
+		userConfig.build_dir +  '/templates-app.js']);
+});
+
+/**
+ * The directories to delete when `gulp cleanAll` is executed.
+ */
+gulp.task('cleanAll', 'Clean the directory build', function () {
     return del([userConfig.build_dir +  '/']);
 });
 
@@ -101,6 +153,19 @@ gulp.task('html2js', false, function () {
 
 });
 
+/**
+ * copy mock data
+ */
+gulp.task('mockData', function() {
+    return gulp.src(['src/assets/mock/*.json'])
+        .pipe(gulp.dest(userConfig.build_dir + '/assets/mock'));
+});
+
+/**
+ * does nothing
+ */
+gulp.task('noop', function() {return this;});
+
 // =======================================================
 // ========  JSHINT ======================================
 // =======================================================
@@ -116,8 +181,17 @@ gulp.task('html2js', false, function () {
 
 var jshintFilesToInspect;
 
-
 gulp.task('jshint', 'Execute Jshint to detect errors and potential problems in code', function () {
+    if (jshintFilesToInspect === undefined) {
+        jshintFilesToInspect = userConfig.app_files.js;
+    }
+
+    return gulp.src(jshintFilesToInspect)
+        .pipe(jshint('.jshintrc'))
+        .pipe(jshint.reporter('jshint-stylish'));
+});
+
+gulp.task('jshint:report', 'Execute Jshint to detect errors and potential problems in code', function () {
     if (jshintFilesToInspect === undefined) {
         jshintFilesToInspect = userConfig.app_files.js;
         gulp.src('./gulpfile.js')
@@ -127,7 +201,8 @@ gulp.task('jshint', 'Execute Jshint to detect errors and potential problems in c
 
     return gulp.src(jshintFilesToInspect)
         .pipe(jshint('.jshintrc'))
-        .pipe(jshint.reporter('jshint-stylish'));
+        .pipe(checkstyleReporter())
+        .pipe(gulp.dest(userConfig.reports_dir.checkstyle));
 });
 
 /**
@@ -157,6 +232,7 @@ gulp.task('injectToHtml', false, function () {
     ], {read: false});
 
     return target.pipe(inject(sources, {addRootSlash: false, ignorePath: userConfig.build_dir}))
+    	.pipe(replaceTask({patterns: [{match: 'moduleName', replacement: bootstrapModule}]}))
         .pipe(gulp.dest(userConfig.build_dir))
         .pipe(connect.reload());
 
@@ -179,7 +255,8 @@ gulp.task('copy:buildAppAssets', false, function () {
     gulp.src(['src/assets/**',
                 '!**/*.scss',
                 '!**/*.md',
-                '!**/debug/*'])
+                '!**/debug/*',
+                '!**/*mock*'])
         .pipe(gulp.dest(userConfig.build_dir + '/assets'));
     gulp.src([userConfig.build_dir +  '/vendor/mdk-html5-lib-core/assets/**',
                 '!' + userConfig.build_dir +  '/vendor/**/*.css',
@@ -220,6 +297,8 @@ gulp.task('build', 'Build the webapp project', function (callback) {
     runSequence(
         ['html2js', 'jshint', 'copy:buildAppAssets'],
         'sass',
+        'config',
+        mock ? 'mockData' : 'noop',
         'copy:buildAppjs',
         ['removeComments', 'bowerDepToHtml'],
         'injectToHtml',
@@ -325,3 +404,19 @@ gulp.task('protractor', 'Run tests "end-to-end"', function () {
             throw e
         });
 });
+
+/**
+ * Creates an EnvironmentConfig module with constants built from the EnvironmentConfig.json file.
+ */
+gulp.task('config', function () {
+    gulp.src('./src/app/init/EnvironmentConfig.json')
+        .pipe(ngConfig('EnvironmentConfig', {
+            environment: 'env.' + getEnvironment(),
+            wrap: '\"use strict\";\n\n<%= module %>'
+        }))
+        .pipe(gulp.dest(userConfig.build_dir + '/src/app/config/'))
+        .on('error', function (e) {
+            gutil.log('erreur');
+        });
+});
+
