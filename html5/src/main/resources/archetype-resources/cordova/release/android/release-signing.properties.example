@@ -1,0 +1,6 @@
+storeFile=XXX.keystore
+storeType=jks
+keyAlias=XXX
+// optional :
+keyPassword=
+storePassword=

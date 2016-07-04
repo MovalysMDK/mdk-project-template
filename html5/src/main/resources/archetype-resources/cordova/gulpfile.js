@@ -97,10 +97,19 @@ gulp.task('removeLogs', function () {
 
 // Builds the project for every platforms added
 gulp.task('build', 'Build the cordova project', function(cb){
-    runSequence(
-        'build:prepare',
-        'cordova:build',
-        cb);
+	if (argv.prod) {
+        runSequence(
+            'build:prepare',
+			'copy:release',
+    		'removeLogs',
+            'cordova:build',
+            cb);
+    } else {
+        runSequence(
+            'build:prepare',
+            'cordova:build',
+            cb);
+    }
 });
 
 // Run Android
@@ -368,6 +377,20 @@ gulp.task('copy:cordovafork', false, function(){
         .pipe( gulp.dest('./platforms/') );
 });
 
+//Copy the release/ folder
+gulp.task('copy:release', false, function(){
+	var sources = [];
+	for (var i=0; i<packageNPM.platforms.length; i++) {
+		var p = packageNPM.platforms[i];
+		sources.push('./release/' + p + '/**/*');
+		sources.push('!./release/' + p + '/README.md');
+	}
+  return gulp.src(sources,
+		{
+			base: './release'
+		})
+   .pipe( gulp.dest('./platforms/') );
+});
 
 
 // *****************************************************************************
