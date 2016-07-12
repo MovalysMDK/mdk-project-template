@@ -58,8 +58,8 @@ angular.module('MFApplication')
         //@generated-end
 	}])
 
-.run(['$rootScope', 'MFInitScheduler', 'MFInitConfiguration', 'MFInitCordova', 'MFInitOpenDataBase', 'MFInitFillInMDKTables', 'MFInitCreateMDKTables', 'MFInitFillInUserTables', 'MFInitCreateUserTables',
-    function($rootScope, MFInitScheduler, MFInitConfiguration, MFInitCordova, MFInitOpenDataBase, MFInitFillInMDKTables, MFInitCreateMDKTables, MFInitFillInUserTables, MFInitCreateUserTables) {
+.run(['$rootScope', 'MFInitScheduler', 'MFInitConfiguration', 'MFInitCordova', 'MFInitOpenDataBase', 'MFInitFillInMDKTables', 'MFInitCreateMDKTables', 'MFInitFillInUserTables', 'MFInitCreateUserTables', 'MFInitUpgradeDB',
+    function($rootScope, MFInitScheduler, MFInitConfiguration, MFInitCordova, MFInitOpenDataBase, MFInitFillInMDKTables, MFInitCreateMDKTables, MFInitFillInUserTables, MFInitCreateUserTables, MFInitUpgradeDB) {
 
         $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
             console.log('[STATE CHANGE] "'+fromState.name+'" '+JSON.stringify(fromParams)+'   ==>   "'+toState.name+'" '+JSON.stringify(toParams)+' ');
@@ -72,6 +72,7 @@ angular.module('MFApplication')
         MFInitFillInMDKTables.register('MFInitFillInMDKTables', ['MFInitCreateMDKTables', 'MFInitConfiguration']);
         MFInitCreateUserTables.register('MFInitCreateUserTables', ['MFInitCreateMDKTables']);
         MFInitFillInUserTables.register('MFInitFillInUserTables', ['MFInitCreateUserTables', 'MFInitConfiguration']);
+        MFInitUpgradeDB.register('MFInitUpgradeDB', ['MFInitFillInUserTables', 'MFInitConfiguration']);
         MFInitScheduler.start();
         //FastClick.attach(document.body); : replaced by https://docs.angularjs.org/api/ngTouch
     }
