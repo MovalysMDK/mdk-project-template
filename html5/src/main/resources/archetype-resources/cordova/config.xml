@@ -36,28 +36,24 @@
     <preference name="StatusBarStyle" value="default" />
     <preference name="detect-data-types" value="true" />
     <preference name="exit-on-suspend" value="false" />
-    <preference name="show-splash-screen-spinner" value="true" />
-    <preference name="auto-hide-splash-screen" value="true" />
     <preference name="disable-cursor" value="false" />
     <preference name="android-minSdkVersion" value="14" />
     <preference name="android-installLocation" value="auto" />
-
-    <preference name="SplashScreen" value="screen" />
+    <!-- splashScreen START -->
+    
+    <preference name="AutoHideSplashScreen" value="true" />
     <preference name="SplashScreenDelay" value="10000" />
+    <preference name="ShowSplashScreenSpinner" value="false"/>
+
+    <!-- splashScreen END -->
 
     <!-- ADD FOR FILE SYSTEM ACCESS -->
     <preference name="AndroidPersistentFileLocation" value="Internal" />
     <preference name="iosPersistentFileLocation" value="Library" />
 
-    <plugin name="Camera" value="CDVCamera" />
-    <plugin name="Notification" value="CDVNotification" />
-    <plugin name="Geolocation" value="CDVLocation" />
-    <plugin name="NetworkStatus" value="CDVConnection" />
-    <plugin name="File" value="CDVFile" />
-    <plugin name="FileTransfer" value="CDVFileTransfer" />
     <feature name="StatusBar">
         <param name="ios-package" value="CDVStatusBar" onload="true" />
     </feature>
-    <plugin name="ionic-plugin-keyboard" spec="~2.2.1" />
+
     <content src="cordovaLoader.html" />
 </widget>
