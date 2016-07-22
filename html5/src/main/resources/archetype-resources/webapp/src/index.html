@@ -1,68 +1,77 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>${applicationName}</title>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta charset="UTF-8">
-  <link rel="shortcut icon" href="assets/pictures/favicon.ico" type="image/x-icon" id="favicon">
+    <title>${applicationName}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' http://localhost:*; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: filesystem:; connect-src 'self' http://localhost:* ws://*">
+    <meta http-equiv="X-Content-Security-Policy"
+          content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' http://localhost:*; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: filesystem:; connect-src 'self' http://localhost:* ws://*">
+    <meta http-equiv="X-Webkit-CSP"
+          content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' http://localhost:*; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: filesystem:; connect-src 'self' http://localhost:* ws://*">
+    <link rel="shortcut icon" href="assets/pictures/favicon.ico" type="image/x-icon" id="favicon">
 
-  <!-- Avoid browser and user scale -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
-  <!-- build:vendorCSS vendor.css -->
-      <!-- bower:css -->
-      <!-- endbower -->
-  <!-- endbuild -->
 
-  <!-- inject:css -->
-  <!-- endinject -->
+    <!-- Avoid browser and user scale -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <!-- build:vendorCSS vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
 
-  <!-- build:js:buildCordova cordova.js -->
-  <!-- /build -->
+    <!-- inject:css -->
+    <!-- endinject -->
 
-  <!-- build:vendorJS vendor.js -->
-      <script src="assets/script/winstore-jscompat.js"></script>
-      <!-- bower:js -->
-      <!-- endbower -->
-  <!-- endbuild -->
+    <!-- build:js:buildCordova cordova.js -->
+    <!-- /build -->
 
-  <!-- build:appJS app.js -->
-      <!-- inject:js -->
-      <!-- endinject -->
-  <!-- endbuild -->
+    <!-- build:vendorJS vendor.js -->
+    <script src="assets/script/winstore-jscompat.js"></script>
+    <!-- bower:js -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:appJS app.js -->
+    <!-- inject:js -->
+    <!-- endinject -->
+    <!-- endbuild -->
 </head>
 
 <body ng-app="@@moduleName" ng-controller="MFRootScopeCtrl">
+<div id="mdk-scroll-zone" class="mdk-scroll-zone">
+    <div id="mdk-container-wrapper" class="mdk-container-wrapper">
+        <!--//@generated-start[index-control-bar][X]-->
+        <mf-controlbar mf-title="${applicationName}" mf-home-state="<% HOME_SCREEN_STATE %>"></mf-controlbar>
+        <!--//@generated-end-->
 
-  <!--//@generated-start[index-control-bar][X]-->
-  <mf-controlbar mf-title="${applicationName}" mf-home-state="<% HOME_SCREEN_STATE %>"></mf-controlbar>
-  <!--//@generated-end-->
 
-
-
-  <!--//@generated-start[index-snap-menu][X]-->
-  <!--
-  Menu utilisable tel quel, visible sur toutes les pages de l'application. A décommenter si nécessaire.
-  <mf-slide-menu>
-  <div name="mf-snap-menu">
-  <ul class="list-group">
-  <li class="list-group-item"><button snap-close ng-click="importDatabase()" class="btn btn-default">{{'slidingmenu.database.import.label' | translate}}</button></li>
-  <li class="list-group-item"><button snap-close ng-click="exportDatabase()" class="btn btn-default">{{'slidingmenu.database.export.label' | translate}}</button></li>
-  <li class="list-group-item"><button snap-close ng-click="resetDatabase()" class="btn btn-default">{{'slidingmenu.database.reset.label' | translate}}</button></li>
-  <li class="list-group-item"><button snap-close ng-click="actions.go('config')" class="btn btn-default">{{'slidingmenu.settings.label' | translate}}</button></li>-->
-  <!--//@generated-start[view-list-group-items][X]-->
-  <!-- <li class="list-group-item"><button snap-close ng-click="actions.go('<% NAVIGABLE_SCREEN_STATE %>')" class="btn btn-default">{{'<% NAVIGABLE_SCREEN_NAME %>' | translate}}</button></li>-->
-  <!--//@generated-end-->
-  <!--</ul>
+        <!--//@generated-start[index-snap-menu][X]-->
+        <!--
+        Menu utilisable tel quel, visible sur toutes les pages de l'application. A décommenter si nécessaire.
+        <mf-slide-menu>
+        <div name="mf-snap-menu">
+        <ul class="list-group">
+        <li class="list-group-item"><button snap-close ng-click="importDatabase()" class="btn btn-default">{{'slidingmenu.database.import.label' | translate}}</button></li>
+        <li class="list-group-item"><button snap-close ng-click="exportDatabase()" class="btn btn-default">{{'slidingmenu.database.export.label' | translate}}</button></li>
+        <li class="list-group-item"><button snap-close ng-click="resetDatabase()" class="btn btn-default">{{'slidingmenu.database.reset.label' | translate}}</button></li>
+        <li class="list-group-item"><button snap-close ng-click="actions.go('config')" class="btn btn-default">{{'slidingmenu.settings.label' | translate}}</button></li>-->
+        <!--//@generated-start[view-list-group-items][X]-->
+        <!-- <li class="list-group-item"><button snap-close ng-click="actions.go('<% NAVIGABLE_SCREEN_STATE %>')" class="btn btn-default">{{'<% NAVIGABLE_SCREEN_NAME %>' | translate}}</button></li>-->
+        <!--//@generated-end-->
+        <!--</ul>
+        </div>
+        -->
+        <!-- </mf-slide-menu> -->
+        <div growl class="main-container"></div>
+        <!-- Application content here -->
+        <!-- Uncomment this line to use snap-menu.
+        <div ui-view="" snap-content class="flex-container" id="mdk-id-flex-container">
+        </div> -->
+        <div ui-view="" class="flex-container" id="mdk-id-flex-container">
+        </div>
+    </div>
 </div>
--->
-<!-- </mf-slide-menu> -->
-<div growl class="main-container"></div>
-<!-- Application content here -->
-<!-- Uncomment this line to use snap-menu.
-<div ui-view="" snap-content class="flex-container" id="mdk-id-flex-container">
-</div> -->
-<div ui-view="" class="flex-container" id="mdk-id-flex-container">
-</div>
-
 </body>
 </html>
