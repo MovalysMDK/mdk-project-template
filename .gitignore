@@ -2,6 +2,7 @@
 .classpath
 .project
 .idea
+*.iml
 target
 ios/MFTemplate.xcodeproj/project.xcworkspace/xcsharedata/
 ios/MFTemplate.xcodeproj/xcuserdata/
