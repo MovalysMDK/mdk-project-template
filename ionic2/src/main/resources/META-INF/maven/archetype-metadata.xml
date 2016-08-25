@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archetype-descriptor name="web-archetype">
+	<requiredProperties>
+	    <requiredProperty key="applicationName">
+	    	<defaultValue>${artifactId}</defaultValue>
+	    </requiredProperty>
+	    <requiredProperty key="xmiFile">
+	    	<defaultValue>docs/modelisation/${artifactId}.xml</defaultValue>
+	    </requiredProperty>
+	    <requiredProperty key="adjavaDebug">
+	    	<defaultValue>false</defaultValue>
+	    </requiredProperty>
+	</requiredProperties>
+
+	<fileSets>
+	   	<!-- project files -->
+		<fileSet filtered="true" encoding="UTF-8">
+			<directory></directory>
+			<includes>
+				<include>config.xml</include>
+				<include>package.json</include>
+				<include>gulpfile.js</include>
+				<include>ionic.config.json</include>
+				<include>tsconfig.json</include>
+				<include>tslint.json</include>
+				<include>typings.json</include>
+			</includes>
+		</fileSet>
+
+
+		<!-- app -->
+		<fileSet filtered="false" encoding="UTF-8">
+			<directory>app</directory>
+			<includes>
+				<include>**/*</include>
+			</includes>
+		</fileSet>
+
+		<!-- platforms -->
+		<fileSet filtered="false" encoding="UTF-8">
+			<directory>platforms</directory>
+			<includes>
+				<include>**/*</include>
+			</includes>
+		</fileSet>
+
+		<!-- plugins -->
+		<fileSet filtered="plugins" encoding="UTF-8">
+			<directory>platforms</directory>
+			<includes>
+				<include>**/*</include>
+			</includes>
+		</fileSet>
+
+		<!-- resources -->
+		<fileSet filtered="false" encoding="UTF-8">
+			<directory>resources</directory>
+			<includes>
+				<include>**/*</include>
+			</includes>
+		</fileSet>
+
+		<!-- typings -->
+		<fileSet filtered="false" encoding="UTF-8">
+			<directory>typings</directory>
+			<includes>
+				<include>**/*</include>
+			</includes>
+		</fileSet>
+
+		<!-- www -->
+		<fileSet filtered="false" encoding="UTF-8">
+			<directory>www</directory>
+			<includes>
+				<include>**/*</include>
+			</includes>
+		</fileSet>
+
+		<!-- docs -->	
+		<fileSet filtered="false" encoding="UTF-8">
+			<directory>docs</directory>
+			<includes>
+				<include>**/*</include>
+			</includes>
+		</fileSet>
+
+		<!-- tools -->	
+		<fileSet filtered="false" encoding="UTF-8">
+			<directory>tools</directory>
+			<includes>
+				<include>**/*</include>
+			</includes>
+		</fileSet>
+
+
+	</fileSets>
+
+</archetype-descriptor>

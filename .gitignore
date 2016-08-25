@@ -1,6 +1,7 @@
 .settings
 .classpath
 .project
+.idea
 target
 ios/MFTemplate.xcodeproj/project.xcworkspace/xcsharedata/
 ios/MFTemplate.xcodeproj/xcuserdata/
