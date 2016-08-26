@@ -92,6 +92,13 @@
 			</includes>
 		</fileSet>
 
+		<fileSet filtered="false" encoding="UTF-8">
+			<directory>version</directory>
+			<includes>
+				<include>**/*.xml</include>
+			</includes>
+		</fileSet>
+
 
 	</fileSets>
 

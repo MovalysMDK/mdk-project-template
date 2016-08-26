@@ -69,7 +69,7 @@
 									<properties>
 										<basePackage>${groupId}</basePackage>
 										<mbandroidPackage>${groupId}.mbandroid</mbandroidPackage>
-										<html5Package>${groupId}.html5</html5Package>
+										<ionic2Package>${groupId}.ionic2</ionic2Package>
 										<appendGeneratorForceOverwrite>true</appendGeneratorForceOverwrite>
 										<importForceOverwrite>false</importForceOverwrite>
 										<mainProject>${artifactId}</mainProject>
