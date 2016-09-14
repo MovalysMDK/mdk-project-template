@@ -1,13 +1,13 @@
 SystemJS.config({
+  paths: {
+    "github:": "jspm_packages/github/",
+    "npm:": "jspm_packages/npm/",
+    "mdk:": "jspm_packages/mdk/",
+    "local:": "jspm_packages/local/",
+    "app/": "app/"
+  },
   browserConfig: {
     "baseURL": "build",
-    "paths": {
-      "github:": "jspm_packages/github/",
-      "npm:": "jspm_packages/npm/",
-      "mdk:": "jspm_packages/mdk/",
-      "local:": "jspm_packages/local/",
-      "app/": "app/"
-    },
     "bundles": {
       "dep.js": [
         "npm:typescript@2.0.2/lib/lib.es6.d.ts!github:frankwallis/plugin-typescript@5.1.1/plugin.js",
@@ -840,15 +840,6 @@ SystemJS.config({
       ]
     }
   },
-  nodeConfig: {
-    "paths": {
-      "github:": "jspm_packages/github/",
-      "npm:": "jspm_packages/npm/",
-      "mdk:": "jspm_packages/mdk/",
-      "local:": "jspm_packages/local/",
-      "app/": "app/"
-    }
-  },
   devConfig: {
     "map": {
       "plugin-typescript": "github:frankwallis/plugin-typescript@5.1.1"
@@ -887,8 +878,7 @@ SystemJS.config({
     "github:*/*.json",
     "npm:@*/*.json",
     "npm:*.json",
-    "mdk:*/*.json",
-    "local:*.json"
+    "mdk:*.json"
   ],
   map: {
     "@angular/common": "npm:@angular/common@2.0.0-rc.4",
@@ -908,7 +898,7 @@ SystemJS.config({
     "ionic-angular": "npm:ionic-angular@2.0.0-beta.11-201609011853",
     "ionic-native": "npm:ionic-native@1.3.21",
     "ionicons": "npm:ionicons@3.0.0",
-    "mdk-ionic2-lib-core": "local:mdk-ionic2-lib-core@2.0.0-SNAPSHOT/src",
+    "mdk-ionic2-lib-core": "mdk:mdk-ionic2-lib-core@master",
     "os": "github:jspm/nodelibs-os@0.2.0-alpha",
     "path": "github:jspm/nodelibs-path@0.2.0-alpha",
     "process": "github:jspm/nodelibs-process@0.2.0-alpha",
@@ -1217,9 +1207,7 @@ SystemJS.config({
         "rxjs": "npm:rxjs@5.0.0-beta.6"
       }
     },
-    "local:mdk-ionic2-lib-core@2.0.0-SNAPSHOT": {
-      "defaultExtension": "ts",
-      "format": "esm",
+    "mdk:mdk-ionic2-lib-core@master": {
       "map": {
         "lodash": "npm:lodash@4.15.0"
       }

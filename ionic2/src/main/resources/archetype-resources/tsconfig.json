@@ -38,8 +38,9 @@
         "rxjs/*": [
           "jspm_packages/npm/rxjs@5.0.0-beta.6/*"
         ],
-        "mdk-ionic2-lib-core/init": [
-          "jspm_packages/local/mdk-ionic2-lib-core@2.0.0-SNAPSHOT/src/init"
+        "mdk-ionic2-lib-core": [
+          "jspm_packages/local/mdk-ionic2-lib-core@2.0.0-SNAPSHOT",
+          "jspm_packages/mdk/mdk-ionic2-lib-core@master"
         ]
     }
   },

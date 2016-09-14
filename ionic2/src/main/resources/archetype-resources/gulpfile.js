@@ -1,5 +1,4 @@
 var gulp = require('gulp'),
-    debug = require('gulp-debug'),
     gulpWatch = require('gulp-watch'),
     del = require('del'),
     runSequence = require('run-sequence'),
