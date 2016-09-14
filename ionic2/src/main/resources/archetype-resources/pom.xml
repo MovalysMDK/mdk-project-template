@@ -12,7 +12,7 @@
 	<groupId>${groupId}</groupId>
 	<artifactId>${artifactId}</artifactId>
 	<name>${artifactId}</name>
-	<version>${version}</version>
+	<version>1.0.0</version>
 	<packaging>pom</packaging>
 
 	
@@ -57,7 +57,7 @@
 									<!-- 2.0.0 with fragments / 1.0.0 without fragments -->
                                     <versionClass>com.adeuza.movalysfwk.mf4mdd.commons.utils.Version</versionClass>
                                     <generationVersion>2.0.0</generationVersion>
-									<xmiFile>${xmiFile}</xmiFile>
+									<xmiFile>../commons/modelisation.xml</xmiFile>
 									<debug>true</debug>
 									<widgetVariant>mdkwidget</widgetVariant>
 									<widgetClass>com.adeuza.movalysfwk.mf4mdd.commons.utils.Widget</widgetClass>

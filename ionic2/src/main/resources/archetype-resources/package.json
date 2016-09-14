@@ -1,33 +1,29 @@
 {
+  "scripts": {
+	"postinstall" : "jspm install"
+  },
   "dependencies": {
-    "@angular/common": "2.0.0-rc.4",
-    "@angular/compiler": "2.0.0-rc.4",
-    "@angular/core": "2.0.0-rc.4",
-    "@angular/platform-browser": "2.0.0-rc.4",
-    "@angular/platform-browser-dynamic": "2.0.0-rc.4",
-    "@angular/http": "2.0.0-rc.4",
-    "@angular/forms": "0.2.0",
     "es6-shim": "0.35.1",
-    "ionic-angular": "2.0.0-beta.11",
-    "ionic-native": "1.3.10",
-    "ionicons": "3.0.0",
-    "reflect-metadata": "0.1.8",
-    "rxjs": "5.0.0-beta.6",
-    "zone.js": "0.6.12"
+    "ionicons": "3.0.0"
   },
   "devDependencies": {
+    "chokidar": "^1.6.0",
     "del": "2.2.0",
     "gulp": "3.9.1",
-    "gulp-watch": "4.3.5",
-    "ionic-gulp-browserify-typescript": "2.0.0",
-    "ionic-gulp-fonts-copy": "^1.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-watch": "^4.3.9",
     "ionic-gulp-html-copy": "^1.0.0",
-    "ionic-gulp-sass-build": "^1.0.0",
-    "ionic-gulp-scripts-copy": "^2.0.0",
     "ionic-gulp-tslint": "^1.0.0",
+    "jspm": "^0.17.0-beta.28",
+    "node-cmd": "^1.1.1",
+    "node-find-folder": "^0.1.25",
+    "run-sequence": "1.1.5",
     "tslint-ionic-rules": "0.0.4",
-    "run-sequence": "1.1.5"
+    "typescript": "^2.1.0-dev.20160908",
+    "vinyl-fs": "^2.4.3"
   },
+  "name": "${artifactId}",
+  "description": "${artifactId}: An Ionic project",
   "cordovaPlugins": [
     "cordova-plugin-device",
     "cordova-plugin-console",
@@ -36,14 +32,149 @@
     "cordova-plugin-statusbar",
     "ionic-plugin-keyboard"
   ],
-  "cordovaPlatforms": [
-    "ios",
-    {
-      "platform": "ios",
-      "version": "",
-      "locator": "ios"
+  "cordovaPlatforms": [],
+  "jspm": {
+    "name": "app",
+    "main": "app.ts",
+    "directories": {
+      "lib": "www/src",
+      "dist": "www/dist",
+      "baseURL": ".",
+      "packages": "jspm_packages"
+    },
+    "configFiles": {
+      "jspm": "jspm.config.js"
+    },
+    "dependencies": {
+      "ionic-angular": "npm:ionic-angular@^2.0.0-beta.11-201609011853",
+      "ionic-native": "npm:ionic-native@^1.3.21",
+      "ionicons": "npm:ionicons@^3.0.0",
+      "mdk-ionic2-lib-core": "local:mdk-ionic2-lib-core@2.0.0-SNAPSHOT",
+      "reflect-metadata": "npm:reflect-metadata@^0.1.8",
+      "typescript": "npm:typescript@next"
+    },
+    "devDependencies": {
+      "plugin-typescript": "github:frankwallis/plugin-typescript@^5.1.1"
+    },
+    "peerDependencies": {
+      "@angular/common": "npm:@angular/common@2.0.0-rc.4",
+      "@angular/compiler": "npm:@angular/compiler@2.0.0-rc.4",
+      "@angular/core": "npm:@angular/core@^2.0.0-rc.4",
+      "@angular/forms": "npm:@angular/forms@0.2.0",
+      "@angular/http": "npm:@angular/http@2.0.0-rc.4",
+      "@angular/platform-browser": "npm:@angular/platform-browser@^2.0.0-rc.4",
+      "@angular/platform-browser-dynamic": "npm:@angular/platform-browser-dynamic@2.0.0-rc.4",
+      "assert": "github:jspm/nodelibs-assert@^0.2.0-alpha",
+      "buffer": "github:jspm/nodelibs-buffer@^0.2.0-alpha",
+      "child_process": "github:jspm/nodelibs-child_process@^0.2.0-alpha",
+      "constants": "github:jspm/nodelibs-constants@^0.2.0-alpha",
+      "crypto": "github:jspm/nodelibs-crypto@^0.2.0-alpha",
+      "events": "github:jspm/nodelibs-events@^0.2.0-alpha",
+      "fs": "github:jspm/nodelibs-fs@^0.2.0-alpha",
+      "os": "github:jspm/nodelibs-os@^0.2.0-alpha",
+      "path": "github:jspm/nodelibs-path@^0.2.0-alpha",
+      "process": "github:jspm/nodelibs-process@^0.2.0-alpha",
+      "readline": "github:jspm/nodelibs-readline@^0.2.0-alpha",
+      "rxjs": "npm:rxjs@5.0.0-beta.6",
+      "stream": "github:jspm/nodelibs-stream@^0.2.0-alpha",
+      "string_decoder": "github:jspm/nodelibs-string_decoder@^0.2.0-alpha",
+      "tty": "github:jspm/nodelibs-tty@^0.2.0-alpha",
+      "util": "github:jspm/nodelibs-util@^0.2.0-alpha",
+      "vm": "github:jspm/nodelibs-vm@^0.2.0-alpha",
+      "zone.js": "npm:zone.js@^0.6.6"
+    },
+    "overrides": {
+      "npm:@angular/common@2.0.0-rc.4": {
+        "meta": {
+          "src/*.js": {
+            "deps": [
+              "reflect-metadata",
+              "zone.js"
+            ]
+          }
+        }
+      },
+      "npm:@angular/compiler@2.0.0-rc.4": {
+        "meta": {
+          "src/*.js": {
+            "deps": [
+              "reflect-metadata",
+              "zone.js"
+            ]
+          }
+        }
+      },
+      "npm:@angular/core@2.0.0-rc.4": {
+        "meta": {
+          "src/*.js": {
+            "deps": [
+              "reflect-metadata",
+              "zone.js"
+            ]
+          }
+        }
+      },
+      "npm:@angular/http@2.0.0-rc.4": {
+        "meta": {
+          "src/*.js": {
+            "deps": [
+              "reflect-metadata",
+              "zone.js"
+            ]
+          }
+        }
+      },
+      "npm:@angular/platform-browser-dynamic@2.0.0-rc.4": {
+        "meta": {
+          "src/*.js": {
+            "deps": [
+              "reflect-metadata",
+              "zone.js"
+            ]
+          }
+        }
+      },
+      "npm:@angular/platform-browser@2.0.0-rc.4": {
+        "meta": {
+          "src/*.js": {
+            "deps": [
+              "reflect-metadata",
+              "zone.js"
+            ]
+          }
+        }
+      },
+      "npm:inherits@2.0.3": {
+        "ignore": [
+          "test.js"
+        ]
+      },
+      "npm:lodash@4.15.0": {
+        "map": {
+          "buffer": "@empty",
+          "process": "@empty"
+        }
+      },
+      "npm:reflect-metadata@0.1.8": {
+        "jspmNodeConversion": false,
+        "map": {
+          "crypto": {
+            "node": "@node/crypto",
+            "default": "@empty"
+          }
+        }
+      },
+      "npm:typescript@2.0.2": {
+        "browser": {},
+        "map": {
+          "buffer": "@empty",
+          "child_process": "@empty",
+          "fs": "@empty",
+          "path": "@empty",
+          "process": "@empty",
+          "readline": "@empty"
+        }
+      }
     }
-  ],
-  "name": "myionic2project",
-  "description": "MyIonic2Project: An Ionic project"
+  }
 }

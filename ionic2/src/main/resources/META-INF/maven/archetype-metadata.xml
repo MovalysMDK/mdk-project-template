@@ -17,17 +17,18 @@
 		<fileSet filtered="true" encoding="UTF-8">
 			<directory></directory>
 			<includes>
-				<include>config.xml</include>
-				<include>package.json</include>
-				<include>gulpfile.js</include>
-				<include>ionic.config.json</include>
-				<include>tsconfig.json</include>
-				<include>tslint.json</include>
-				<include>typings.json</include>
+				<include>*</include>
 			</includes>
 		</fileSet>
 
-
+		<!-- .vscode -->
+		<fileSet filtered="false" encoding="UTF-8">
+			<directory>.vscode</directory>
+			<includes>
+				<include>**/*</include>
+			</includes>
+		</fileSet>
+		
 		<!-- app -->
 		<fileSet filtered="false" encoding="UTF-8">
 			<directory>app</directory>
@@ -35,7 +36,40 @@
 				<include>**/*</include>
 			</includes>
 		</fileSet>
-
+		
+		<!-- bundles -->
+		<fileSet filtered="false" encoding="UTF-8">
+			<directory>bundles</directory>
+			<includes>
+				<include>**/*</include>
+			</includes>
+		</fileSet>
+		
+		<!-- docs -->	
+		<fileSet filtered="false" encoding="UTF-8">
+			<directory>docs</directory>
+			<includes>
+				<include>**/*</include>
+			</includes>
+		</fileSet>
+				
+		<!-- hooks -->	
+		<fileSet filtered="false" encoding="UTF-8">
+			<directory>hooks</directory>
+			<includes>
+				<include>**/*</include>
+			</includes>
+		</fileSet>
+		
+		<!-- jspm_packages -->
+		<fileSet filtered="false" encoding="UTF-8">
+			<directory>jspm_packages</directory>
+			<includes>
+				<include>**/*</include>
+			</includes>
+		</fileSet>
+		
+		
 		<!-- platforms -->
 		<fileSet filtered="false" encoding="UTF-8">
 			<directory>platforms</directory>
@@ -46,7 +80,7 @@
 
 		<!-- plugins -->
 		<fileSet filtered="plugins" encoding="UTF-8">
-			<directory>platforms</directory>
+			<directory>plugins</directory>
 			<includes>
 				<include>**/*</include>
 			</includes>
@@ -60,6 +94,14 @@
 			</includes>
 		</fileSet>
 
+		<!-- tools (Automatically include MOV-MM-XXXX.xls) -->
+		<fileSet filtered="false" encoding="UTF-8">
+			<directory>tools</directory>
+			<includes>
+				<include>**/*</include>
+			</includes>
+		</fileSet>
+		
 		<!-- typings -->
 		<fileSet filtered="false" encoding="UTF-8">
 			<directory>typings</directory>
@@ -68,38 +110,21 @@
 			</includes>
 		</fileSet>
 
-		<!-- www -->
-		<fileSet filtered="false" encoding="UTF-8">
-			<directory>www</directory>
-			<includes>
-				<include>**/*</include>
-			</includes>
-		</fileSet>
-
-		<!-- docs -->	
-		<fileSet filtered="false" encoding="UTF-8">
-			<directory>docs</directory>
-			<includes>
-				<include>**/*</include>
-			</includes>
-		</fileSet>
-
-		<!-- tools -->	
-		<fileSet filtered="false" encoding="UTF-8">
-			<directory>tools</directory>
-			<includes>
-				<include>**/*</include>
-			</includes>
-		</fileSet>
-
+		<!-- version -->
 		<fileSet filtered="false" encoding="UTF-8">
 			<directory>version</directory>
 			<includes>
 				<include>**/*.xml</include>
 			</includes>
 		</fileSet>
-
-
+		
+		<!-- www -->
+		<fileSet filtered="true" encoding="UTF-8">
+			<directory>www</directory>
+			<includes>
+				<include>**/*</include>
+			</includes>
+		</fileSet>
 	</fileSets>
 
 </archetype-descriptor>
