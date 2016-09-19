@@ -1,6 +1,8 @@
 {
     "extends": "tslint-ionic-rules",
     "rules" : {
-
+        "comment-format": [
+            
+        ]
     }
 }

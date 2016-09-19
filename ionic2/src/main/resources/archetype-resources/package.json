@@ -7,13 +7,12 @@
     "ionicons": "3.0.0"
   },
   "devDependencies": {
-    "chokidar": "^1.6.0",
     "del": "2.2.0",
     "gulp": "3.9.1",
     "gulp-rename": "^1.2.2",
+    "gulp-tslint": "^6.1.1",
     "gulp-watch": "^4.3.9",
     "ionic-gulp-html-copy": "^1.0.0",
-    "ionic-gulp-tslint": "^1.0.0",
     "jspm": "^0.17.0-beta.28",
     "node-cmd": "^1.1.1",
     "node-find-folder": "^0.1.25",
@@ -22,8 +21,8 @@
     "typescript": "^2.1.0-dev.20160908",
     "vinyl-fs": "^2.4.3"
   },
-  "name": "${artifactId}",
-  "description": "${artifactId}: An Ionic project",
+  "name": "test1gen",
+  "description": "test1gen: An Ionic project",
   "cordovaPlugins": [
     "cordova-plugin-device",
     "cordova-plugin-console",

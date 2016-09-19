@@ -8,7 +8,8 @@ var gulp = require('gulp'),
     glob = require('glob'),
     findFolder = require('node-find-folder'),
     rename = require('gulp-rename'),
-    cmd=require('node-cmd');
+    cmd=require('node-cmd'),
+    gulptslint = require('gulp-tslint');
 
 
 /**
@@ -31,19 +32,18 @@ gulp.task('run:before', [shouldWatch ? 'watch' : 'build']);
  * build however you see fit.
  */
 var copyHTML = require('ionic-gulp-html-copy');
-var tslint = require('ionic-gulp-tslint');
 var sassBuild = require('ionic-gulp-sass-build');
 
 var isRelease = argv.indexOf('--release') > -1;
 
 gulp.task('build', ['clean'], function(){
-  runSequence('lint',
+  runSequence('tslint',
     ['sass', 'html', 'fonts', 'config', 'project-ts', 'local-dependencies', 'dependencies']
   );
 });
 
 gulp.task('watch', ['clean'], function(done){
-  runSequence('lint',
+  runSequence('tslint',
     ['sass', 'html', 'fonts', 'config', 'project-ts', 'local-dependencies', 'dependencies'],
     function(){
       gulpWatch('app/**/*.scss', {read: false},function(){ gulp.start('sass'); });
@@ -111,4 +111,10 @@ gulp.task('local-dependencies', function() {
 });
 
 
-gulp.task('lint', tslint);
+gulp.task('tslint', function() {
+  const options = { summarizeFailureOutput: true };
+
+    return gulp.src("app/**/*.ts", { base: '.' })
+        .pipe(gulptslint({"formatter": "vso"}))
+        .pipe(gulptslint.report(options));
+});
