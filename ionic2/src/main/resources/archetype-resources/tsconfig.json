@@ -7,6 +7,8 @@
     "moduleResolution": "node",
     "baseUrl": ".",
     "outDir": "tmp",
+    "sourceRoot": ".",
+	"typeCheck": true,
     "paths": {
         "@angular/core": [
           "jspm_packages/npm/@angular/core@2.0.0-rc.4"

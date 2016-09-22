@@ -103,7 +103,7 @@ gulp.task('dependencies', function() {
 
 gulp.task('local-dependencies', function() {
   // Create a symlink to local dependencies  
-  vfs.src(['jspm_packages/local/**/*', 'jspm_packages/local/**/*/**/*', '!jspm_packages/local/**/{jspm_packages,jspm_packages/**}'],
+  vfs.src(['jspm_packages/local/**/*', 'jspm_packages/local/**/*/**/*', '!jspm_packages/local/**/{jspm_packages,jspm_packages/**,node_modules,node_modules/**}'],
      {followSymlinks: true}).pipe(vfs.dest('www/build/jspm_packages/local/'));
 
   // Copy MDK dependencies
