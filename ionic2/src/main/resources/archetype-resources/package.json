@@ -12,6 +12,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-tslint": "^6.1.1",
     "gulp-watch": "^4.3.9",
+    "ionic-gulp-sass-build": "^1.0.0",
     "ionic-gulp-html-copy": "^1.0.0",
     "jspm": "^0.17.0-beta.28",
     "node-cmd": "^1.1.1",
