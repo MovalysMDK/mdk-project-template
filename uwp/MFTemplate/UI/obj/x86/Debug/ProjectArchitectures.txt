@@ -1,2 +1,0 @@
-D:\Projets\MDK\mdk-uwp-sampleapp\SampleApp\Core\Core.csproj;x86
-D:\Projets\MDK\mdk-uwp-sampleapp\SampleApp\UI\UI.csproj;x86
