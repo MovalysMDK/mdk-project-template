@@ -8,7 +8,7 @@
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 
-	<artifactId>mdk-uwp-project-template</artifactId>
+	<artifactId>mdk-win8-project-template</artifactId>
 	<packaging>jar</packaging>
 
 	<name>MDK Universal Windows Apps Project Template</name>
