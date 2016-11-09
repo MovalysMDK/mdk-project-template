@@ -1,1 +1,0 @@
-foreach ($pack in Get-Package| Where-Object{$_.Version -match ".SNAPSHOT"}) { update-package $pack.Id -includePrerelease}
