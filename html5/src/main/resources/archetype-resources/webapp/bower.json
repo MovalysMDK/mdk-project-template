@@ -27,8 +27,8 @@
     },
     "private": true,
     "resolutions": {
-      "angular": "=1.4.3",
-      "angular-cookies": "=1.4.3",
+      "angular": "=1.5.8",
+      "angular-cookies": "=1.5.8",
       "angular-translate-storage-cookie": "=2.7.2",
       "angular-translate": "=2.7.2",
       "angular-ui-router": "=0.2.15"
