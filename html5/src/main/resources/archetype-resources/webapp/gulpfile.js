@@ -21,6 +21,7 @@ var gulp                = require('gulp-help')(require("gulp")),
     open                = require('gulp-open'),
     wiredep             = require('wiredep').stream,
 	ngConfig  			= require('gulp-ng-config'),
+    ngAnnotate          = require('gulp-ng-annotate'),
     replaceTask         = require('gulp-replace-task');
 
 /**
@@ -276,6 +277,7 @@ gulp.task('copy:buildAppAssets', false, function () {
 
 gulp.task('copy:buildAppjs', false, function () {
     return gulp.src(userConfig.app_files.js)
+        .pipe(ngAnnotate())
         .pipe(gulp.dest(userConfig.build_dir + '/src/app'));
 });
 

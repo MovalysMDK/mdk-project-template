@@ -23,6 +23,7 @@
     "gulp-ng-html2js": "^0.2.0",
     "gulp-open": "^1.0.0",
     "gulp-protractor": "^1.0.0",
+    "gulp-ng-annotate": "2.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.1.1",
     "gulp-strip-json-comments": "^1.0.2",

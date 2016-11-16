@@ -82,7 +82,6 @@ gulp.task('default', 'Execute gulp build', ['build']);
 // Inits a project
 gulp.task('init', 'Init the Cordova project: install NPM modules, and updates plugins and platforms', function(cb){
     runSequence(
-        'npm:install',
         'files:permissions:hooks',
         'rename:ios:resources',
         'cordova:init',
@@ -184,17 +183,6 @@ gulp.task('cordova:plugin:update', 'Update installed plugins in Cordova based on
     });
 
 });
-
-
-
-
-
-// *****************************************************************************
-// ******************* NPM *****************************************************
-// *****************************************************************************
-
-// Install node modules
-gulp.task('npm:install', false, shell.task('npm install'));
 
 
 
