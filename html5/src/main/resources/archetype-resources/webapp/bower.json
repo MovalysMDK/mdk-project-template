@@ -1,36 +1,38 @@
 {
- 	"name": "${artifactId}",
-  	"version": "${version}",
-  	"repository": {
-    	"type": "git",
-    	"url": "TODO"
-  	},
-  	"description": "${artifactId}",
- 	"json": "bower.json",
-    "dependencies": {
-        "mdk-html5-lib-core": "gitmovalys@git.ptx.fr.sopra:mdk-html5-lib-core.git#master",
-        "mdk-html5-lib-ui": "gitmovalys@git.ptx.fr.sopra:mdk-html5-lib-ui.git#master",
-        "angular-mocks": "~1.5.5"
+  "name": "${artifactId}",
+  "version": "${version}",
+  "repository": {
+    "type": "git",
+    "url": "TODO"
+  },
+  "description": "${artifactId}",
+  "json": "bower.json",
+  "dependencies": {
+    "mdk-html5-lib-core": "gitmovalys@git.ptx.fr.sopra:mdk-html5-lib-core.git#master",
+    "mdk-html5-lib-ui": "gitmovalys@git.ptx.fr.sopra:mdk-html5-lib-ui.git#master",
+    "angular-mocks": "~1.5.5"
+  },
+  "overrides": {
+    "modernizr": {
+      "main": "modernizr.js"
     },
-    "overrides": {
-        "modernizr": {
-            "main": "modernizr.js"
-        },
-        "ngCordova": {
-            "main": "dist/ng-cordova.min.js"
-        },
-      "ionic": {
-        "main": [
-          "release/js/ionic.bundle.js"
-        ]
-      }
+    "ngCordova": {
+      "main": "dist/ng-cordova.min.js"
     },
-    "private": true,
-    "resolutions": {
-      "angular": "=1.5.8",
-      "angular-cookies": "=1.5.8",
-      "angular-translate-storage-cookie": "=2.7.2",
-      "angular-translate": "=2.7.2",
-      "angular-ui-router": "=0.2.15"
+    "ionic": {
+      "main": [
+        "release/js/ionic.bundle.js"
+      ]
     }
+  },
+  "private": true,
+  "resolutions": {
+    "angular": "=1.5.8",
+    "angular-cookies": "=1.5.8",
+    "angular-sanitize": "=1.5.8",
+    "angular-animate": "=1.5.8",
+    "angular-translate-storage-cookie": "=2.7.2",
+    "angular-translate": "=2.7.2",
+    "angular-ui-router": "=0.2.15"
+  }
 }
