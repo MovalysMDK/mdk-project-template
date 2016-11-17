@@ -1,0 +1,46 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{$guidSolution$}") = "Model", "Model\Model.csproj", "{$guidProjetDao$}"
+EndProject
+Project("{$guidSolution$}") = "Dao", "Dao\Dao.csproj", "{$guidProjetDao$}"
+EndProject
+Project("{$guidSolution$}") = "DataLoader", "DataLoader\DataLoader.csproj", "{$guidProjetDataLoader$}"
+EndProject
+Project("{$guidSolution$}") = "ViewModel", "ViewModel\ViewModel.csproj", "{$guidProjetViewModel$}"
+EndProject
+Project("{$guidSolution$}") = "Application", "Application\Application.csproj", "{$guidProjetApplication$}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{$guidProjetModel$}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{$guidProjetModel$}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{$guidProjetModel$}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{$guidProjetModel$}.Release|Any CPU.Build.0 = Release|Any CPU
+		{$guidProjetDao$}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{$guidProjetDao$}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{$guidProjetDao$}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{$guidProjetDao$}.Release|Any CPU.Build.0 = Release|Any CPU
+		{$guidProjetDataLoader$}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{$guidProjetDataLoader$}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{$guidProjetDataLoader$}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{$guidProjetDataLoader$}.Release|Any CPU.Build.0 = Release|Any CPU
+		{$guidProjetViewModel$}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{$guidProjetViewModel$}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{$guidProjetViewModel$}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{$guidProjetViewModel$}.Release|Any CPU.Build.0 = Release|Any CPU	
+		{$guidProjetApplication$}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{$guidProjetApplication$}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{$guidProjetApplication$}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{$guidProjetApplication$}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

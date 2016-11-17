@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ArrayOfPropertiesValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PropertiesValue>
+    <PropertiesValue>
+        <Key>SendLogOnCrash</Key>
+        <Value>
+            <Value>true</Value>
+        </Value>
+    </PropertiesValue>
+    <Key>LogLevel</Key>
+    <Value>
+      <Value>1</Value>
+    </Value>
+  </PropertiesValue>
+  <PropertiesValue>
+    <Key>LogMaxSize</Key>
+    <Value>
+      <Value>2</Value>
+    </Value>
+  </PropertiesValue>
+  <PropertiesValue>
+    <Key>LogEnabled</Key>
+    <Value>
+      <Value>True</Value>
+    </Value>
+  </PropertiesValue>
+  <PropertiesValue>
+    <Key>LogMaxFiles</Key>
+    <Value>
+      <Value>3</Value>
+    </Value>
+  </PropertiesValue>
+</ArrayOfPropertiesValue>

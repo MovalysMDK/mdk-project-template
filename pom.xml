@@ -68,6 +68,7 @@
 		<module>ionic2</module>
 		<module>win8</module>
 		<module>android</module>
+		<module>uwp</module>
 	</modules>
 
 	<build>
