@@ -127,7 +127,12 @@ uploadArchives {
             repository(url: mdkArtifactoryRepoReleases) {
                 authentication(userName: mdkArtifactoryUsername, password: mdkArtifactoryPassword)
             }
-            
+            // >>>> SNAPSHOT
+            // DO NOT REMOVE -> This tag is used by release scripts
+            snapshotRepository(url: mdkArtifactoryRepoSnapshots) {
+                authentication(userName: mdkArtifactoryUsername, password: mdkArtifactoryPassword)
+            }
+            // >>>> end SNAPSHOT
         }
     }
 }
