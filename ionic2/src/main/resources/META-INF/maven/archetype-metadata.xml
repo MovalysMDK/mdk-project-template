@@ -29,21 +29,14 @@
 			</includes>
 		</fileSet>
 		
-		<!-- app -->
+		<!-- src -->
 		<fileSet filtered="false" encoding="UTF-8">
-			<directory>app</directory>
+			<directory>src</directory>
 			<includes>
 				<include>**/*</include>
 			</includes>
 		</fileSet>
 		
-		<!-- bundles -->
-		<fileSet filtered="false" encoding="UTF-8">
-			<directory>bundles</directory>
-			<includes>
-				<include>**/*</include>
-			</includes>
-		</fileSet>
 		
 		<!-- docs -->	
 		<fileSet filtered="false" encoding="UTF-8">
@@ -56,14 +49,6 @@
 		<!-- hooks -->	
 		<fileSet filtered="false" encoding="UTF-8">
 			<directory>hooks</directory>
-			<includes>
-				<include>**/*</include>
-			</includes>
-		</fileSet>
-		
-		<!-- jspm_packages -->
-		<fileSet filtered="false" encoding="UTF-8">
-			<directory>jspm_packages</directory>
 			<includes>
 				<include>**/*</include>
 			</includes>
