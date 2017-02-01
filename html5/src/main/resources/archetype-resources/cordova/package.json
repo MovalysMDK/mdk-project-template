@@ -27,7 +27,7 @@
     "gulp-util": "3.0.7",
     "wiredep": "^2.2.2"
   },
-  "platforms": ["ios","android"],
+  "platforms": ["android"],
   "cordovaPlugins": [
     "cordova-plugin-device@1.1.2",
     "cordova-plugin-file@4.2.0",
