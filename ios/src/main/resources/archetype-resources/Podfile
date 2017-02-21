@@ -1,10 +1,17 @@
 	platform :ios, '8.0'
 
-	source 'https://github.com/CocoaPods/Specs.git'
+	target '__productId__' do
 
-	use_frameworks!
-	inhibit_all_warnings!
+		use_frameworks!
+		inhibit_all_warnings!
 
-	pod 'MFCore', :path => '../../mdk-ios-lib-core'
-	pod 'MFUI', :path => '../../mdk-ios-lib-ui'
-	pod 'MDKControl', :path => '../../mdk-ios-control'
+		pod 'MFCore', :path => '../../mdk-ios-lib-core'
+		pod 'MFUI', :path => '../../mdk-ios-lib-ui'
+		pod 'MDKControl', :path => '../../mdk-ios-control'
+
+	  target '__productId__Tests' do
+	    inherit! :search_paths
+	    # Pods for testing
+	  end
+
+	end
