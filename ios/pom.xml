@@ -82,9 +82,9 @@
         											</chainedmapper>
         										</mapper>
                                         </copy>                                         
-                                         <copy todir="${project.build.outputDirectory}/archetype-resources/__productId__/resources/strings/" verbose="true" overwrite="true">
-                                                <fileset dir="${basedir}/MFTemplate/resources/strings/">
-                                                        <include name="**/*" />
+                                         <copy todir="${project.build.outputDirectory}/archetype-resources/" verbose="true" overwrite="true">
+                                                <fileset dir="${basedir}">
+                                                        <include name="Podfile" />
                                                 </fileset>
                                                 <mapper>
                                                     <chainedmapper>
@@ -97,6 +97,8 @@
                                         
 		                                <copy file="../commons/src/main/resources/root/commons/UML Movalys Framework Profile.mdzip" todir="${project.build.directory}/classes/archetype-resources/__productId__/docs/modelisation/" verbose="true" overwrite="true">
 		                                </copy>
+                                        <copy file="../commons/src/main/resources/root/commons/UML Movalys Framework Profile.mdzip" todir="${project.build.directory}/classes/archetype-resources/__productId__/docs/modelisation/" verbose="true" overwrite="true">
+                                        </copy>
 		                                <copy file="../commons/src/main/resources/root/commons/MOV-MM-Referentiel_de_donnees-V1.11.xls" todir="${project.build.directory}/classes/archetype-resources/__productId__/tools/" verbose="true" overwrite="true">
 		                                </copy>
                                          

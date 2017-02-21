@@ -15,12 +15,6 @@
 	        <directory/>
 			<includes>
 				<include>computeCoverage.sh</include>
-			</includes>
-	    </fileSet>
-
-	   	<fileSet filtered="true" encoding="UTF-8">
-	        <directory/>
-			<includes>
 				<include>Podfile</include>
 			</includes>
 	    </fileSet>
