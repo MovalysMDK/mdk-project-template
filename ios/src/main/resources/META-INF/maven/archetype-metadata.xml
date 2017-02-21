@@ -14,8 +14,9 @@
 	    <fileSet filtered="false" encoding="UTF-8">
 	        <directory/>
 			<includes>
-				<include>computeCoverage.sh</include>
 				<include>Podfile</include>
+				<include>computeCoverage.sh</include>
+				<include>computeCoverage.sh</include>
 			</includes>
 	    </fileSet>
 

@@ -27,7 +27,7 @@ do
 done
 
 echo "\tPatching files ..."
-for f in $(find $NEWNAME $NEWNAME.xcodeproj -depth -type f -name "*.pbxproj" -o -name "*.xcworkspacedata" -o -name "*.h" -o -name "*.m" -o -name "*.xcscheme" -o -name "*.pch"  -o -name "Podfile")
+for f in $(find $NEWNAME $NEWNAME.xcodeproj -depth -type f -name "*.pbxproj" -o -name "*.xcworkspacedata" -o -name "*.h" -o -name "*.m" -o -name "*.xcscheme" -o -name "*.pch")
 do
     echo "\t\tPatching $f ..."
     sed -i '' "s/$OLDNAME/$NEWNAME/g" $f
