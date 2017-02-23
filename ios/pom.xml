@@ -102,7 +102,7 @@
 		                                <copy file="../commons/src/main/resources/root/commons/MOV-MM-Referentiel_de_donnees-V1.11.xls" todir="${project.build.directory}/classes/archetype-resources/__productId__/tools/" verbose="true" overwrite="true">
 		                                </copy>
                                          
-                                        <replace token="MFTemplate" value="$${productId}" dir="${project.build.outputDirectory}/archetype-resources/">                                 
+                                        <replace token="MFTemplate" value="__productId__" dir="${project.build.outputDirectory}/archetype-resources/">                                 
               								<include name="**/*" />
             							</replace>
                                 </tasks>
