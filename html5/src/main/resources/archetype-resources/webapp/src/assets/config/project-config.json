@@ -14,7 +14,7 @@
                 {
                     "comparator": ">=",
                     "version": "23",
-                    "database": "IndexedDB"
+                    "database": "WebSql"
                 },
                 {
                     "version": "*",
@@ -50,7 +50,7 @@
                 {
                     "comparator":">=",
                     "version": "4.4",
-                    "database":"IndexedDB"
+                    "database":"WebSql"
                 },
                 {
                     "version": "*",

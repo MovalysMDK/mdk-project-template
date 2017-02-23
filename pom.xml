@@ -65,10 +65,14 @@
 	    <module>commons</module>
 		<module>ios</module>
 		<module>html5</module>
+		<!--
 		<module>ionic2</module>
+		-->
 		<module>win8</module>
 		<module>android</module>
+		<!--
 		<module>uwp</module>
+		-->
 	</modules>
 
 	<build>

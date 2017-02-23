@@ -1,57 +1,19 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "system",
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "lib": [
+      "dom",
+      "es2015"
+    ],
+    "module": "es2015",
     "moduleResolution": "node",
-    "baseUrl": ".",
-    "outDir": "tmp",
-    "sourceRoot": ".",
-	"typeCheck": true,
-    "paths": {
-        "@angular/core": [
-          "jspm_packages/npm/@angular/core@2.0.0-rc.4"
-        ],
-        "@angular/common": [
-          "jspm_packages/npm/@angular/common@2.0.0-rc.4"
-        ],
-        "@angular/compiler": [
-          "jspm_packages/npm/@angular/compiler@2.0.0-rc.4"
-        ],
-        "@angular/http": [
-          "jspm_packages/npm/@angular/http@2.0.0-rc.4"
-        ],
-        "@angular/forms": [
-          "jspm_packages/npm/@angular/forms@0.2.0"
-        ],
-        "@angular/platform-browser-dynamic": [
-          "jspm_packages/npm/@angular/platform-browser-dynamic@2.0.0-rc.4"
-        ],
-        "@angular/platform-browser": [
-          "jspm_packages/npm/@angular/platform-browser@2.0.0-rc.4"
-        ],
-        "ionic-angular": [
-          "jspm_packages/npm/ionic-angular@2.0.0-beta.11-201609011853"
-        ],
-        "ionic-native": [
-          "jspm_packages/npm/ionic-native@1.3.21"
-        ],
-        "rxjs/*": [
-          "jspm_packages/npm/rxjs@5.0.0-beta.6/*"
-        ],
-        "mdk-ionic2-lib-core": [
-          "jspm_packages/local/mdk-ionic2-lib-core@2.0.0-SNAPSHOT",
-          "jspm_packages/mdk/mdk-ionic2-lib-core@master"
-        ]
-    }
+    "target": "es5"
   },
   "exclude": [
-    "node_modules",
-    "jspm_packages",
-    "www",
-    "typings/global",
-    "typings/global.d.ts"
+    "node_modules"
   ],
   "compileOnSave": false,
   "atom": {

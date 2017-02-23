@@ -5,7 +5,7 @@
   "dependencies": {},
   "devDependencies": {
     "async": "1.5.0",
-    "cordova-lib": "6.2.0",
+    "cordova-lib": "6.4.0",
     "del": "2.2.0",
     "lazypipe": "1.0.1",
     "run-sequence": "1.1.5",
@@ -27,7 +27,7 @@
     "gulp-util": "3.0.7",
     "wiredep": "^2.2.2"
   },
-  "platforms": ["ios","android"],
+  "platforms": ["android"],
   "cordovaPlugins": [
     "cordova-plugin-device@1.1.2",
     "cordova-plugin-file@4.2.0",
