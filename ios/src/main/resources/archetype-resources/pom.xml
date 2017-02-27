@@ -191,6 +191,25 @@
 							</execution>
 						</executions>
 					</plugin>
+					<plugin>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>Changes module files names</id>
+								<phase>generate-sources</phase>
+								<configuration>
+									<tasks>
+										<replace token="__productId__" value="${artifactId}" dir="${project.basedir}">                                 
+											<include name="**/*" />	
+										</replace>
+									</tasks>
+								</configuration>
+								<goals>
+										<goal>run</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
 				</plugins>
 			</build>
 		</profile>
