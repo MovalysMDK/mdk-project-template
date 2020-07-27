@@ -1,4 +1,5 @@
 # mdk-project-template
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
 
 ## What is mdk-project-template?
 
